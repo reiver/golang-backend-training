@@ -6,6 +6,14 @@ If you can accomplish all these tasks, you will have _a lot_ of the skills neces
 
 THis guide gives you hints. As spend a bit of time trying to figure out yourself. **BUT DON'T SPEND TOO MUCH TIME BEING STUCK. ASK FOR HELP IF YOU GET STUCK!**
 
+## Table of Contents
+
+## 0. PREFACE
+
+Do NOT skip any sections.
+
+Do all sections. And do all the sections in the order that they appear in this guide.
+
 ## 1. PROGRAMS
 
 ### 1.1. Create a Go program that outputs text
@@ -184,9 +192,43 @@ Use the Postgres command line tool `psql` to INSERT some new values (into the ne
 
 ## 4. Database & Go
 
-### 4.1. BROWSE
+### 4.1. Browse
 
 Write a Go program that connects to the database server you previously installed and gets and outputs all the data your from the table you previously created.
 
+Hints:
+* [import "database/sql"](https://golang.org/pkg/database/sql/)
+* [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 
+### 4.2. Read
+
+Write a Go program that connects to the database server you previously installed and gets a single row from the table you previously created.
+
+Use a variable to specify the ID of the row you want to get. For example:
+```Go
+var id int64 = 123
+```
+
+Also include logging.
+
+Hints:
+* [import "database/sql"](https://golang.org/pkg/database/sql/)
+* [import _ "github.com/lib/pq"](https://github.com/lib/pq)
+
+### 4.3. Create
+
+Write a Go program that connects to the database server you previously installed and updates a single row from the table you previously created.
+
+Use a variable to specify the ID of the row you want to get. For example:
+```Go
+var id int64 = 123
+```
+
+And use other variables for the fields that you update.
+
+Also include logging.
+
+Hints:
+* [import "database/sql"](https://golang.org/pkg/database/sql/)
+* [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 
