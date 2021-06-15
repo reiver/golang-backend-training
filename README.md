@@ -82,6 +82,8 @@ Hints:
 Create a Web server in Go, where the Web server outputs:
 > Hello world
 
+Also include logging.
+
 Hints:
 * [import "net/http"](https://golang.org/pkg/net/http/)
 
@@ -99,7 +101,8 @@ Hello Joe
 ```
 Hello Stan
 ```
-    
+Also include logging.
+
 Hint:
 * [fmt.Fprintf](https://golang.org/pkg/fmt/#Fprintf)
 * [http.Handler](https://golang.org/pkg/net/http/#Handler)
@@ -113,6 +116,8 @@ Make the Web server you wrote in Go output the JSON:
     "msg":"Hello world!"
 }
 ```
+
+Also include logging.
 
 Hints:
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
@@ -138,3 +143,22 @@ I.e., make the API end point `/hello?name=REPLACE_ME` output the following:
     "msg":"Hello Stan!"
 }
 ```
+
+Also include logging.
+
+## 7. Web Addition
+
+Create an API end point that accepts two numbers, adds then, and outputs the result.
+
+For example:
+
+`/addition?x=3&y=2`
+```
+{
+    "result":"5",
+}
+```
+
+Hints:
+* [strconv.ParseInt()](https://golang.org/pkg/strconv/#ParseInt)
+* [strconv.ParseUint()](https://golang.org/pkg/strconv/#ParseUint)
