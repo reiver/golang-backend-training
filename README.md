@@ -111,7 +111,7 @@ Hint:
 * [http.Handler](https://golang.org/pkg/net/http/#Handler)
 * [http.ResponseWriter](https://golang.org/pkg/net/http/#ResponseWriter)
 
-## 2.3. Output JSON
+### 2.3. Output JSON
 
 Make the Web server you wrote in Go output the JSON:
 ```json
@@ -125,7 +125,7 @@ Also include logging.
 Hints:
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
-## 2.4. Web Hello {NAME} with JSON
+### 2.4. Web Hello {NAME} with JSON
 
 Copy your previous _Web Hello {NAME}_ program, but make it output JSON:
 
@@ -149,7 +149,7 @@ I.e., make the API end point `/hello?name=REPLACE_ME` output the following:
 
 Also include logging.
 
-## 2.5. Web Addition
+### 2.5. Web Addition
 
 Create an API end point that accepts two numbers, adds then, and outputs the result.
 
@@ -165,3 +165,28 @@ For example:
 Hints:
 * [strconv.ParseInt()](https://golang.org/pkg/strconv/#ParseInt)
 * [strconv.ParseUint()](https://golang.org/pkg/strconv/#ParseUint)
+
+## 3. Database
+
+### 3.1. Install the Postgres Database Server
+
+### 3.2. Create a Database
+
+Use the Postgres command line tool `psql` to create a new database.
+
+### 3.3. Create a Table
+
+Use the Postgres command line tool `psql` to create a new table (in the database you previously created).
+
+### 3.4. INSERT
+
+Use the Postgres command line tool `psql` to INSERT some new values (into the new table you created in the new database you previously created).
+
+## 4. Database & Go
+
+### 4.1. BROWSE
+
+Write a Go program that connects to the database server you previously installed and gets and outputs all the data your from the table you previously created.
+
+
+
