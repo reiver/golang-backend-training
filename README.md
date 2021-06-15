@@ -2,6 +2,11 @@
 
 This is a guide to help train someone with backend development using the Go programming language.
 
+If you can accomplish all these tasks, you will have _a lot_ of the skills necessary to do **backend development** using the Go programming language.
+
+THis guide gives you hints. As spend a bit of time trying to figure out yourself. **BUT DON'T SPEND TOO MUCH TIME BEING STUCK. ASK FOR HELP IF YOU GET STUCK!**
+
+
 ## 1. Create a Go program that outputs text
 
 Create a Go program that outputs the text:
