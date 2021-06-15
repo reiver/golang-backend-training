@@ -6,13 +6,13 @@ If you can accomplish all these tasks, you will have _a lot_ of the skills neces
 
 THis guide gives you hints. As spend a bit of time trying to figure out yourself. **BUT DON'T SPEND TOO MUCH TIME BEING STUCK. ASK FOR HELP IF YOU GET STUCK!**
 
-## Table of Contents
-
 ## 0. PREFACE
 
 Do NOT skip any sections.
 
 Do all sections. And do all the sections in the order that they appear in this guide.
+
+Also, the point of this is that you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster.
 
 ## 1. PROGRAMS
 
