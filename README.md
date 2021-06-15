@@ -205,6 +205,7 @@ Write a Go program that connects to the database server you previously installed
 Hints:
 * [import "database/sql"](https://golang.org/pkg/database/sql/)
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
+* [Go "database/sql" tutorial](http://go-database-sql.org/)
 
 ### 4.2. Read
 
@@ -220,6 +221,7 @@ Also include logging.
 Hints:
 * [import "database/sql"](https://golang.org/pkg/database/sql/)
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
+* [Go "database/sql" tutorial](http://go-database-sql.org/)
 
 ### 4.3. Create
 
@@ -237,6 +239,7 @@ Also include logging.
 Hints:
 * [import "database/sql"](https://golang.org/pkg/database/sql/)
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
+* [Go "database/sql" tutorial](http://go-database-sql.org/)
 
 ### 4.4. Update
 
@@ -254,6 +257,7 @@ Also include logging.
 Hints:
 * [import "database/sql"](https://golang.org/pkg/database/sql/)
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
+* [Go "database/sql" tutorial](http://go-database-sql.org/)
 
 ### 4.5. Delete
 
@@ -271,3 +275,4 @@ Also include logging.
 Hints:
 * [import "database/sql"](https://golang.org/pkg/database/sql/)
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
+* [Go "database/sql" tutorial](http://go-database-sql.org/)
