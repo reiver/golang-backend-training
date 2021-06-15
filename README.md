@@ -217,6 +217,23 @@ Hints:
 
 ### 4.3. Create
 
+Write a Go program that connects to the database server you previously installed and creates a single row from the table you previously created.
+
+Use a variable to specify the ID of the row you want to get. For example:
+```Go
+var id int64 = 123
+```
+
+And use other variables for the fields for the row that you are creating.
+
+Also include logging.
+
+Hints:
+* [import "database/sql"](https://golang.org/pkg/database/sql/)
+* [import _ "github.com/lib/pq"](https://github.com/lib/pq)
+
+### 4.4. Update
+
 Write a Go program that connects to the database server you previously installed and updates a single row from the table you previously created.
 
 Use a variable to specify the ID of the row you want to get. For example:
@@ -232,3 +249,19 @@ Hints:
 * [import "database/sql"](https://golang.org/pkg/database/sql/)
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 
+### 4.5. Delete
+
+Write a Go program that connects to the database server you previously installed and delete a single row from the table you previously created.
+
+Use a variable to specify the ID of the row you want to get. For example:
+```Go
+var id int64 = 123
+```
+
+And use other variables for the fields for the row that you are creating.
+
+Also include logging.
+
+Hints:
+* [import "database/sql"](https://golang.org/pkg/database/sql/)
+* [import _ "github.com/lib/pq"](https://github.com/lib/pq)
