@@ -163,6 +163,9 @@ I.e., make the API end point `/hello?name=REPLACE_ME` output the following:
 
 Also include logging.
 
+Hints:
+* [import "encoding/json"](https://golang.org/pkg/encoding/json/)
+
 ### 2.5. Web Addition
 
 Create an API end point that accepts two numbers, adds then, and outputs the result.
@@ -179,6 +182,7 @@ For example:
 Hints:
 * [strconv.ParseInt()](https://golang.org/pkg/strconv/#ParseInt)
 * [strconv.ParseUint()](https://golang.org/pkg/strconv/#ParseUint)
+* [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
 ## 3. Database
 
