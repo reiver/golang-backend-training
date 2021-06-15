@@ -37,7 +37,12 @@ Hints:
 
 ## 3. Create a simple logger
 
-Create a Go program where you can turn on and off the outputted text:
+Create a Go program where you can turn on and off the outputted text.
+
+Use the following variable to switch between text being outputted and text _not_ being outputted.
+```Go
+var logging bool = true
+```
 
 Hints:
 * [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf) — `fmt.Fprintf()` is similar to `fmt.Printf()` except `fmt.Fprintf()` lets you tell it where to send the output.
