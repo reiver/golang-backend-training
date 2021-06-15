@@ -18,3 +18,4 @@ Hints:
 * [fmt.Fprintln()](https://golang.org/pkg/fmt/#Fprintln)
 * [os.Stdout](https://golang.org/pkg/os/#Stdout)
 * [ioutil.Discard](https://golang.org/pkg/io/ioutil/#Discard)
+* [io.Writer](https://golang.org/pkg/io/#Writer)
