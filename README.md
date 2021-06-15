@@ -6,8 +6,9 @@ If you can accomplish all these tasks, you will have _a lot_ of the skills neces
 
 THis guide gives you hints. As spend a bit of time trying to figure out yourself. **BUT DON'T SPEND TOO MUCH TIME BEING STUCK. ASK FOR HELP IF YOU GET STUCK!**
 
+## 1. PROGRAMS
 
-## 1. Create a Go program that outputs text
+### 1.1. Create a Go program that outputs text
 
 Create a Go program that outputs the text:
 > Hello world!
@@ -15,7 +16,7 @@ Create a Go program that outputs the text:
 Hints:
 * [fmt.Println()](https://golang.org/pkg/fmt/#Println)
 
-## 2. Hello {NAME}
+### 1.2. Hello {NAME}
 
 Create a Go program that takes a name from a variable:
 ```Go
@@ -40,7 +41,7 @@ Or whatever, depending on the value of the `name` variable.
 Hints:
 * [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
 
-## 3. Create a simple logger
+### 1.3. Create a simple logger
 
 Create a Go program where you can turn on and off the outputted text.
 
@@ -62,7 +63,7 @@ Hints:
 * [ioutil.Discard](https://golang.org/pkg/io/ioutil/#Discard)
 * [io.Writer](https://golang.org/pkg/io/#Writer)
 
-## 4. Hello {NAME} with logging
+### 1.4. Hello {NAME} with logging
 
 Copy your previous _Hello {NAME}_ program, but make it also log the name.
 
@@ -77,7 +78,9 @@ Etc.
 Hints:
 * [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf)
 
-## 5. Create a Web server
+## 2. WEB SERVER
+
+### 2.1. Create a Web server
 
 Create a Web server in Go, where the Web server outputs:
 > Hello world
@@ -87,7 +90,7 @@ Also include logging.
 Hints:
 * [import "net/http"](https://golang.org/pkg/net/http/)
 
-## 6. Web Hello {NAME}
+### 2.2. Web Hello {NAME}
 
 Make the API end point `/hello?name=REPLACE_ME` output the following:
 
@@ -108,7 +111,7 @@ Hint:
 * [http.Handler](https://golang.org/pkg/net/http/#Handler)
 * [http.ResponseWriter](https://golang.org/pkg/net/http/#ResponseWriter)
 
-## 7. Output JSON
+## 2.3. Output JSON
 
 Make the Web server you wrote in Go output the JSON:
 ```json
@@ -122,7 +125,7 @@ Also include logging.
 Hints:
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
-## 6. Web Hello {NAME} with JSON
+## 2.4. Web Hello {NAME} with JSON
 
 Copy your previous _Web Hello {NAME}_ program, but make it output JSON:
 
@@ -146,7 +149,7 @@ I.e., make the API end point `/hello?name=REPLACE_ME` output the following:
 
 Also include logging.
 
-## 7. Web Addition
+## 2.5. Web Addition
 
 Create an API end point that accepts two numbers, adds then, and outputs the result.
 
