@@ -102,6 +102,8 @@ Hello Stan
     
 Hint:
 * [fmt.Fprintf](https://golang.org/pkg/fmt/#Fprintf)
+* [http.Handler](https://golang.org/pkg/net/http/#Handler)
+* [http.ResponseWriter](https://golang.org/pkg/net/http/#ResponseWriter)
 
 ## 7. Output JSON
 
