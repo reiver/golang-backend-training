@@ -20,7 +20,9 @@ Or:
 ```Go
 var name string = "Fred"
 ```
-Or whatever
+Or whatever.
+
+And outputs a message such as:
 ```
 Hello Joe!
 ```
@@ -38,6 +40,7 @@ Hints:
 Create a Go program where you can turn on and off the outputted text:
 
 Hints:
+* [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf)
 * [fmt.Fprintln()](https://golang.org/pkg/fmt/#Fprintln)
 * [os.Stdout](https://golang.org/pkg/os/#Stdout)
 * [ioutil.Discard](https://golang.org/pkg/io/ioutil/#Discard)
