@@ -2,7 +2,7 @@
 
 This is a guide to help train someone to do **backend development** using the Go programming language.
 
-**This is NOT a tutorial. This is a guide that directs to learn specific things.**
+**This is NOT a tutorial. This is a guide that directs someone to learn specific things.**
 
 The whole point of this is that you go and learn what you need to learn to be able to complete each assignment.
 
