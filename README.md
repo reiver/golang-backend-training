@@ -4,7 +4,7 @@ This is a guide to help train someone to do **backend development** using the Go
 
 **This is NOT a tutorial. This is a guide that directs someone to learn specific things.**
 
-The whole point of this is that you go and learn what you need to learn to be able to complete each assignment.
+The whole point of this guide is that _you_ go and learn what you need to learn to be able to complete each assignment in this guide.
 
 If you can accomplish all these tasks, you will have _a lot_ of the skills necessary to do **backend development** using the Go programming language.
 
