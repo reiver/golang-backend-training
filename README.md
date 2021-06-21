@@ -1,4 +1,7 @@
 # Golang Backend Training
+by [Charles Iliya Krempeaux](http://changelog.ca/)
+
+-----
 
 This is a guide to help train someone to do **backend development** using the Go programming language.
 
@@ -10,6 +13,14 @@ If you can accomplish all these tasks, you will have _a lot_ of the skills neces
 
 This guide gives you hints. And you should spend a bit of time trying to figure out stuff yourself. **BUT DON'T SPEND TOO MUCH TIME BEING STUCK. ASK FOR HELP IF YOU GET STUCK!**
 
+## TABLE OF CONTENTS
+
+* [0. Preface](#0-preface)
+* [1. Outputting](#1-outputting)
+* [2. Web Server](#2-web-server)
+
+-----
+
 ## 0. PREFACE
 
 Do NOT skip any sections.
@@ -18,7 +29,7 @@ Do all sections. And do all the sections in the order that they appear in this g
 
 Also, the point of this is that you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster.
 
-## 1. PROGRAMS
+## 1. Outputting
 
 ### 1.1. Create a Go program that outputs text
 
