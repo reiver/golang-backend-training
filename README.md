@@ -17,7 +17,8 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 
 * [0. Preface](#0-preface)
 * [1. Outputting](#1-outputting)
-* [2. Web Server](#2-web-server)
+* [2. Logging](#2-logging)
+* [3. Web Server](#3-web-server)
 
 -----
 
@@ -66,7 +67,9 @@ Or whatever, depending on the value of the `name` variable.
 Hints:
 * [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
 
-### 1.3. Create a simple logger
+## 2. Logging
+
+### 2.1. Create a simple logger
 
 Create a Go program where you can turn on and off the outputted text.
 
@@ -88,7 +91,7 @@ Hints:
 * [ioutil.Discard](https://golang.org/pkg/io/ioutil/#Discard)
 * [io.Writer](https://golang.org/pkg/io/#Writer)
 
-### 1.4. Hello {NAME} with logging
+### 2.2. Hello {NAME} with logging
 
 Copy your previous _Hello {NAME}_ program, but make it also log the name.
 
@@ -103,9 +106,9 @@ Etc.
 Hints:
 * [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf)
 
-## 2. WEB SERVER
+## 3. WEB SERVER
 
-### 2.1. Create a Web server
+### 3.1. Create a Web server
 
 Create a Web server in Go, where the Web server outputs:
 > Hello world
@@ -115,7 +118,7 @@ Also include logging.
 Hints:
 * [import "net/http"](https://golang.org/pkg/net/http/)
 
-### 2.2. Web Hello {NAME}
+### 3.2. Web Hello {NAME}
 
 Make the API end point `/hello?name=REPLACE_ME` output the following:
 
@@ -136,7 +139,7 @@ Hint:
 * [http.Handler](https://golang.org/pkg/net/http/#Handler)
 * [http.ResponseWriter](https://golang.org/pkg/net/http/#ResponseWriter)
 
-### 2.3. Output JSON
+### 3.3. Output JSON
 
 Make the Web server you wrote in Go output the JSON:
 ```json
@@ -150,7 +153,7 @@ Also include logging.
 Hints:
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
-### 2.4. Web Hello {NAME} with JSON
+### 3.4. Web Hello {NAME} with JSON
 
 Copy your previous _Web Hello {NAME}_ program, but make it output JSON:
 
@@ -177,7 +180,7 @@ Also include logging.
 Hints:
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
-### 2.5. Web Addition
+### 3.5. Web Addition
 
 Create an API end point that accepts two numbers, adds then, and outputs the result.
 
@@ -195,25 +198,25 @@ Hints:
 * [strconv.ParseUint()](https://golang.org/pkg/strconv/#ParseUint)
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
-## 3. Database
+## 4. Database
 
-### 3.1. Install the Postgres Database Server
+### 4.1. Install the Postgres Database Server
 
-### 3.2. Create a Database
+### 4.2. Create a Database
 
 Use the Postgres command line tool `psql` to create a new database.
 
-### 3.3. Create a Table
+### 4.3. Create a Table
 
 Use the Postgres command line tool `psql` to create a new table (in the database you previously created).
 
-### 3.4. INSERT
+### 4.4. INSERT
 
 Use the Postgres command line tool `psql` to INSERT some new values (into the new table you created in the new database you previously created).
 
-## 4. Database & Go
+## 5. Database & Go
 
-### 4.1. Browse
+### 5.1. Browse
 
 Write a Go program that connects to the database server you previously installed and gets and outputs all the data your from the table you previously created.
 
@@ -222,7 +225,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-### 4.2. Read
+### 5.2. Read
 
 Write a Go program that connects to the database server you previously installed and gets a single row from the table you previously created.
 
@@ -238,7 +241,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-### 4.3. Create
+### 5.3. Create
 
 Write a Go program that connects to the database server you previously installed and creates a single row from the table you previously created.
 
@@ -256,7 +259,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-### 4.4. Update
+### 5.4. Update
 
 Write a Go program that connects to the database server you previously installed and updates a single row from the table you previously created.
 
@@ -274,7 +277,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-### 4.5. Delete
+### 5.5. Delete
 
 Write a Go program that connects to the database server you previously installed and delete a single row from the table you previously created.
 
