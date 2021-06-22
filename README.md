@@ -19,6 +19,7 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [1. Outputting](#1-outputting)
 * [2. Logging](#2-logging)
 * [3. Web Server](#3-web-server)
+* [4. Database](#4-database)
 
 -----
 
