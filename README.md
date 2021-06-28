@@ -115,7 +115,6 @@ func (receiver Logger) End(a ...interface{}) {
 And these other two methods should use the `Log()` method you created before.
 
 Hints:
-* [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf) — `fmt.Fprintf()` is similar to `fmt.Printf()` except `fmt.Fprintf()` lets you tell it where to send the output.
 * [fmt.Fprintln()](https://golang.org/pkg/fmt/#Fprintln) — `fmt.Fprintln()` is similar to `fmt.Println()` except `fmt.Fprintln()` lets you tell it where to send the output.
 * [os.Stdout](https://golang.org/pkg/os/#Stdout) — `os.Stdout` is where `fmt.Printf()` & `fmt.Println()` send their output.
 * [ioutil.Discard](https://golang.org/pkg/io/ioutil/#Discard)
@@ -132,6 +131,18 @@ Alternatively, for example, if `name == "Fred"`, then it out log:
 > The name was "Fred"
 
 Etc.
+
+To accomplish this you should add another method to your logger:
+```
+func (receiver Logger) Logf(format string, a ...interface{}) {
+    //@TODO:  you will need to figure out what goes here.
+}
+```
+
+Such that when you log the name you do a:
+```
+log.Logf("The name was %q", name)
+```
 
 Hints:
 * [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf)
