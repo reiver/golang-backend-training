@@ -108,6 +108,41 @@ Etc.
 Hints:
 * [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf)
 
+### 2.3. Repository "go-log"
+
+Create a new publicly accessible repository named `go-log`.
+
+If you are on [GitHub](https://github.com/) and your username is `joeblow`, then you would create:
+```
+https://github.com/joeblow/go-log
+```
+
+If you are on [Bitbucket](https://bitbucket.org/) and your username is `homersimpson`, then you would create:
+```
+https://bitbucket.org/homersimpson/go-log
+```
+
+If you are on [Gitlab](https://gitlab.com/) and your username is `commanderkeen`, then you would create:
+```
+https://gitlab.com/commanderkeen/go-log
+```
+
+Etc.
+
+### 2.4. Pacakge "log"
+
+Put your logger code into the `go-log` repository you previously created.
+
+### 2.5. import "go-log"
+
+Write a program that uses your `"log"` package.
+
+At the beginning of the program log:
+> BEGIN
+
+At the end of the program log:
+> END
+
 ## 3. WEB SERVER
 
 ### 3.1. Create a Web server
