@@ -299,6 +299,13 @@ Use the Postgres command line tool `psql` to create a new database.
 
 Use the Postgres command line tool `psql` to create a new table (in the database you previously created).
 
+Your table should includ a single field **primary key**.
+
+And it should include a field named `when_created`:
+```sql
+when_created TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+```
+
 ### 4.4. INSERT
 
 Use the Postgres command line tool `psql` to INSERT some new values (into the new table you created in the new database you previously created).
