@@ -73,18 +73,46 @@ Hints:
 
 ### 2.1. Create a simple logger
 
-Create a Go program where you can turn on and off the outputted text.
+Create a logger. The logger will provide functions or methods to output text BUT you will have the ability to turn on and off the outputted text, and decide where you want the output to go.
 
-Use the following variable to switch between text being outputted and text _not_ being outputted.
-```Go
-var logging bool = true
-```
+Then write a program that uses that logger, and:—
 
-At the beginning of the program log:
+At the beginning of the program it logs:
 > BEGIN
 
-At the end of the program log:
+At the end of the program it logs:
 > END
+
+You should create a type to represent this logger called:
+```
+type Logger struct {
+    //@TODO: you will need to figure out what goes here.
+}
+```
+
+And the logger should have these three methods.
+
+The first method should be:
+```
+func (receiver Logger) Log(a ...interface{}) {
+    //@TODO:  you will need to figure out what goes here.
+}
+```
+
+The other two methods are:
+```
+func (receiver Logger) Begin(a ...interface{}) {
+    //@TODO:  you will need to figure out what goes here.
+}
+```
+
+```
+func (receiver Logger) End(a ...interface{}) {
+    //@TODO:  you will need to figure out what goes here.
+}
+```
+
+And these other two methods should use the `Log()` method you created before.
 
 Hints:
 * [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf) — `fmt.Fprintf()` is similar to `fmt.Printf()` except `fmt.Fprintf()` lets you tell it where to send the output.
