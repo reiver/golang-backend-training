@@ -73,9 +73,11 @@ Hints:
 
 ### 2.1. Create a simple logger
 
-Create a logger. The logger will provide functions or methods to output text BUT you will have the ability to turn on and off the outputted text, and decide where you want the output to go.
+In this section you will №1 create a logger, and then №2 create a (very simple) program that uses that logger.
 
-Then write a program that uses that logger, and:—
+(Loggers let programmers record information about events.)
+
+The program you will create (that uses that logger you created) will log the following:—
 
 At the beginning of the program it logs:
 > BEGIN
@@ -83,23 +85,33 @@ At the beginning of the program it logs:
 At the end of the program it logs:
 > END
 
-You should create a type to represent this logger called:
+And it will look something like:
+```
+package main
+
+func main() {
+    log.Begin()
+    
+    log.End()
+}
+```
+
+The logger you create will be represents by a type:
 ```
 type Logger struct {
     //@TODO: you will need to figure out what goes here.
 }
 ```
 
-And the logger should have these three methods.
+This logger will provide methods to output text BUT you will write it in a way that you have the ability to turn on and off the outputted text, and decide where you want the output to go.
 
-The first method should be:
+The first method your logger will have is:
 ```
 func (receiver Logger) Log(a ...interface{}) {
     //@TODO:  you will need to figure out what goes here.
 }
 ```
-
-The other two methods are:
+The other two methods your logger will have are:
 ```
 func (receiver Logger) Begin(a ...interface{}) {
     //@TODO:  you will need to figure out what goes here.
@@ -112,7 +124,8 @@ func (receiver Logger) End(a ...interface{}) {
 }
 ```
 
-And these other two methods should use the `Log()` method you created before.
+These other two methods should use the `Log()` method (you created before) to do their outputting.
+
 
 Hints:
 * [fmt.Fprintln()](https://golang.org/pkg/fmt/#Fprintln) — `fmt.Fprintln()` is similar to `fmt.Println()` except `fmt.Fprintln()` lets you tell it where to send the output.
