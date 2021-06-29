@@ -523,18 +523,29 @@ Hints:
 
 ### 6.6. Valuer
 
+If you are putting data into a database in Go, then you will probably either use [database/sql.DB.Exec()](https://golang.org/pkg/database/sql/#DB.Exec) or [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow) (or something similar to them).
+
+By default, these  methods will only understand basic types.
+
+**So how do you put your own custom type into the database?**
+
+That is what you need to figure out.
+
+Then make it so your **option type** can put into a database.
+
+And then write a program that INSERTs your **option type** INTO the database.
+
 Hints:
 * [database/sql/driver.Valuer](https://golang.org/pkg/database/sql/driver/#Valuer)
 * [database/sql.DB.Exec()](https://golang.org/pkg/database/sql/#DB.Exec)
 * [database/sql.DB.Query()](https://golang.org/pkg/database/sql/#DB.Query)
 * [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow)
 
-
 ### 6.7. Scanner
 
 If you are getting data from a database in Go, then you will probably either use [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan) or [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan) (or something similar to them).
 
-By defauly, these `.Scan()` methods will scan into (a pointer to):
+By default, these `.Scan()` methods will scan into (a pointer to):
 
 * string
 * []byte
@@ -562,7 +573,6 @@ Then make it so your **option type** can be `.Scan()`ed into.
 
 And then write a program that scans data from the database into your **option type**.
 
- 
 Hints:
 * [database/sql.Scanner](https://golang.org/pkg/database/sql/#Scanner)
 * [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan)
