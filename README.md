@@ -197,7 +197,7 @@ It would be nice if our `flags/` sub-directory could do this all by itself.
 We can run initialization code from a special magical `init()` function. Create an init() function in the `flags/` sub-directory:
 ```go
 func init() {
-	//@TOD
+	//@TODO
 }
 ```
 
