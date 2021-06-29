@@ -523,4 +523,11 @@ Hints:
 
 ### 6.6. Valuer
 
+Hints:
+* [database/sql/driver.Valuer](https://golang.org/pkg/database/sql/driver/#Valuer)
+* [database/sql.DB.Exec()](https://golang.org/pkg/database/sql/#DB.Exec)
+* [database/sql.DB.Query()](https://golang.org/pkg/database/sql/#DB.Query)
+* [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow)
+
+
 ### 6.7. Scanner
