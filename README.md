@@ -347,7 +347,7 @@ END
 Hints:
 * [import "flag"](https://golang.org/pkg/flag/)
 
-### 3.9. Prefix
+### 3.8. Prefix
 
 Modify the logger you created so that it has this method:
 ```go
@@ -402,6 +402,29 @@ Hints:
 * [runtime.Caller()](https://golang.org/pkg/runtime/#Caller)
 * [runtime.FuncForPC()](https://golang.org/pkg/runtime/#FuncForPC)
 * [runetime.Func.Name()](https://golang.org/pkg/runtime/#Func.Name)
+
+
+### 3.10. Timer
+
+We want to make it so calling `.End()` will also output the value of a timer that was started when we called `.Begin()`
+
+So that a program such as this:
+```go
+package main
+
+// ...
+
+func main() {
+	log.Begin()
+	
+	log.End()
+}
+```
+Would output something similar to:
+```
+main: BEGIN
+main: END δt=15µs
+```
 
 ## 4. WEB SERVER
 
