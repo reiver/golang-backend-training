@@ -76,6 +76,24 @@ Hints:
 
 ## 2. Flags
 
+## 2.1. Flag Hello {NAME}
+
+Modify your previous **Hello {NAME}** program so that the name comes from a command line flag.
+
+So, for example, if your program is name `myprogram`, and it is run with:
+```
+myprogram --name=Joe
+```
+Then it outputs:
+```
+Hello Joe!
+```
+
+Etc.
+
+Hints:
+* [import "flag"](https://golang.org/pkg/flag/)
+
 
 ## 3. Logging
 
