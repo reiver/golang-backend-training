@@ -35,9 +35,13 @@ Do NOT skip any sections!
 
 Do NOT skip any sections!!
 
-Do _all_ the sections. And do all the sections in the order that they appear in this guide.
+**Do _all_ the sections.**
 
-Also, the point of this is that you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster.
+Even if they seem easy to you — still, do _all_ the sections! The point of this guide is _not_ to challenge you; the point of this guide is to get you familiar with certain parts of Go, and to correct any mistakes or misunderstandings you might have early on.
+
+**And do all the sections in the order that they appear in this guide.**
+
+The point of you going through this guide is that **you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster**.
 
 ## 1. Outputting
 
