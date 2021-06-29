@@ -174,6 +174,10 @@ Hints:
 
 To help make your code more manageable, let's put all the flag code into a separate file named: `flags.go`
 
+So that your code base will look something like:
+* main.go
+* flags.go
+
 Once you have done that, do a `go build` and make sure everything still works.
 
 ## 2.4. Flags Sub Directory
