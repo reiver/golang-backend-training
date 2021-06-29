@@ -45,6 +45,8 @@ Hints:
 * [fmt.Println()](https://golang.org/pkg/fmt/#Println)
 * [installing Go](https://golang.org/doc/install)
 * [getting started with Go](https://golang.org/doc/tutorial/getting-started)
+* [A Tour of Go](https://tour.golang.org/)
+
 
 ### 1.2. Hello {NAME}
 
