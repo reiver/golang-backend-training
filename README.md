@@ -512,11 +512,39 @@ Hints:
 
 ### 6.4. JSON Marshal
 
+Make it so your **option type** can be represented as JSON as:—
+
+For nothing:
+```
+"nothing()"
+```
+
+For something:
+```
+"something(5)"
+```
+
+Then write a program that demonstrates this being used.
+
 Hints:
 * [json.Marshaler](https://golang.org/pkg/encoding/json/#Marshaler)
 * [json.Marshal()](https://golang.org/pkg/encoding/json/#Marshal)
 
 ### 6.5. JSON Unmarshal
+
+Make it so your **option type** can be parse from a JSON representation of:—
+
+For nothing:
+```
+"nothing()"
+```
+
+For something:
+```
+"something(5)"
+```
+
+Then write a program that demonstrates this being used.
 
 Hints:
 * [json.Unmarshaler](https://golang.org/pkg/encoding/json/#Unmarshaler)
