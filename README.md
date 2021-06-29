@@ -31,7 +31,11 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 
 Do NOT skip any sections.
 
-Do all sections. And do all the sections in the order that they appear in this guide.
+Do NOT skip any sections!
+
+Do NOT skip any sections!!
+
+Do _all_ the sections. And do all the sections in the order that they appear in this guide.
 
 Also, the point of this is that you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster.
 
