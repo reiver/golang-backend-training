@@ -439,7 +439,7 @@ type CAD struct {
 }
 ```
 
-But instead to make it so we have exact values, we are going to (secretly) store the dollar amount as cents. I.e.,:
+To make it so we have exact values and exact math, we are going to (secretly) store the dollar amount as cents. I.e.,:
 ```go
 type CAD struct {
     cents int64
@@ -474,9 +474,19 @@ func (receiver CAD) Sub(other CAD) CAD {
 
 Write unit tests to try to verify that your implementation of each of those methods & functions is correct.
 
-### 6.3. GoStringer
+### 6.3. Program
 
-### 6.4. Stringer
+Write a program showing each of those functions in action.
+
+### 6.4. GoStringer
+
+Hints:
+* [fmt.GoStringer](https://golang.org/pkg/fmt/#GoStringer)
+* [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf)
+* [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
+* [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf)
+
+### 6.5. Stringer
 
 Make it so this:
 ```go
@@ -495,19 +505,19 @@ Hints:
 * [fmt.Stringer](https://golang.org/pkg/fmt/#Stringer)
 * [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf)
 
-### 6.5. JSON Marshal
+### 6.6. JSON Marshal
 
 Hints:
 * [json.Marshaler](https://golang.org/pkg/encoding/json/#Marshaler)
 * [json.Marshal()](https://golang.org/pkg/encoding/json/#Marshal)
 
-### 6.6. JSON Unmarshal
+### 6.7. JSON Unmarshal
 
 Hints:
 * [json.Unmarshaler](https://golang.org/pkg/encoding/json/#Unmarshaler)
 * [json.Unmarshal()](https://golang.org/pkg/encoding/json/#Unmarshal)
 
-### 6.7. Valuer
+### 6.8. Valuer
 
 Hints:
 * [database/sql/driver.Valuer](https://golang.org/pkg/database/sql/driver/#Valuer)
@@ -515,7 +525,7 @@ Hints:
 * [database/sql.DB.Query()](https://golang.org/pkg/database/sql/#DB.Query)
 * [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow)
 
-### 6.8. Scaner
+### 6.9. Scaner
 
 Hints:
 * [database/sql.Scanner](https://golang.org/pkg/database/sql/#Scanner)
