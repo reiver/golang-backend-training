@@ -532,6 +532,37 @@ Hints:
 
 ### 6.7. Scanner
 
+If you are getting data from a database in Go, then you will probably either use [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan) or [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan) (or something similar to them).
+
+By defauly, these `.Scan()` methods will scan into (a pointer to):
+
+* string
+* []byte
+* int
+* int8
+* int16
+* int32
+* int64
+* uint
+* uint8
+* uint16
+* uint32
+* uint64
+* bool
+* float32
+* float64
+* interface{}
+* sql.RawBytes
+
+**But how do you `.Scan()` into your own custom type?**
+
+That is what you need to figure out.
+
+Then make it so your **option type** can be `.Scan()`ed into.
+
+And then write a program that scans data from the database into your **option type**.
+
+ 
 Hints:
 * [database/sql.Scanner](https://golang.org/pkg/database/sql/#Scanner)
 * [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan)
