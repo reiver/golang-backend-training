@@ -17,7 +17,7 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 
 * [0. Preface](#0-preface)
 * [1. Outputting](#1-outputting)
-* [2. Flags](#2-flags)
+* [2. Flagging](#2-flagging)
 * [3. Logging](#3-logging)
 * [4. Web Server](#4-web-server)
 * [5. Database](#5-database)
@@ -106,7 +106,7 @@ Or whatever, depending on the value of the `name` variable.
 Hints:
 * [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
 
-## 2. Flags
+## 2. Flagging
 
 ## 2.1. Flag Hello {NAME}
 
@@ -125,6 +125,13 @@ Etc.
 
 Hints:
 * [import "flag"](https://golang.org/pkg/flag/)
+
+
+## 2.2. Flags File
+
+To help make your code more manageable, let's put all the flag code into a separate file named: `flags.go`
+
+Once you have done that, do a `go build` and make sure everything still works.
 
 
 ## 3. Logging
