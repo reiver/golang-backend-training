@@ -21,8 +21,8 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [3. Web Server](#3-web-server)
 * [4. Database](#4-database)
 * [5. Database & Go](#5-database--go)
-* [6. Option Types](#6-option-types)
-* [7. Money](#7-money)
+* [6. Money](#6-money)
+* [7. Option Types](#7-option-types)
 
 -----
 
@@ -403,9 +403,128 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-## 6. Option Types
+## 6. Money
 
 ### 6.1. Type
+
+Go does NOT have any built-in types to safely represent money. So we are going to create a custom type to represent money in Go.
+
+**And we are _not_ going to make the mistake of storing money using float64 or float32.** For example, if you want to see an example of the problem with using float to represent money, run the follow code:
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var a float64 = 0.01
+	var b float64 = 0.09
+	
+	var result float64 = a + b
+
+	fmt.Printf("result = %#v \n", result)	
+	fmt.Println("should be: 0.1")
+}
+```
+
+(Many many people get really really really get pissed off if you don't get money calcuations perfect.)
+
+So we are going to create our own money type, and we are going to do it right.
+
+We are going to create a type to represent Canadian Dollars (CAD):
+```go
+type CAD struct {
+    //@TODO
+}
+```
+
+But instead to make it so we have exact values, we are going to (secretly) store the dollar amount as cents. I.e.,:
+```go
+type CAD struct {
+    cents int64
+}
+```
+
+You first task is to implement these functions:
+```go
+func ParseCAD(s string) (CAD, error) {
+    //@TODO
+}
+
+// Abs returns the absolute value.
+func (receiver CAD) Abs() CAD {
+    //@TODO
+}
+
+func (receiver CAD) Add(other CAD) CAD {
+    //@TODO
+}
+
+func (receiver CAD) Mul(scalar int64) CAD {
+    //@TODO
+}
+
+func (receiver CAD) Sub(other CAD) CAD {
+    //@TODO
+}
+```
+
+### 6.2. Unit Tests
+
+Write unit tests to try to verify that your implementation of each of those methods & functions is correct.
+
+### 6.3. GoStringer
+
+### 6.4. Stringer
+
+Make it so this:
+```go
+money, err := ParseCAD("$1.23")
+
+fmt.Println("money:", money)
+```
+Outputs:
+```
+money: $1.23
+```
+
+And write a program demonstrate that this is indeed happening.
+
+Hints:
+* [fmt.Stringer](https://golang.org/pkg/fmt/#Stringer)
+* [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf)
+
+### 6.5. JSON Marshal
+
+Hints:
+* [json.Marshaler](https://golang.org/pkg/encoding/json/#Marshaler)
+* [json.Marshal()](https://golang.org/pkg/encoding/json/#Marshal)
+
+### 6.6. JSON Unmarshal
+
+Hints:
+* [json.Unmarshaler](https://golang.org/pkg/encoding/json/#Unmarshaler)
+* [json.Unmarshal()](https://golang.org/pkg/encoding/json/#Unmarshal)
+
+### 6.7. Valuer
+
+Hints:
+* [database/sql/driver.Valuer](https://golang.org/pkg/database/sql/driver/#Valuer)
+* [database/sql.DB.Exec()](https://golang.org/pkg/database/sql/#DB.Exec)
+* [database/sql.DB.Query()](https://golang.org/pkg/database/sql/#DB.Query)
+* [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow)
+
+### 6.8. Scaner
+
+Hints:
+* [database/sql.Scanner](https://golang.org/pkg/database/sql/#Scanner)
+* [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan)
+* [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan)
+
+## 7. Option Types
+
+### 7.1. Type
 
 You can think of an **option types** as a _container_ that either has _nothing_ in it, or it can have _something_ in it.
 
@@ -434,7 +553,7 @@ func (receiver Int64Option) Return() (int64, error) {
 }
 ```
 
-### 6.2. GoStringer
+### 7.2. GoStringer
 
 The Go [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf), [fmt.Printf()](https://golang.org/pkg/fmt/#Printf), and [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf) functions have a **flag** that lets you see the **Go-syntax representation of the value**.
 
@@ -505,12 +624,12 @@ Hints:
 * [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
 * [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf)
 
-### 6.3. Stringer
+### 7.3. Stringer
 
 Hints:
 * [fmt.Stringer](https://golang.org/pkg/fmt/#Stringer)
 
-### 6.4. JSON Marshal
+### 7.4. JSON Marshal
 
 Make it so your **option type** can be represented as JSON as:—
 
@@ -530,7 +649,7 @@ Hints:
 * [json.Marshaler](https://golang.org/pkg/encoding/json/#Marshaler)
 * [json.Marshal()](https://golang.org/pkg/encoding/json/#Marshal)
 
-### 6.5. JSON Unmarshal
+### 7.5. JSON Unmarshal
 
 Make it so your **option type** can be parse from a JSON representation of:—
 
@@ -550,7 +669,7 @@ Hints:
 * [json.Unmarshaler](https://golang.org/pkg/encoding/json/#Unmarshaler)
 * [json.Unmarshal()](https://golang.org/pkg/encoding/json/#Unmarshal)
 
-### 6.6. Valuer
+### 7.6. Valuer
 
 If you are putting data into a database in Go, then you will probably either use [database/sql.DB.Exec()](https://golang.org/pkg/database/sql/#DB.Exec) or [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow) (or something similar to them).
 
@@ -570,7 +689,7 @@ Hints:
 * [database/sql.DB.Query()](https://golang.org/pkg/database/sql/#DB.Query)
 * [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow)
 
-### 6.7. Scanner
+### 7.7. Scanner
 
 If you are getting data from a database in Go, then you will probably either use [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan) or [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan) (or something similar to them).
 
@@ -606,103 +725,4 @@ Hints:
 * [database/sql.Scanner](https://golang.org/pkg/database/sql/#Scanner)
 * [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan)
 * [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan)
-
-## 7. Money
-
-### 7.1. Type
-
-Go does NOT have any built-in types to safely represent money. So we are going to create a custom type to represent money in Go.
-
-**And we are _not_ going to make the mistake of storing money using float64 or float32.** For example, if you want to see an example of the problem with using float to represent money, run the follow code:
-```go
-package main
-
-import (
-	"fmt"
-)
-
-func main() {
-	var a float64 = 0.01
-	var b float64 = 0.09
-	
-	var result float64 = a + b
-
-	fmt.Printf("result = %#v \n", result)	
-	fmt.Println("should be: 0.1")
-}
-```
-
-(Many many people get really really really get pissed off if you don't get money calcuations perfect.)
-
-So we are going to create our own money type, and we are going to do it right.
-
-We are going to create a type to represent Canadian Dollars (CAD):
-```go
-type CAD struct {
-    //@TODO
-}
-```
-
-But instead to make it so we have exact values, we are going to (secretly) store the dollar amount as cents. I.e.,:
-```go
-type CAD struct {
-    cents int64
-}
-```
-
-You first task is to implement these functions:
-```go
-func ParseCAD(s string) (CAD, error) {
-    //@TODO
-}
-
-// Abs returns the absolute value.
-func (receiver CAD) Abs() CAD {
-    //@TODO
-}
-
-func (receiver CAD) Add(other CAD) CAD {
-    //@TODO
-}
-
-func (receiver CAD) Mul(scalar int64) CAD {
-    //@TODO
-}
-
-func (receiver CAD) Sub(other CAD) CAD {
-    //@TODO
-}
-```
-
-### 7.2. Unit Tests
-
-Write unit tests to try to verify that your implementation of each of those methods & functions is correct.
-
-### 7.3. GoStringer
-
-
-
-### 7.4. Stringer
-
-Make it so this:
-```go
-money, err := ParseCAD("$1.23")
-
-fmt.Println("money:", money)
-```
-Outputs:
-```
-money: $1.23
-```
-
-And write a program demonstrate that this is indeed happening.
-
-
-### 7.5. JSON Marshal
-
-### 7.6. JSON Unmarshal
-
-### 7.7. Valuer
-
-### 7.8. Scaner
 
