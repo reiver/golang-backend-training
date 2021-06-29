@@ -510,9 +510,49 @@ And then when we call `.End()` it is on this new logger. I.e.,:—
 sublogger.End()
 ```
 
+**Make this change, and then create a program that uses them.**
+
 Hints:
 * [time.Time](https://golang.org/pkg/time/#Time)
 * [time.Now()](https://golang.org/pkg/time/#Now)
+
+### 3.11. Leveled Logger
+
+Sometimes it is useful to have a logger that can categorize its logs, and turn on and off the different categories of logs.
+
+Change your logged to have these levels:
+```go
+type Logger interface {
+	Alert(a ...interface{})
+	Alertf(format string, a ...interface{})
+
+	Error(a ...interface{})
+	Errorf(format string, a ...interface{})
+	
+	Highlight(a ...interface{})
+	Highlightf(format string, a ...interface{})
+
+	Inform(a ...interface{})
+	Informf(format string, a ...interface{})
+
+	Log(a ...interface{})
+	Logf(format string, a ...interface{})
+
+	Trace(a ...interface{})
+	Tracef(format string, a ...interface{})
+	
+	Warn(a ...interface{})
+	Warnf(format string, a ...interface{})
+	
+	Prefix(...string) Logger
+	
+	Begin(a ...interface{}) Logger
+	Beginf(format string, a ...interface{}) Logger
+	
+	End(a ...interface{})
+	Endf(format string, a ...interface{})
+}
+```
 
 ## 4. WEB SERVER
 
