@@ -180,11 +180,31 @@ Once you have done that, do a `go build` and make sure everything still works.
 
 To help make your code even more manageable, let's put all the flag code into a sub-directory named: `flags/`
 
-You will need to `import` this sub-directory to use it.
+So that your code will look something like:
+
+* main.go
+* flags/
+  * flags.go
+
+You will need to `import` this sub-directory from `main.go` to use it.
 
 ## 2.5. init()
 
+To make the flags get their values you have to run [flag.Parse()](https://golang.org/pkg/flag/#Parse).
 
+It would be nice if our `flags/` sub-directory could do this all by itself.
+
+We can run initialization code from a special magical `init()` function. Create an init() function in the `flags/` sub-directory:
+```go
+func init() {
+	//@TOD
+}
+```
+
+And then run [flag.Parse()](https://golang.org/pkg/flag/#Parse) from it, to make the flags get their values.
+
+Hints:
+* [Effective Go: The init function](https://golang.org/doc/effective_go#init)
 
 ## 3. Logging
 
