@@ -505,7 +505,7 @@ Hints:
 * [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
 * [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf)
 
-### 6.3. String
+### 6.3. Stringer
 
 Hints:
 * [fmt.Stringer](https://golang.org/pkg/fmt/#Stringer)
@@ -608,3 +608,50 @@ Hints:
 * [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan)
 
 ## 7. Money
+
+### 7.1. Type
+
+Create a Canadian Dollars money type, that stores the money as cents. I.e.,:
+```go
+type CAD struct {
+    cents int64
+}
+```
+
+And implement these functions:
+```go
+func ParseCAD(s string) (CAD, error) {
+    //@TODO
+}
+
+// Abs returns the absolute value.
+func (receiver CAD) Abs() CAD {
+    //@TODO
+}
+
+func (receiver CAD) Add(other CAD) CAD {
+    //@TODO
+}
+
+func (receiver CAD) Mul(scalar int64) CAD {
+    //@TODO
+}
+
+func (receiver CAD) Sub(other CAD) CAD {
+    //@TODO
+}
+```
+
+
+### 7.2. GoStringer
+
+### 7.3. Stringer
+
+### 7.4. JSON Marshal
+
+### 7.5. JSON Unmarshal
+
+### 7.6. Valuer
+
+### 7.7. Scaner
+
