@@ -436,11 +436,25 @@ func (receiver Int64Option) Return() (int64, error)
 
 ### 6.2. GoStringer
 
+Hints:
+* [fmt.GoStringer](https://golang.org/pkg/fmt/#GoStringer)
+
 ### 6.3. String
+
+Hints:
+* [fmt.Stringer](https://golang.org/pkg/fmt/#Stringer)
 
 ### 6.4. JSON Marshal
 
+Hints:
+* [json.Marshaler](https://golang.org/pkg/encoding/json/#Marshaler)
+* [json.Marshal()](https://golang.org/pkg/encoding/json/#Marshal)
+
 ### 6.5. JSON Unmarshal
+
+Hints:
+* [json.Unmarshaler](https://golang.org/pkg/encoding/json/#Unmarshaler)
+* [json.Unmarshal()](https://golang.org/pkg/encoding/json/#Unmarshal)
 
 ### 6.6. Valuer
 
