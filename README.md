@@ -406,6 +406,34 @@ Hints:
 
 ### 6.1. Type
 
+You can think of an **option types** as a _container_ that either has _nothing_ in it, or it can have _something_ in it.
+
+Let's make an **option type** for `int64`. So that this _int64 option type_ will either have nothing in it, or will have an int64 value in it.
+
+Make this code work:
+
+```
+type Int64Option struct {
+    //@TODO
+}
+
+// Nothing returns an option with nothing in it.
+func Nothing() Int64Option {
+    //@TODO
+}
+
+// Something returns an option with ‘ value’ in it.
+func Something(value int64) Int64Option {
+    //@TODO
+}
+
+// Return returns the value it store if there is something in it, else it return an error.
+func (receiver Int64Option) Return() (int64, error)
+{
+    //@TODO
+}
+```
+
 ### 6.2. GoStringer
 
 ### 6.3. String
