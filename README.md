@@ -65,7 +65,9 @@ go run main.go
 
 ### 1.3. go build
 
-Using `go run` can be quick in some intances, but it isn't how we create an executable program from our source code. Also, `go run` also won't work with some code layouts!
+Using `go run` can be quick when we are able to use it.
+
+But we cannot use `go run` to create an executable program from our source code. Also, `go run` won't work with some code layouts!
 
 Either way, to create an executable program, we run `go build`
 
