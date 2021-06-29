@@ -187,9 +187,16 @@ Etc.
 
 Put your logger code into the `go-log` repository you previously created.
 
+The name of your package will be `log`. I.e.,:—
+```go
+package log
+```
+
+You might have noticed that the repository is called `go-log`, but the package is named `log`. That is on purpose. The convention in the Go community is to name things this way.
+
 ### 2.5. Unit Tests
 
-**Unit testing** is a test used to test a piece of a software system. (These _pieces_ of the software system get called _“units”_ — thus the name “unit test”.
+**Unit testing** are tests used to test a piece of a software system. (These _pieces_ of the software system get called _“units”_ — thus the name “unit test”.
 
 Go has built-in support for **unit tests**.
 
@@ -197,7 +204,7 @@ With Go, unit tests are put in files that end in `_test.go`
 
 So, for example, you might have a unit test file name: `apple_test.go`, `banana_test.go`, and `cherry_test.go`
 
-(When you normally build a program — using `go build` — all the `_test.go` are ignored. Go only pays attention to them when it runs the test — when you run `go test`)
+(When you normally build a program — using `go build` — all the `_test.go` are ignored. Go only pays attention to them when it runs the tests — when you run `go test`)
 
 All Go unit tests will need to import the ["testing"](https://golang.org/pkg/testing/) package:
 ```go
@@ -208,7 +215,7 @@ Inside the `*_test.go` file, each test is put inside a function whose name start
 
 So, for example, if we are testing the `Logf()` method of the type `Logger` we might name our test:
 ```go
-func TetLogger_Logf(t *testing.T) {
+func TestLogger_Logf(t *testing.T) {
 	//@TODO
 }
 ```
@@ -229,13 +236,19 @@ go test
 
 The output from running this program will tell you if any tests failed.
 
-
 **Write units tests to make sure your logger is working as you expect it to work.**
 
+You will need to figure out how to capture the output from your `Log()` and `Logf()` functions. You can use [strings.Builder](https://golang.org/pkg/strings/#Builder) to do this; as a pointer to [strings.Builder](https://golang.org/pkg/strings/#Builder) is an `io.Write` — i.e.,:—
+```go
+var output strings.Builder
+
+var writer io.Writer = &output
+```
+
 Hints:
-* []()
 * [Go by Example: Testing](https://gobyexample.com/testing)
 * [import "testing"](https://golang.org/pkg/testing/)
+* [strings.Builder](https://golang.org/pkg/strings/#Builder)
 
 ### 2.5. import "go-log"
 
