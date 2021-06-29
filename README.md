@@ -267,6 +267,29 @@ At the beginning of the program log:
 At the end of the program log:
 > END
 
+### 3.7. Verbose
+
+Write a program that normally discards all the logs. But if the `-v` flag is sent to it, then it will output the logs.
+
+So, if you program was named `myprogram`, then running:
+```
+myprogram
+```
+Would output nothing.
+
+But running:
+```
+myprogram -v
+```
+Would output:
+```
+BEGIN
+END
+```
+
+Hints:
+* [import "flag"](https://golang.org/pkg/flag/)
+
 ## 4. WEB SERVER
 
 ### 4.1. Create a Web server
