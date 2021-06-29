@@ -428,16 +428,81 @@ func Something(value int64) Int64Option {
 }
 
 // Return returns the value it store if there is something in it, else it return an error.
-func (receiver Int64Option) Return() (int64, error)
-{
+func (receiver Int64Option) Return() (int64, error) {
     //@TODO
 }
 ```
 
 ### 6.2. GoStringer
 
+The Go [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf), [fmt.Printf()](https://golang.org/pkg/fmt/#Printf), and [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf) functions have a **flag** that lets you see the **Go-syntax representation of the value**.
+
+To do this we use the following flag:
+```
+%#v
+```
+
+For example:
+```
+var name string = "Joe Blow"
+
+fmt.Printf("name = %#v", name)
+```
+This would output:
+```
+name = "Rex"
+```
+
+
+And also, for example:
+```
+type Dog struct {
+    Name string
+}
+
+var myDog Dog
+
+myDog.Name = "Rex"
+
+fmt.Printf("myDog = %#v", myDog)
+```
+This would output something like:
+```
+myDog = main.Dog{Name:"Rex"}
+```
+
+If we were to use `%#v` on your **option type** then it would try to display the struct.
+
+Make it so that this:
+```
+var opt Int64Option = Nothing()
+
+fmt.Printf("opt = %#v" , opt)
+```
+Outputs:
+```
+opt = Nothing()
+```
+
+And:
+```
+var opt Int64Option = Something(42)
+
+fmt.Printf("opt = %#v" , opt)
+```
+Outputs:
+```
+opt = Something(42)
+```
+
+Etc.
+
+
 Hints:
 * [fmt.GoStringer](https://golang.org/pkg/fmt/#GoStringer)
+* [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf)
+* [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
+* [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf)
 
 ### 6.3. String
 
