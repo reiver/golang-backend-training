@@ -67,6 +67,9 @@ go run main.go
 
 **Use `go run` to run the _Hello world!_ program you previously created.**
 
+Did it output?:
+> Hello world!
+
 ### 1.3. go build
 
 Using `go run` can be quick when we are able to use it.
@@ -90,6 +93,11 @@ If you want the executable file `go build`  creates to be named something differ
 ```go
 go build -o myprogramname
 ```
+
+**Use `go build` to create an executable file from the _Hello world!_ program you previously created, and then run that executable file.**
+
+Did it output?:
+> Hello world!
 
 ### 1.4. Hello {NAME}
 
