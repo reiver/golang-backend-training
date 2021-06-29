@@ -143,13 +143,47 @@ Etc.
 
 Hints:
 * [import "flag"](https://golang.org/pkg/flag/)
+* [flag.StringVar()](https://golang.org/pkg/flag/#StringVar)
+* [flag.Parse()](https://golang.org/pkg/flag/#Parse)
+
+## 2.2. Shhh
+
+Modify your previous program to add  `--shhh` flag. The `--shhh` will make it so nothing will output.
+
+So, for example, if your program is name `myprogram`, and it is run with:
+```
+myprogram --name=Joe
+```
+Then it outputs:
+```
+Hello Joe!
+```
+And, again for example, if again your program is name `myprogram`, and this time it is run with:
+```
+myprogram --name=Joe --shhh
+```
+Then it would output nothing.
+
+Hints:
+* [import "flag"](https://golang.org/pkg/flag/)
+* [flag.BoolVar()](https://golang.org/pkg/flag/#BoolVar)
+* [flag.Parse()](https://golang.org/pkg/flag/#Parse)
 
 
-## 2.2. Flags File
+## 2.3. Flags File
 
 To help make your code more manageable, let's put all the flag code into a separate file named: `flags.go`
 
 Once you have done that, do a `go build` and make sure everything still works.
+
+## 2.4. Flags Sub Directory
+
+To help make your code even more manageable, let's put all the flag code into a sub-directory named: `flags/`
+
+You will need to `import` this sub-directory to use it.
+
+## 2.5. init()
+
 
 
 ## 3. Logging
