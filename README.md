@@ -611,14 +611,46 @@ Hints:
 
 ### 7.1. Type
 
-Create a Canadian Dollars money type, that stores the money as cents. I.e.,:
+Go does NOT have any built-in types to safely represent money. So we are going to create a custom type to represent money in Go.
+
+**And we are _not_ going to make the mistake of storing money using float64 or float32.** For example, if you want to see an example of the problem with using float to represent money, run the follow code:
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var a float64 = 0.01
+	var b float64 = 0.09
+	
+	var result float64 = a + b
+
+	fmt.Printf("result = %#v \n", result)	
+	fmt.Println("should be: 0.1")
+}
+```
+
+(Many many people get really really really get pissed off if you don't get money calcuations perfect.)
+
+So we are going to create our own money type, and we are going to do it right.
+
+We are going to create a type to represent Canadian Dollars (CAD):
+```go
+type CAD struct {
+    //@TODO
+}
+```
+
+But instead to make it so we have exact values, we are going to (secretly) store the dollar amount as cents. I.e.,:
 ```go
 type CAD struct {
     cents int64
 }
 ```
 
-And implement these functions:
+You first task is to implement these functions:
 ```go
 func ParseCAD(s string) (CAD, error) {
     //@TODO
@@ -642,16 +674,35 @@ func (receiver CAD) Sub(other CAD) CAD {
 }
 ```
 
+### 7.2. Unit Tests
 
-### 7.2. GoStringer
+Write unit tests to try to verify that your implementation of each of those methods & functions is correct.
 
-### 7.3. Stringer
+### 7.3. GoStringer
 
-### 7.4. JSON Marshal
 
-### 7.5. JSON Unmarshal
 
-### 7.6. Valuer
+### 7.4. Stringer
 
-### 7.7. Scaner
+Make it so this:
+```go
+money, err := ParseCAD("$1.23")
+
+fmt.Println("money:", money)
+```
+Outputs:
+```
+money: $1.23
+```
+
+And write a program demonstrate that this is indeed happening.
+
+
+### 7.5. JSON Marshal
+
+### 7.6. JSON Unmarshal
+
+### 7.7. Valuer
+
+### 7.8. Scaner
 
