@@ -428,7 +428,7 @@ func main() {
 }
 ```
 
-(Many many people get really really really get pissed off if you don't get money calcuations perfect.)
+(Many many people get really really really get pissed off if you don't get money calcuations perfect. So we are going to make it so our money calculations are perfect.)
 
 So we are going to create our own money type, and we are going to do it right.
 
@@ -439,34 +439,106 @@ type CAD struct {
 }
 ```
 
-To make it so we have exact values and exact math, we are going to (secretly) store the dollar amount as cents. I.e.,:
+To make it so we have exact values and perfect math, we are going to (secretly) store the dollar amount as cents. I.e.,:
 ```go
 type CAD struct {
     cents int64
 }
 ```
 
-You first task is to implement these functions:
+(Note that we are using `int64` rather than `uint64`. In doing that we can represent **negative** money values too. Such as: -$3.50. Which is good.)
+
+Your first task is to implement these functions:
 ```go
+// Cents returns a CAD that represents ‘n’ cents.
+//
+// For example, if one was to call:
+//
+//	cad := Cents(105)
+//
+// Then ‘cad’ would be: $1.05
+func Cents(n int64) CAD {
+	//@TODO
+}
+
+// ParseCAD parses the string ‘s’ and return the equivalent CAD.
+//
+// If ‘s’ does not contain a money amount, then ParseCAD returns an error.
+//
+// Some example valid strings include:
+//
+// • -$1234.56
+// • $-1234.56
+// • -$1,234.56
+// • $-1,234.56
+// • CAD -$1234.56
+// • CAD $-1234.56
+// • CAD-$1,234.56
+// • CAD$-1,234.56
+// • $1234.56
+// • $1,234.56
+// • CAD $1234.56
+// • CAD $1,234.56
+// • CAD$1234.56
+// • CAD$1,234.56
+// • $0.09
+// • $.09
+// • -$0.09
+// • -$.09
+// • $-0.09
+// • $-.09
+// • CAD $0.09
+// • CAD $.09
+// • CAD -$0.09
+// • CAD -$.09
+// • CAD $-0.09
+// • CAD $-.09
+// • CAD$0.09
+// • CAD$.09
+// • CAD-$0.09
+// • CAD-$.09
+// • CAD$-0.09
+// • CAD$-.09
+// • 9¢
+// • -9¢
+// • 123456¢
+// • -123456¢
+// 
 func ParseCAD(s string) (CAD, error) {
-    //@TODO
+	//@TODO
 }
 
 // Abs returns the absolute value.
 func (receiver CAD) Abs() CAD {
-    //@TODO
+ 	//@TODO
 }
 
+// Add adds two CAD and returns the result.
 func (receiver CAD) Add(other CAD) CAD {
-    //@TODO
+	//@TODO
 }
 
+// Count return the number of dollars and cents that CAD represents.
+//
+// ‘cents’ is always less than for equal to 99. I.e.,:
+//	cents ≤ 99
+func (receiver CAD) Count() (dollars int64, cents int64) {
+	//@TODO
+}
+
+// Mul multiplies CAD by a scalar (number) and returns the result.
 func (receiver CAD) Mul(scalar int64) CAD {
-    //@TODO
+	//@TODO
 }
 
+// NumCents returns CAD as the number of pennies it is equivalent to.
+func (receiver) CountCents() int64 {
+	//@TODO
+}
+
+// Sub subtracts two CAD and returns the result.
 func (receiver CAD) Sub(other CAD) CAD {
-    //@TODO
+	//@TODO
 }
 ```
 
@@ -479,6 +551,63 @@ Write unit tests to try to verify that your implementation of each of those meth
 Write a program showing each of those functions in action.
 
 ### 6.4. GoStringer
+
+The Go [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf), [fmt.Printf()](https://golang.org/pkg/fmt/#Printf), and [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf) functions have a **flag** that lets you see the **Go-syntax representation of the value**.
+
+To do this we use the following flag:
+```
+%#v
+```
+
+For example:
+```
+var name string = "Joe Blow"
+
+fmt.Printf("name = %#v", name)
+```
+This would output:
+```
+name = "Rex"
+```
+
+And also, for example:
+```
+type Dog struct {
+    Name string
+}
+
+var myDog Dog
+
+myDog.Name = "Rex"
+
+fmt.Printf("myDog = %#v", myDog)
+```
+This would output something like:
+```
+myDog = main.Dog{Name:"Rex"}
+```
+
+If we were to use `%#v` on our **money type** then it would try to display the struct. Which isn't ideal. We can do better than this!
+
+Make it so that this:
+```
+var money CAD
+var err error
+
+money, err = ParseCAD("$1.23)
+
+fmt.Printf("money = %#v" , opt)
+```
+Outputs:
+```
+opt = Cents(123)
+```
+
+Etc.
+
+And write units tests for this too.
+
+And write an **example** program that shows this in action.
 
 Hints:
 * [fmt.GoStringer](https://golang.org/pkg/fmt/#GoStringer)
@@ -499,7 +628,9 @@ Outputs:
 money: $1.23
 ```
 
-And write a program demonstrate that this is indeed happening.
+And write units tests for this too.
+
+And write an **example** program that shows this in action.
 
 Hints:
 * [fmt.Stringer](https://golang.org/pkg/fmt/#Stringer)
