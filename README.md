@@ -194,17 +194,17 @@ package log
 
 You might have noticed that the repository is called `go-log`, but the package is named `log`. That is on purpose. The convention in the Go community is to name things this way.
 
-### 2.5. Unit Tests
+### 2.5. Unit Testing
 
-**Unit testing** are tests used to test a piece of a software system. (These _pieces_ of the software system get called _“units”_ — thus the name “unit test”.
+**Unit testing** are tests used to test a piece of a software system. (These _pieces_ of the software system get called _“units”_ — thus the name “unit test”.)
 
-Go has built-in support for **unit tests**.
+Go has built-in support for **unit testing**.
 
-With Go, unit tests are put in files that end in `_test.go`
+With Go, _unit tests_ are put in files that end in `_test.go`
 
-So, for example, you might have a unit test file name: `apple_test.go`, `banana_test.go`, and `cherry_test.go`
+So, for example, you might have a unit test file name: `apple_test.go`, `banana_test.go`, and `cherry_test.go`, and even `one_two_three_test.go`
 
-(When you normally build a program — using `go build` — all the `_test.go` are ignored. Go only pays attention to them when it runs the tests — when you run `go test`)
+(When you normally build a program — using `go build` — all the `*_test.go` are ignored. Go only pays attention to the `*_test.go` files when it runs the tests — when you run `go test`)
 
 All Go unit tests will need to import the ["testing"](https://golang.org/pkg/testing/) package:
 ```go
@@ -247,6 +247,7 @@ var writer io.Writer = &output
 
 Hints:
 * [Go by Example: Testing](https://gobyexample.com/testing)
+* [Add a Test](https://golang.org/doc/tutorial/add-a-test)
 * [import "testing"](https://golang.org/pkg/testing/)
 * [strings.Builder](https://golang.org/pkg/strings/#Builder)
 
