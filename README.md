@@ -21,6 +21,7 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [3. Web Server](#3-web-server)
 * [4. Database](#4-database)
 * [5. Database & Go](#5-database--go)
+* [6. Option Type](#6-option-type)
 
 -----
 
@@ -400,3 +401,19 @@ Hints:
 * [import "database/sql"](https://golang.org/pkg/database/sql/)
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
+
+## 6. Option Type
+
+### 6.1. Type
+
+### 6.2. GoStringer
+
+### 6.3. String
+
+### 6.4. JSON Marshal
+
+### 6.5. JSON Unmarshal
+
+### 6.6. Valuer
+
+### 6.7. Scanner
