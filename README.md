@@ -187,6 +187,56 @@ Etc.
 
 Put your logger code into the `go-log` repository you previously created.
 
+### 2.5. Unit Tests
+
+**Unit testing** is a test used to test a piece of a software system. (These _pieces_ of the software system get called _“units”_ — thus the name “unit test”.
+
+Go has built-in support for **unit tests**.
+
+With Go, unit tests are put in files that end in `_test.go`
+
+So, for example, you might have a unit test file name: `apple_test.go`, `banana_test.go`, and `cherry_test.go`
+
+(When you normally build a program — using `go build` — all the `_test.go` are ignored. Go only pays attention to them when it runs the test — when you run `go test`)
+
+All Go unit tests will need to import the ["testing"](https://golang.org/pkg/testing/) package:
+```go
+import "testing"
+```
+
+Inside the `*_test.go` file, each test is put inside a function whose name starts with `Test`.
+
+So, for example, if we are testing the `Logf()` method of the type `Logger` we might name our test:
+```go
+func TetLogger_Logf(t *testing.T) {
+	//@TODO
+}
+```
+
+And, for example, if we are testing the `Punch()` function, we might name our test:
+```
+func TestPunch(t *testing.T) {
+	//@TODO
+}
+```
+
+Etc.
+
+To run your unit tests, you will use the following command from the command line:
+```
+go test
+```
+
+The output from running this program will tell you if any tests failed.
+
+
+**Write units tests to make sure your logger is working as you expect it to work.**
+
+Hints:
+* []()
+* [Go by Example: Testing](https://gobyexample.com/testing)
+* [import "testing"](https://golang.org/pkg/testing/)
+
 ### 2.5. import "go-log"
 
 Write a program that uses your `"log"` package.
