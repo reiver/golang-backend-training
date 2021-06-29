@@ -290,6 +290,31 @@ END
 Hints:
 * [import "flag"](https://golang.org/pkg/flag/)
 
+### 3.8. Func Name
+
+Modify the logger you created so that your `Log()` and `Logf()` functions prefix their output with the name of the function they are called in.
+
+So, for example, this program:
+```go
+package main
+
+// ...
+
+func main() {
+	log.Log("Hello world!")
+}
+```
+Would output:
+```
+main: BEGIN
+main: END
+```
+
+Hints:
+* [runtime.Caller()](https://golang.org/pkg/runtime/#Caller)
+* [runtime.FuncForPC()](https://golang.org/pkg/runtime/#FuncForPC)
+* [runetime.Func.Name()](https://golang.org/pkg/runtime/#Func.Name)
+
 ## 4. WEB SERVER
 
 ### 4.1. Create a Web server
