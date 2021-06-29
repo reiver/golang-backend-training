@@ -531,3 +531,8 @@ Hints:
 
 
 ### 6.7. Scanner
+
+Hints:
+* [database/sql.Scanner](https://golang.org/pkg/database/sql/#Scanner)
+* [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan)
+* [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan)
