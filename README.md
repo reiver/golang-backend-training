@@ -22,6 +22,7 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [4. Database](#4-database)
 * [5. Database & Go](#5-database--go)
 * [6. Option Types](#6-option-types)
+* [7. Money](#7-money)
 
 -----
 
@@ -577,3 +578,5 @@ Hints:
 * [database/sql.Scanner](https://golang.org/pkg/database/sql/#Scanner)
 * [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan)
 * [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan)
+
+## 7. Money
