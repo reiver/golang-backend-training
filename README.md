@@ -21,7 +21,7 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [3. Web Server](#3-web-server)
 * [4. Database](#4-database)
 * [5. Database & Go](#5-database--go)
-* [6. Option Type](#6-option-type)
+* [6. Option Types](#6-option-types)
 
 -----
 
@@ -402,7 +402,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-## 6. Option Type
+## 6. Option Types
 
 ### 6.1. Type
 
