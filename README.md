@@ -308,7 +308,38 @@ END
 Hints:
 * [import "flag"](https://golang.org/pkg/flag/)
 
-### 3.8. Func Name
+### 3.9. Prefix
+
+Modify the logger you created so that it has this method:
+```go
+func (receiver Logger) Prefix(newprefix ...string) Logger {
+	//@TODO
+}
+```
+
+So that if we had:
+```go
+package main
+
+// ...
+
+func main() {
+	prefixedLogger := log.Prefix("apple", "banana", "cherry")
+
+	prefixedLogger.Log("Hello world!")
+	
+	doublePrefixedLogger := prefixedLogger.Prefix("date")
+	
+	doublePrefixedLogger.Log("I am here!")
+}
+```
+It would output something similar to:
+```
+apple: banana: cherry: Hello world!
+apple: banana: cherry: date: I am here!
+```
+
+### 3.9. Func Name
 
 Modify the logger you created so that your `Log()` and `Logf()` functions prefix their output with the name of the function they are called in.
 
@@ -322,7 +353,7 @@ func main() {
 	log.Log("Hello world!")
 }
 ```
-Would output:
+Would output something similar to:
 ```
 main: BEGIN
 main: END
