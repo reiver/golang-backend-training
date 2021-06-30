@@ -387,6 +387,7 @@ var writer io.Writer = &output
 Hints:
 * [Go by Example: Testing](https://gobyexample.com/testing)
 * [Add a Test](https://golang.org/doc/tutorial/add-a-test)
+* [Table Driven Tests](https://github.com/golang/go/wiki/TableDrivenTests)
 * [import "testing"](https://golang.org/pkg/testing/)
 * [strings.Builder](https://golang.org/pkg/strings/#Builder)
 
