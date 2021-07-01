@@ -871,7 +871,7 @@ func main() {
 	var result float64 = a + b
 
 	fmt.Printf("result = %#v \n", result)	
-	fmt.Println("should be: 0.1")
+	fmt.Println("should be 0.1 but as you can see it isn't!")
 }
 ```
 
