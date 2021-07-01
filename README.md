@@ -1139,12 +1139,60 @@ Hints:
 * [database/sql.DB.Query()](https://golang.org/pkg/database/sql/#DB.Query)
 * [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow)
 
-### 9.9. Scaner
+### 9.9. Scanner
+
+If you are getting data from a database in Go, then you will probably either use [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan) or [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan) (or something similar to them).
+
+By default, these `.Scan()` methods will scan into (a pointer to):
+
+* string
+* []byte
+* int
+* int8
+* int16
+* int32
+* int64
+* uint
+* uint8
+* uint16
+* uint32
+* uint64
+* bool
+* float32
+* float64
+* interface{}
+* sql.RawBytes
+
+**But how do you `.Scan()` into your own custom type?**
+
+That is what you need to figure out.
+
+Then make it so your custom **money** type can be `.Scan()`ed into. I.e.,:
+```go
+var id    int64
+var kind  string
+var money CAD // <----
+
+// ...
+for rows.Next() {
+	// ...
+
+	//                            ↓↓↓↓↓
+	err := rows.Scan(&id, &kind, &money)
+
+	// ...
+}
+```
+
+And then write a program that scans data from the database into your custom **money** type.
 
 Hints:
 * [database/sql.Scanner](https://golang.org/pkg/database/sql/#Scanner)
 * [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan)
 * [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan)
+* [Pointer receivers](https://tour.golang.org/methods/4)
+* [Choosing a value or pointer receiver](https://tour.golang.org/methods/8)
+
 
 ## 10. Option Types
 
