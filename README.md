@@ -580,10 +580,8 @@ type Logger interface {
 	Prefix(...string) Logger
 	
 	Begin(a ...interface{}) Logger
-	Beginf(format string, a ...interface{}) Logger
 	
 	End(a ...interface{})
-	Endf(format string, a ...interface{})
 }
 ```
 
