@@ -178,6 +178,10 @@ So that your code base will look something like:
 * main.go
 * flags.go
 
+The code that deals the flags should be in `flags.go`
+
+The code that means with the outputting should be in `main.go`
+
 Once you have done that, do a `go build` and make sure everything still works.
 
 ## 2.4. Flags Sub Directory
@@ -191,6 +195,12 @@ So that your code will look something like:
   * flags.go
 
 You will need to `import` this sub-directory from `main.go` to use it.
+
+The code that deals the flags should be in `flags/flags.go`
+
+The code that means with the outputting should be in `main.go`
+
+Once you have done that, do a `go build` and make sure everything still works.
 
 ## 2.5. init()
 
