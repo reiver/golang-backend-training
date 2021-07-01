@@ -180,7 +180,7 @@ So that your code base will look something like:
 
 The code that deals the flags should be in `flags.go`
 
-The code that means with the outputting should be in `main.go`
+The code that deals with the outputting should be in `main.go`
 
 Once you have done that, do a `go build` and make sure everything still works.
 
@@ -198,7 +198,7 @@ You will need to `import` this sub-directory from `main.go` to use it.
 
 The code that deals the flags should be in `flags/flags.go`
 
-The code that means with the outputting should be in `main.go`
+The code that deals with the outputting should be in `main.go`
 
 Once you have done that, do a `go build` and make sure everything still works.
 
