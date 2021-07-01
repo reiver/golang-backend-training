@@ -1085,6 +1085,8 @@ Hints:
 
 ### 9.6. JSON Marshal
 
+Make it so
+
 Hints:
 * [json.Marshaler](https://golang.org/pkg/encoding/json/#Marshaler)
 * [json.Marshal()](https://golang.org/pkg/encoding/json/#Marshal)
@@ -1097,7 +1099,7 @@ Hints:
 
 ### 9.8. Valuer
 
-Make it so that this custom money type you are creating can be used as an input argument to these methods from `"database/sql" package's:
+Make it so that this custom money type you are creating can be used as an input argument to these methods from Go's built-in `"database/sql" package:
 
 * [database/sql.Conn.ExecContext()](https://golang.org/pkg/database/sql/#Conn.ExecContext)
 * [database/sql.Conn.QueryContext()](https://golang.org/pkg/database/sql/#Conn.QueryContext)
