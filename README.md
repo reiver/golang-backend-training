@@ -298,6 +298,13 @@ Alternatively, for example, if `name == "Fred"`, then it out log:
 
 Etc.
 
+So, because you are also calling the `.Begin()` & `End()` functions, then your full output will be something like:
+```
+BEGIN
+The name was "Joe"
+END
+```
+
 To accomplish this you should add another method to your logger:
 ```
 func (receiver Logger) Logf(format string, a ...interface{}) {
