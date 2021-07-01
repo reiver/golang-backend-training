@@ -669,6 +669,10 @@ Hints:
 
 ### 6.1. Simple JSON
 
+Using the built-in `"encoding/json"`package to return an HTTP response whose payload is JSON can be quite verbose, with a lot of biolerplate looking code.
+
+To improve on this, weimprvo 
+
 ## 7. Database
 
 ### 7.1. Install the Postgres Database Server
