@@ -20,10 +20,11 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [2. Flagging](#2-flagging)
 * [3. Logging](#3-logging)
 * [4. Web Server](#4-web-server)
-* [5. Database](#5-database)
-* [6. Database & Go](#6-database--go)
-* [7. Money](#7-money)
-* [8. Option Types](#8-option-types)
+* [5. JSON](#5-json)
+* [6. Database](#6-database)
+* [7. Database & Go](#7-database--go)
+* [8. Money](#8-money)
+* [9. Option Types](#9-option-types)
 
 -----
 
@@ -602,7 +603,9 @@ Hint:
 * [http.Handler](https://golang.org/pkg/net/http/#Handler)
 * [http.ResponseWriter](https://golang.org/pkg/net/http/#ResponseWriter)
 
-### 4.3. Output JSON
+## 5. JSON
+
+### 5.1. Output JSON
 
 Make the Web server you wrote in Go output the JSON:
 ```json
@@ -616,7 +619,7 @@ Also include logging.
 Hints:
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
-### 4.4. Web Hello {NAME} with JSON
+### 5.2. Web Hello {NAME} with JSON
 
 Copy your previous _Web Hello {NAME}_ program, but make it output JSON:
 
@@ -643,7 +646,7 @@ Also include logging.
 Hints:
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
-### 4.5. Web Addition
+### 5.3. Web Addition
 
 Create an API end point that accepts two numbers, adds then, and outputs the result.
 
@@ -661,15 +664,15 @@ Hints:
 * [strconv.ParseUint()](https://golang.org/pkg/strconv/#ParseUint)
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
-## 5. Database
+## 6. Database
 
-### 5.1. Install the Postgres Database Server
+### 6.1. Install the Postgres Database Server
 
-### 5.2. Create a Database
+### 6.2. Create a Database
 
 Use the Postgres command line tool `psql` to create a new database.
 
-### 5.3. Create a Table
+### 6.3. Create a Table
 
 Use the Postgres command line tool `psql` to create a new table (in the database you previously created).
 
@@ -685,13 +688,13 @@ when_created TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
 
 Of course, you should have other fields besides this one. Make up some type of table. And include fields that make sense for your made up table.
 
-### 5.4. INSERT
+### 6.4. INSERT
 
 Use the Postgres command line tool `psql` to INSERT some new values (into the new table you created in the new database you previously created).
 
-## 6. Database & Go
+## 7. Database & Go
 
-### 6.1. Browse
+### 7.1. Browse
 
 Write a Go program that connects to the database server you previously installed and gets and outputs all the data your from the table you previously created.
 
@@ -700,7 +703,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-### 6.2. Read
+### 7.2. Read
 
 Write a Go program that connects to the database server you previously installed and gets a single row from the table you previously created.
 
@@ -716,7 +719,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-### 6.3. Create
+### 7.3. Create
 
 Write a Go program that connects to the database server you previously installed and creates a single row from the table you previously created.
 
@@ -739,7 +742,7 @@ Hints:
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 * [pq Queries](https://pkg.go.dev/github.com/lib/pq#hdr-Queries)
 
-### 6.4. Update
+### 7.4. Update
 
 Write a Go program that connects to the database server you previously installed and updates a single row from the table you previously created.
 
@@ -757,7 +760,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-### 6.5. Delete
+### 7.5. Delete
 
 Write a Go program that connects to the database server you previously installed and delete a single row from the table you previously created.
 
@@ -775,9 +778,9 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-## 7. Money
+## 8. Money
 
-### 7.1. Type
+### 8.1. Type
 
 Go does NOT have any built-in types to safely represent money. So we are going to create a custom type to represent money in Go.
 
@@ -914,15 +917,15 @@ func (receiver CAD) Sub(other CAD) CAD {
 }
 ```
 
-### 7.2. Unit Tests
+### 8.2. Unit Tests
 
 Write unit tests to try to verify that your implementation of each of those methods & functions is correct.
 
-### 7.3. Program
+### 8.3. Program
 
 Write a program showing each of those functions in action.
 
-### 7.4. GoStringer
+### 8.4. GoStringer
 
 The Go [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf), [fmt.Printf()](https://golang.org/pkg/fmt/#Printf), and [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf) functions have a **flag** that lets you see the **Go-syntax representation of the value**.
 
@@ -987,7 +990,7 @@ Hints:
 * [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
 * [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf)
 
-### 7.5. Stringer
+### 8.5. Stringer
 
 Make it so this:
 ```go
@@ -1008,19 +1011,19 @@ Hints:
 * [fmt.Stringer](https://golang.org/pkg/fmt/#Stringer)
 * [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf)
 
-### 7.6. JSON Marshal
+### 8.6. JSON Marshal
 
 Hints:
 * [json.Marshaler](https://golang.org/pkg/encoding/json/#Marshaler)
 * [json.Marshal()](https://golang.org/pkg/encoding/json/#Marshal)
 
-### 7.7. JSON Unmarshal
+### 8.7. JSON Unmarshal
 
 Hints:
 * [json.Unmarshaler](https://golang.org/pkg/encoding/json/#Unmarshaler)
 * [json.Unmarshal()](https://golang.org/pkg/encoding/json/#Unmarshal)
 
-### 7.8. Valuer
+### 8.8. Valuer
 
 Hints:
 * [database/sql/driver.Valuer](https://golang.org/pkg/database/sql/driver/#Valuer)
@@ -1028,16 +1031,16 @@ Hints:
 * [database/sql.DB.Query()](https://golang.org/pkg/database/sql/#DB.Query)
 * [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow)
 
-### 7.9. Scaner
+### 8.9. Scaner
 
 Hints:
 * [database/sql.Scanner](https://golang.org/pkg/database/sql/#Scanner)
 * [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan)
 * [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan)
 
-## 8. Option Types
+## 9. Option Types
 
-### 8.1. Type
+### 9.1. Type
 
 You can think of an **option types** as a _container_ that either has _nothing_ in it, or it can have _something_ in it.
 
@@ -1066,7 +1069,7 @@ func (receiver Int64Option) Return() (int64, error) {
 }
 ```
 
-### 8.2. GoStringer
+### 9.2. GoStringer
 
 The Go [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf), [fmt.Printf()](https://golang.org/pkg/fmt/#Printf), and [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf) functions have a **flag** that lets you see the **Go-syntax representation of the value**.
 
@@ -1137,12 +1140,12 @@ Hints:
 * [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
 * [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf)
 
-### 8.3. Stringer
+### 9.3. Stringer
 
 Hints:
 * [fmt.Stringer](https://golang.org/pkg/fmt/#Stringer)
 
-### 8.4. JSON Marshal
+### 9.4. JSON Marshal
 
 Make it so your **option type** can be represented as JSON as:—
 
@@ -1162,7 +1165,7 @@ Hints:
 * [json.Marshaler](https://golang.org/pkg/encoding/json/#Marshaler)
 * [json.Marshal()](https://golang.org/pkg/encoding/json/#Marshal)
 
-### 8.5. JSON Unmarshal
+### 9.5. JSON Unmarshal
 
 Make it so your **option type** can be parse from a JSON representation of:—
 
@@ -1182,7 +1185,7 @@ Hints:
 * [json.Unmarshaler](https://golang.org/pkg/encoding/json/#Unmarshaler)
 * [json.Unmarshal()](https://golang.org/pkg/encoding/json/#Unmarshal)
 
-### 8.6. Valuer
+### 9.6. Valuer
 
 If you are putting data into a database in Go, then you will probably either use [database/sql.DB.Exec()](https://golang.org/pkg/database/sql/#DB.Exec) or [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow) (or something similar to them).
 
@@ -1202,7 +1205,7 @@ Hints:
 * [database/sql.DB.Query()](https://golang.org/pkg/database/sql/#DB.Query)
 * [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow)
 
-### 8.7. Scanner
+### 9.7. Scanner
 
 If you are getting data from a database in Go, then you will probably either use [database/sql.Rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan) or [database/sql.Row.Scan()](https://golang.org/pkg/database/sql/#Row.Scan) (or something similar to them).
 
