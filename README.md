@@ -22,10 +22,10 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [4. Web Server](#4-web-server)
 * [5. JSON](#5-json)
 * [6. Simple JSON](#6-simple-json)
-* [7. Database](#6-database)
-* [8. Database & Go](#7-database--go)
-* [9. Money](#8-money)
-* [10. Option Types](#9-option-types)
+* [7. Database](#7-database)
+* [8. Database & Go](#8-database--go)
+* [9. Money](#9-money)
+* [10. Option Types](#10-option-types)
 
 -----
 
