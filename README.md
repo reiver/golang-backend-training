@@ -965,21 +965,21 @@ func (receiver CAD) Add(other CAD) CAD {
 	//@TODO
 }
 
-// Count return the number of dollars and cents that CAD represents.
+// AsCents returns CAD as the number of pennies it is equivalent to.
+func (receiver) AsCents() int64 {
+	//@TODO
+}
+
+// CanonicalForm returns the number of dollars and cents that CAD represents.
 //
 // ‘cents’ is always less than for equal to 99. I.e.,:
 //	cents ≤ 99
-func (receiver CAD) Count() (dollars int64, cents int64) {
+func (receiver CAD) CanonicalForm() (dollars int64, cents int64) {
 	//@TODO
 }
 
 // Mul multiplies CAD by a scalar (number) and returns the result.
 func (receiver CAD) Mul(scalar int64) CAD {
-	//@TODO
-}
-
-// NumCents returns CAD as the number of pennies it is equivalent to.
-func (receiver) CountCents() int64 {
 	//@TODO
 }
 
