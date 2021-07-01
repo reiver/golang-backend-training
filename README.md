@@ -703,7 +703,7 @@ func ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 ```
 We can write:
-```
+```go
 
 import "github.com/reiver/go-simplehttp"
 
@@ -720,6 +720,21 @@ func ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	simplejson.NotFound(w)
 }
 ```
+
+Re-write that API end point that accepts two numbers, adds then, and outputs the result, so that it uses the `simplehttp` package to return the result. I.e.,:
+
+`/addition?x=3&y=2`
+```
+{
+    "result":"5",
+}
+```
+
+Hints:
+* [strconv.ParseInt()](https://golang.org/pkg/strconv/#ParseInt)
+* [strconv.ParseUint()](https://golang.org/pkg/strconv/#ParseUint)
+* [import "github.com/reiver/go-simplehttp"](https://pkg.go.dev/github.com/reiver/go-simplehttp)
+
 
 ## 7. Database
 
