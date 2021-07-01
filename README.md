@@ -1097,6 +1097,42 @@ Hints:
 
 ### 9.8. Valuer
 
+Make it so that this custom money type you are creating can be used as an input argument to these methods from `"database/sql" package's:
+
+* [database/sql.Conn.ExecContext()](https://golang.org/pkg/database/sql/#Conn.ExecContext)
+* [database/sql.Conn.QueryContext()](https://golang.org/pkg/database/sql/#Conn.QueryContext)
+* [database/sql.Conn.QueryRowContext()](https://golang.org/pkg/database/sql/#Conn.QueryRowContext)
+* [database/sql.DB.Exec()](https://golang.org/pkg/database/sql/#DB.Exec)
+* [database/sql.DB.ExecContext()](https://golang.org/pkg/database/sql/#DB.ExecContext)
+* [database/sql.DB.Query()](https://golang.org/pkg/database/sql/#DB.Query)
+* [database/sql.DB.QueryContext()](https://golang.org/pkg/database/sql/#DB.QueryContext)
+* [database/sql.DB.QueryRow()](https://golang.org/pkg/database/sql/#DB.QueryRow)
+* [database/sql.DB.QueryRowContext()](https://golang.org/pkg/database/sql/#DB.QueryRowContext)
+* [database/sql.Stmt.Exec()](https://golang.org/pkg/database/sql/#Stmt.Exec)
+* [database/sql.Stmt.ExecContext()](https://golang.org/pkg/database/sql/#Stmt.ExecContext)
+* [database/sql.Stmt.Query()](https://golang.org/pkg/database/sql/#Stmt.Query)
+* [database/sql.Stmt.QueryContext()](https://golang.org/pkg/database/sql/#Stmt.QueryContext)
+* [database/sql.Stmt.QueryRow()](https://golang.org/pkg/database/sql/#Stmt.QueryRow)
+* [database/sql.Stmt.QueryRowContext()](https://golang.org/pkg/database/sql/#Stmt.QueryRowContext)
+* [database/sql.Tx.Exec()](https://golang.org/pkg/database/sql/#Tx.Exec)
+* [database/sql.Tx.ExecContext()](https://golang.org/pkg/database/sql/#Tx.ExecContext)
+* [database/sql.Tx.Query()](https://golang.org/pkg/database/sql/#Tx.Query)
+* [database/sql.Tx.QueryContext()](https://golang.org/pkg/database/sql/#Tx.QueryContext)
+* [database/sql.Tx.QueryRow()](https://golang.org/pkg/database/sql/#Tx.QueryRow)
+* [database/sql.Tx.QueryRowContext()](https://golang.org/pkg/database/sql/#Tx.QueryRowContext)
+
+I.e., so you can do things such as:
+```go
+
+var money CAD = Cents(150) // $1.50
+
+// ...
+
+dbconn.Exec(`INSERT INTO bankaccount (cuatomer_id, type, amount) VALUES ($1, 'credit', $2)`, id, money)
+```
+
+And then write a program demonstating this working.
+
 Hints:
 * [database/sql/driver.Valuer](https://golang.org/pkg/database/sql/driver/#Valuer)
 * [database/sql.DB.Exec()](https://golang.org/pkg/database/sql/#DB.Exec)
