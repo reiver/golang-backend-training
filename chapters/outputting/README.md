@@ -54,6 +54,8 @@ go build -o myprogramname
 Did it output?:
 > Hello world!
 
+➤ Note if you are using `git`. Typically most people do NOT commit the executable iles into git. So you probably want to be careful what you commit. Maybe even excluse it using a `.gitignore` file.
+
 ## 1.4. Hello {NAME}
 
 Create a Go program that takes a name from a variable:
