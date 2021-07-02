@@ -13,23 +13,9 @@ If you can accomplish all these tasks, you will have _a lot_ of the skills neces
 
 This guide gives you hints. And you should spend a bit of time trying to figure out stuff yourself. **BUT DON'T SPEND TOO MUCH TIME BEING STUCK. ASK FOR HELP IF YOU GET STUCK!**
 
-## TABLE OF CONTENTS
-
-* [0. Preface](#0-preface)
-* [1. Outputting](outputting/README.md)
-* [2. Flagging](#2-flagging)
-* [3. Logging](#3-logging)
-* [4. Web Server](#4-web-server)
-* [5. JSON](#5-json)
-* [6. Simple JSON](#6-simple-json)
-* [7. Database](#7-database)
-* [8. Database & Go](#8-database--go)
-* [9. Money](#9-money)
-* [10. Option Types](#10-option-types)
-
 -----
 
-## 0. PREFACE
+## PREFACE
 
 Do NOT skip any sections.
 
@@ -44,6 +30,23 @@ Even if they seem easy to you — still, do _all_ the sections! The point of thi
 **And do all the sections in the order that they appear in this guide.**
 
 The point of you going through this guide is that **you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster**.
+
+## TABLE OF CONTENTS
+
+* [1. Outputting](outputting/README.md)
+* [2. Flagging](#2-flagging)
+* [3. Logging](#3-logging)
+* [4. Web Server](#4-web-server)
+* [5. JSON](#5-json)
+* [6. Simple JSON](#6-simple-json)
+* [7. Database](#7-database)
+* [8. Database & Go](#8-database--go)
+* [9. Money](#9-money)
+* [10. Option Types](#10-option-types)
+
+-----
+
+
 
 ## 2. Flagging
 
