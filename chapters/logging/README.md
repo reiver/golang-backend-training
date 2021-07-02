@@ -448,18 +448,21 @@ for i, user := range users {
 
 If you have information that you want to record that is a bit more important than a regular log, then you should use `Inform()` & `Informf()`; for example:
 ```go
-lg := log.Begin()
+func ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
-lg.Log("Receive HTTP Request")
-lg.Trace("HTTP request:", r)
+	lg := log.Begin()
 
-// ...
-lg.Log("Tried to INSERT into database.")
+	lg.Log("Receive HTTP Request")
+	lg.Trace("HTTP request:", r)
 
-// ...
-lg.Inform("new user created") // <----
+	// ...
+	lg.Log("Tried to INSERT into database.")
 
-lg.End()
+	// ...
+	lg.Inform("new user created") // <----
+
+	lg.End()
+}
 ```
 
 
