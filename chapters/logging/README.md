@@ -435,8 +435,32 @@ func ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// ...
 }
 ```
+And:
+```go
+var users []User
 
-If you have information that you want to record that is a bit more important than a regular log, then you should use `Inform()` & `Informf()`.
+// ...
+
+for i, user := range users {
+	log.Trace("user ", i, "is", user)
+}
+```
+
+If you have information that you want to record that is a bit more important than a regular log, then you should use `Inform()` & `Informf()`; for example:
+```go
+lg := log.Begin()
+
+lg.Log("Receive HTTP Request")
+lg.Trace("HTTP request:", r)
+
+// ...
+lg.Log("Tried to INSERT into database.")
+
+// ...
+lg.Inform("new user created") // <----
+
+lg.End()
+```
 
 
 
