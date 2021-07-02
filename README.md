@@ -36,8 +36,8 @@ The point of you going through this guide is that **you show your work to someon
 * [1. Outputting](outputting/README.md)
 * [2. Flagging](chapters/flagging/README.md)
 * [3. Logging](chapters/logging/README.md)
-* [4. Web Server](chapters/web_serving/README.md)
-* [5. JSON](#5-json)
+* [4. Web Serving](chapters/web_serving/README.md)
+* [5. JSON](chapters/json/README.md)
 * [6. Simple JSON](#6-simple-json)
 * [7. Database](#7-database)
 * [8. Database & Go](#8-database--go)
@@ -51,66 +51,7 @@ The point of you going through this guide is that **you show your work to someon
 
 
 
-## 5. JSON
 
-### 5.1. Output JSON
-
-Make the Web server you wrote in Go output the JSON:
-```json
-{
-    "msg":"Hello world!"
-}
-```
-
-Also include logging.
-
-Hints:
-* [import "encoding/json"](https://golang.org/pkg/encoding/json/)
-
-### 5.2. Web Hello {NAME} with JSON
-
-Copy your previous _Web Hello {NAME}_ program, but make it output JSON:
-
-
-I.e., make the API end point `/hello?name=REPLACE_ME` output the following:
-
-`/hello?name=Joe`
-```json
-{
-    "msg":"Hello Joe!"
-}
-```
-
-
-`/hello?name=Stan`
-```json
-{
-    "msg":"Hello Stan!"
-}
-```
-
-Also include logging.
-
-Hints:
-* [import "encoding/json"](https://golang.org/pkg/encoding/json/)
-
-### 5.3. Web Addition
-
-Create an API end point that accepts two numbers, adds then, and outputs the result.
-
-For example:
-
-`/addition?x=3&y=2`
-```
-{
-    "result":"5",
-}
-```
-
-Hints:
-* [strconv.ParseInt()](https://golang.org/pkg/strconv/#ParseInt)
-* [strconv.ParseUint()](https://golang.org/pkg/strconv/#ParseUint)
-* [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
 ## 6. Simple JSON
 
