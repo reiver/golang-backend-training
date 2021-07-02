@@ -9,7 +9,7 @@ This is a guide to help train someone to do **backend development** using the Go
 
 The whole point of this guide is that _you_ go and learn what you need to learn to be able to complete each assignment in this guide.
 
-If you can accomplish all these tasks, you will have _a lot_ of the skills necessary to do **backend development** using the Go programming language.
+If you can accomplish all these tasks then you will have _a lot_ of the skills necessary to do **backend development** using the Go programming language.
 
 This guide gives you hints. And you should spend a bit of time trying to figure out stuff yourself. **BUT DON'T SPEND TOO MUCH TIME BEING STUCK. ASK FOR HELP IF YOU GET STUCK!**
 
