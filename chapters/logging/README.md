@@ -334,14 +334,14 @@ main: BEGIN
 main: END δt=15µs
 ```
 
-To do this we are going to are going to radically change how `.Begin()` and `.End()` work.
+To do this we are going to have to radically change how `.Begin()` and `.End()` work.
 
 We need to make it so calling `.Begin()` №1 still outputs what it did before but now №2 returns a new logger. I.e.,:—
 ```go
 sublogger := log.Begin()
 ```
 
-And then when we call `.End()` it is on this new logger. I.e.,:—
+And then when we call `.End()` it is (not on the original logger but) on this new logger. I.e.,:—
 ```go
 sublogger.End()
 ```
@@ -350,7 +350,8 @@ So, a more full example might be:
 ```go
 locallogger := log.Begin()
 
-locallogger.Logf("The name was %q", name)
+locallogger.Logf("The name is %q", name)
+fmt.Printf("Hello %s!\n", name)
 
 locallogger.End()
 ```
