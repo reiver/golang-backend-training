@@ -181,6 +181,20 @@ And, for example, if we are testing the `Punch()` function, we might name our te
 func TestPunch(t *testing.T) {
 	//@TODO
 }
+
+And if we wanted to have 2 different tests for `the Log()` method we might have the following:
+```go
+func TestLogger_Log_apple(t *testing.T) {
+	//@TODO
+}
+
+func TestLogger_Log_banana(t *testing.T) {
+	//@TODO
+}
+
+func TestLogger_Log_cherry(t *testing.T) {
+	//@TODO
+}
 ```
 
 Etc.
