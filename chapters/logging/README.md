@@ -464,7 +464,25 @@ func ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	lg.End()
 }
 ```
+If you have information that you want to record that you want to highlight above the regular logs then use `Highlight()` & `Highlightf()`
 
+If an error occurred then use `Error()` & `Errorf()`; for example:
+```go
+	lg := log.Begin()
+	
+	// ...
+
+	err := something.DoIt()
+	if nil != err {
+		log.Error("problem doing it:", err) // <----
+		return err
+	}
+	log.Log("Success! — was able to do it.")
+	
+	// ...
+	
+	lg.End()
+```
 
 
 -----
