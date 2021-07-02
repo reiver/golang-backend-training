@@ -13,7 +13,7 @@ Hints:
 
 ## 1.2. go run
 
-Run your programing using `go run`
+Run your program using `go run`
 
 So, for example, if all your source code is in the one file `main.go`, then you would run:
 ```
