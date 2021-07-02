@@ -1,6 +1,6 @@
-## 4. WEB SERVING
+# 4. WEB SERVING ([Golang Backend Training](../../README.md))
 
-### 4.1. Create a Web server
+## 4.1. Create a Web server
 
 Create a Web server in Go, where the Web server outputs:
 > Hello world
@@ -10,7 +10,7 @@ Also include logging.
 Hints:
 * [import "net/http"](https://golang.org/pkg/net/http/)
 
-### 4.2. Web Hello {NAME}
+## 4.2. Web Hello {NAME}
 
 Make the API end point `/hello?name=REPLACE_ME` output the following:
 
