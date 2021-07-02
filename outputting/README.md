@@ -1,6 +1,6 @@
-## 1. Outputting
+# 1. Outputting ([Golang Backend Training](../README.md))
 
-### 1.1. Create a Go program that outputs text
+## 1.1. Create a Go program that outputs text
 
 Create a Go program that outputs the text:
 > Hello world!
@@ -11,7 +11,7 @@ Hints:
 * [getting started with Go](https://golang.org/doc/tutorial/getting-started)
 * [A Tour of Go](https://tour.golang.org/)
 
-### 1.2. go run
+## 1.2. go run
 
 Run your programing using `go run`
 
@@ -25,7 +25,7 @@ go run main.go
 Did it output?:
 > Hello world!
 
-### 1.3. go build
+## 1.3. go build
 
 Using `go run` can be quick when we are able to use it.
 
@@ -54,7 +54,7 @@ go build -o myprogramname
 Did it output?:
 > Hello world!
 
-### 1.4. Hello {NAME}
+## 1.4. Hello {NAME}
 
 Create a Go program that takes a name from a variable:
 ```Go
