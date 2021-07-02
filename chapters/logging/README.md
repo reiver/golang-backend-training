@@ -1,6 +1,6 @@
-## 3. Logging
+# 3. Logging ([Golang Backend Training](../../README.md))
 
-### 3.1. Create a simple logger
+## 3.1. Create a simple logger
 
 In this section you will №1 create a logger, and then №2 create a (very simple) program that uses that logger.
 
@@ -62,7 +62,7 @@ Hints:
 * [ioutil.Discard](https://golang.org/pkg/io/ioutil/#Discard)
 * [io.Writer](https://golang.org/pkg/io/#Writer)
 
-### 3.2. Hello {NAME} with logging
+## 3.2. Hello {NAME} with logging
 
 Copy your previous _Hello {NAME}_ program, but make it also log the name.
 
@@ -96,7 +96,7 @@ log.Logf("The name was %q", name)
 Hints:
 * [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf)
 
-### 3.3. Repository "go-log"
+## 3.3. Repository "go-log"
 
 Create a new publicly accessible repository named `go-log`.
 
@@ -117,7 +117,7 @@ https://gitlab.com/commanderkeen/go-log
 
 Etc.
 
-### 3.4. Pacakge "log"
+## 3.4. Pacakge "log"
 
 Put your logger code into the `go-log` repository you previously created.
 
@@ -186,7 +186,7 @@ Hints:
 * [import "testing"](https://golang.org/pkg/testing/)
 * [strings.Builder](https://golang.org/pkg/strings/#Builder)
 
-### 3.6. import "go-log"
+## 3.6. import "go-log"
 
 Write a program that uses your `"log"` package.
 
@@ -196,7 +196,7 @@ At the beginning of the program log:
 At the end of the program log:
 > END
 
-### 3.7. Verbose
+## 3.7. Verbose
 
 Write a program that normally discards all the logs. But if the `-v` flag is sent to it, then it will output the logs.
 
@@ -219,7 +219,7 @@ END
 Hints:
 * [import "flag"](https://golang.org/pkg/flag/)
 
-### 3.8. Prefix
+## 3.8. Prefix
 
 Modify the logger you created so that it has this method:
 ```go
@@ -250,7 +250,7 @@ apple: banana: cherry: Hello world!
 apple: banana: cherry: date: I am here!
 ```
 
-### 3.9. Func Name
+## 3.9. Func Name
 
 Modify the logger you created so that your `Log()` and `Logf()` functions prefix their output with the name of the function they are called in.
 
@@ -276,7 +276,7 @@ Hints:
 * [runetime.Func.Name()](https://golang.org/pkg/runtime/#Func.Name)
 
 
-### 3.10. Timer
+## 3.10. Timer
 
 We want to make it so calling `.End()` will also output the value of a timer that was started when we called `.Begin()`
 
@@ -325,7 +325,7 @@ Hints:
 * [time.Time](https://golang.org/pkg/time/#Time)
 * [time.Now()](https://golang.org/pkg/time/#Now)
 
-### 3.11. Leveled Logger
+## 3.11. Leveled Logger
 
 Sometimes it is useful to have a logger that can categorize its logs, and turn on and off the different categories of logs.
 
