@@ -436,6 +436,8 @@ func ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
+If you have information that you want to record that is a bit more important than a regular log, then you should use `Inform()` & `Informf()`.
+
 
 
 -----
