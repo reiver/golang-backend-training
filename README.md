@@ -35,7 +35,7 @@ The point of you going through this guide is that **you show your work to someon
 
 ## TABLE OF CONTENTS
 
-* [1. Outputting](outputting/README.md)
+* [1. Outputting](outputting/README.md) ⟸ START HERE
 * [2. Flagging](chapters/flagging/README.md)
 * [3. Logging](chapters/logging/README.md)
 * [4. Web Serving](chapters/web_serving/README.md)
