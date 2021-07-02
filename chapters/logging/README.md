@@ -1,10 +1,14 @@
 # 3. Logging ([Golang Backend Training](../../README.md))
 
+In this chapter you will create a **logger**.
+
+Loggers let programmers record information about events.
+
+At first you logger will be simple. But we will keep adding to it until it is quite powerful & sophisticated.
+
 ## 3.1. Create a simple logger
 
-In this section you will №1 create a logger, and then №2 create a (very simple) program that uses that logger.
-
-(Loggers let programmers record information about events.)
+Let's start of by №1 creating a simple logger, and then №2 creating a (very simple) program that uses that logger.
 
 The program you will create (that uses that logger you created) will log the following:—
 
@@ -20,6 +24,8 @@ package main
 
 func main() {
     log.Begin()
+    
+    fmt.Println("Hello world!")
     
     log.End()
 }
@@ -77,9 +83,25 @@ Etc.
 So, because you are also calling the `.Begin()` & `End()` functions, then your full output will be something like:
 ```
 BEGIN
-The name was "Joe"
+The name is "Joe"
+Hello Joe!
 END
 ```
+
+Note that 3 of those lines are output from logs; and 1 of those lines is regular output.
+
+This is a log:
+> `BEGIN`
+
+This is a log:
+> `The name is "Joe"`
+
+This is regular output:
+> `Hello Joe!`
+
+And this is a log:
+> `END`
+
 
 To accomplish this you should add another method to your logger:
 ```
