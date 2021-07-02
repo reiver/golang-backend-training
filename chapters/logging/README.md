@@ -410,6 +410,10 @@ And make it so that your logger has a concept of a “level”.
 * level 5 — everything from level 4 is outputted, plus **log** is also outputted
 * level 6 — everything from level 5 if outputted, plus **trace** is also outputted
 
+Use the `Level()` method to handle these levels.
+
+Also, make it so anything above level 6 — 7, 8, 9, 10, etc … — acts the same as level 6. I.e., all the logs are on.
+
 -----
 
 [⏮](../flagging/README.md) [⏭️](../web_serving/README.md)
