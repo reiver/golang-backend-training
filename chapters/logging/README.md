@@ -404,8 +404,8 @@ And make it so that your logger has a concept of a “level”.
 
 * level 0 — _nothing_ is outputted
 * level 1 — only **alert**, and **error** are outputted
-* level 2 — everything from level 1 is outputted, plus **highlight** is also outputted
-* level 3 — everything from level 2 is outputted, plus **warn** is also outputted
+* level 2 — everything from level 1 is outputted, plus **warn** is also outputted
+* level 3 — everything from level 2 is outputted, plus **highlight** is also outputted
 * level 4 — everything from level 3 is outputted, plus **inform** is also outputted
 * level 5 — everything from level 4 is outputted, plus **log** is also outputted
 * level 6 — everything from level 5 if outputted, plus **trace** is also outputted
@@ -413,6 +413,30 @@ And make it so that your logger has a concept of a “level”.
 Use the `Level()` method to handle these levels.
 
 Also, make it so anything above level 6 — 7, 8, 9, 10, etc … — acts the same as level 6. I.e., all the logs are on.
+
+## 3.12. Leveled Logger Unit Tests
+
+Add to your unit tests to cover all these new methods.
+
+## 3.13. Leveled Logger Demonstration
+
+Write a program that uses your leveled logger, and use each level in the appropriate way.
+
+Your default choice should be `Log()` & `Logf()`
+
+If you want to dump the contents of a "large" data structure or variable, then you should use `Trace()` & `Tracef()`; for example:
+```go
+func ServeHTTP(w http.ResponseWriter, r *http.Request) {
+
+	// ...
+
+	log.Trace("HTTP request:", r)
+
+	// ...
+}
+```
+
+
 
 -----
 
