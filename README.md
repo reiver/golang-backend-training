@@ -41,40 +41,13 @@ The point of you going through this guide is that **you show your work to someon
 * [4. Web Serving](chapters/web_serving/README.md)
 * [5. JSON](chapters/json/README.md)
 * [6. Simple JSON](chapters/simple_json/README.md)
-* [7. Database](#7-database)
+* [7. Database](chapters/database/README.md)
 * [8. Database & Go](#8-database--go)
 * [9. Money](#9-money)
 * [10. Option Types](#10-option-types)
 
 -----
 
-## 7. Database
-
-### 7.1. Install the Postgres Database Server
-
-### 7.2. Create a Database
-
-Use the Postgres command line tool `psql` to create a new database.
-
-### 7.3. Create a Table
-
-Use the Postgres command line tool `psql` to create a new table (in the database you previously created).
-
-Your table should include a field that is its _primary key_:
-```
-id BIGSERIAL PRIMARY KEY,
-```
-
-And it should include a field named `when_created`:
-```sql
-when_created TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
-```
-
-Of course, you should have other fields besides this one. Make up some type of table. And include fields that make sense for your made up table.
-
-### 7.4. INSERT
-
-Use the Postgres command line tool `psql` to INSERT some new values (into the new table you created in the new database you previously created).
 
 ## 8. Database & Go
 
