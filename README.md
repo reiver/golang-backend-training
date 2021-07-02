@@ -29,6 +29,8 @@ Even if they seem easy to you — still, do _all_ the sections! The point of thi
 
 **And do all the sections in the order that they appear in this guide.**
 
+A particular section can depend on the knowledge gained in previous sections. You need to 
+
 The point of you going through this guide is that **you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster**.
 
 ## TABLE OF CONTENTS
