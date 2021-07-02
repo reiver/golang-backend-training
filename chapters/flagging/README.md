@@ -1,6 +1,6 @@
-## 2. Flagging
+# 2. Flagging ([Golang Backend Training](../../README.md))
 
-## 2.1. Flag Hello {NAME}
+# 2.1. Flag Hello {NAME}
 
 Modify your previous **Hello {NAME}** program so that the name comes from a command line flag.
 
@@ -20,7 +20,7 @@ Hints:
 * [flag.StringVar()](https://golang.org/pkg/flag/#StringVar)
 * [flag.Parse()](https://golang.org/pkg/flag/#Parse)
 
-## 2.2. Shhh
+# 2.2. Shhh
 
 Modify your previous program to add  `--shhh` flag. The `--shhh` will make it so nothing will output.
 
@@ -44,7 +44,7 @@ Hints:
 * [flag.Parse()](https://golang.org/pkg/flag/#Parse)
 
 
-## 2.3. Flags File
+# 2.3. Flags File
 
 To help make your code more manageable, let's put all the flag code into a separate file named: `flags.go`
 
@@ -58,7 +58,7 @@ The code that deals with the outputting should be in `main.go`
 
 Once you have done that, do a `go build` and make sure everything still works.
 
-## 2.4. Flags Sub Directory
+# 2.4. Flags Sub Directory
 
 To help make your code even more manageable, let's put all the flag code into a sub-directory named: `flags/`
 
@@ -76,7 +76,7 @@ The code that deals with the outputting should be in `main.go`
 
 Once you have done that, do a `go build` and make sure everything still works.
 
-## 2.5. init()
+# 2.5. init()
 
 To make the flags get their values you have to run [flag.Parse()](https://golang.org/pkg/flag/#Parse).
 
