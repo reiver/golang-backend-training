@@ -48,5 +48,5 @@ The point of you going through this guide is that **you show your work to someon
 
 -----
 
-[➡️](chapters/outputting/README.md) ⟸ CLICK HERE
+[⏭️](chapters/outputting/README.md) ⟸ CLICK HERE
 
