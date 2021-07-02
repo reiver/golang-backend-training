@@ -553,7 +553,7 @@ Hints:
 
 Sometimes it is useful to have a logger that can categorize its logs, and turn on and off the different categories of logs.
 
-Change your logged to have these levels:
+Change your logger to have these levels:
 ```go
 type Logger interface {
 	Alert(a ...interface{})
@@ -582,8 +582,21 @@ type Logger interface {
 	Begin(a ...interface{}) Logger
 	
 	End(a ...interface{})
+	
+	Level(uint8) Logger
 }
 ```
+
+And make it so that your logger has a concept of a “level”.
+
+* level 0 — _nothing_ is outputted
+* level 1 — only **alert**, and **error** are outputted
+* level 2 — everything from level 1 is outputted, plus **highlight** is also outputted
+* level 3 — everything from level 2 is outputted, plus **warn** is also outputted
+* level 4 — everything from level 3 is outputted, plus **inform** is also outputted
+* level 5 — everything from level 4 is outputted, plus **log** is also outputted
+* level 6 — everything from level 5 if outputted, plus **trace** is also outputted
+
 
 ## 4. WEB SERVER
 
