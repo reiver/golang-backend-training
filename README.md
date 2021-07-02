@@ -36,7 +36,7 @@ The point of you going through this guide is that **you show your work to someon
 * [1. Outputting](outputting/README.md)
 * [2. Flagging](chapters/flagging/README.md)
 * [3. Logging](chapters/logging/README.md)
-* [4. Web Server](#4-web-server)
+* [4. Web Server](chapters/web_serving/README.md)
 * [5. JSON](#5-json)
 * [6. Simple JSON](#6-simple-json)
 * [7. Database](#7-database)
@@ -49,38 +49,7 @@ The point of you going through this guide is that **you show your work to someon
 
 
 
-## 4. WEB SERVER
 
-### 4.1. Create a Web server
-
-Create a Web server in Go, where the Web server outputs:
-> Hello world
-
-Also include logging.
-
-Hints:
-* [import "net/http"](https://golang.org/pkg/net/http/)
-
-### 4.2. Web Hello {NAME}
-
-Make the API end point `/hello?name=REPLACE_ME` output the following:
-
-`/hello?name=Joe`
-```
-Hello Joe
-```
-
-
-`/hello?name=Stan`
-```
-Hello Stan
-```
-Also include logging.
-
-Hint:
-* [fmt.Fprintf](https://golang.org/pkg/fmt/#Fprintf)
-* [http.Handler](https://golang.org/pkg/net/http/#Handler)
-* [http.ResponseWriter](https://golang.org/pkg/net/http/#ResponseWriter)
 
 ## 5. JSON
 
