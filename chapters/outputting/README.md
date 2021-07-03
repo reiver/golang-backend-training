@@ -113,8 +113,20 @@ And finally have it so the snack is too stored in a variable; for example:
 ```go
 var snack string = "macaroni and cheese"
 ```
+## 1.6 Form Letter Func
 
-## 1.6 Configurations File
+Let's organize your code a bit. Let's make it so that the code that outputs the _form letter_ is in a function.
+
+And make it so the _name_, _weather_, and _snack_ are passed to this function as parameters.
+
+Hints:
+* [Go by Example: Functions](https://gobyexample.com/functions)
+* [A Tour of Go: Functions](https://tour.golang.org/basics/4)
+* [A Tour of Go: Functions continued](https://tour.golang.org/basics/5)
+* [A Tour of Go: Multiple results](https://tour.golang.org/basics/6)
+* [A Tour of Go: Named return values](https://tour.golang.org/basics/7)
+
+## 1.7 Configurations File
 
 These variables — `name`, `weather`, and `snack` — function as _configuration parameters_.
 
