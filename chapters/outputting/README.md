@@ -1,6 +1,6 @@
 # 1. Outputting ([Golang Backend Training](../../README.md))
 
-## 1.1. Create a Go program that outputs text
+## 1.1. Hello world!
 
 Create a Go program that outputs the text:
 > Hello world!
@@ -80,6 +80,39 @@ Or whatever, depending on the value of the `name` variable.
 
 Hints:
 * [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
+
+## 1.5 Form Letter
+
+Let's now make it so we are saying more than just _“Hello”_. Let's make it so the program says something such as:
+
+> Hello Joe!
+> 
+> The weather today is sunny.
+> 
+> Today's snack will be french fries.
+
+Or:
+
+> Hello Fred!
+> 
+> The weather today is cloudy.
+> 
+> Today's snack will be meatloaf.
+
+And have it so the person's name (ex: _“Joe”_, _“Fred”_, etc) is stored in a variable; for example:
+```go
+var name string = "John"
+```
+
+Have it so the type of weather is also stored in a variable; for example:
+```go
+var weather string = "raining"
+```
+
+And finally have it so the snack is too stored in a variable; for example:
+```go
+var snake string = "macaroni and cheese"
+```
 
 -------------------------
 
