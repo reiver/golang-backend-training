@@ -111,8 +111,25 @@ var weather string = "raining"
 
 And finally have it so the snack is too stored in a variable; for example:
 ```go
-var snake string = "macaroni and cheese"
+var snack string = "macaroni and cheese"
 ```
+
+## 1.6 Configurations File
+
+These variables — `name`, `weather`, and `snack` — function as _configuration parameters_.
+
+Let's move them into their own file so that it is easier to locate them and potentially edit them.
+
+So, let's make it so your program has 2 files:
+
+* main.go
+* cfg.go
+
+➤ `cfg` is short for configurations.
+
+In `cfg.go` let's put these 3 variables: `name`, `weather`, and `snack`
+
+After you have done that, do a `go build`, and make sure you get the same output as before.
 
 -------------------------
 
