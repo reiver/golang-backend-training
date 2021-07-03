@@ -125,9 +125,9 @@ So, let's make it so your program has 2 files:
 * main.go
 * cfg.go
 
-➤ `cfg` is short for configurations.
+➤ `cfg` is short for _“configurations”_ or _“configuration parameters”_ (depending on who you ask).
 
-In `cfg.go` let's put these 3 variables: `name`, `weather`, and `snack`
+In `cfg.go` let's put those 3 variables: `name`, `weather`, and `snack`
 
 After you have done that, do a `go build`, and make sure you get the same output as before.
 
