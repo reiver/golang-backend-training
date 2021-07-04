@@ -81,7 +81,7 @@ Or whatever, depending on the value of the `name` variable.
 Hints:
 * [fmt.Printf()](https://golang.org/pkg/fmt/#Printf)
 
-## 1.5 Form Letter
+## 1.5. Form Letter
 
 Let's now make it so we are saying more than just _“Hello”_. Let's make it so the program says something such as:
 
@@ -113,7 +113,7 @@ And finally have it so the snack is too stored in a variable; for example:
 ```go
 var snack string = "macaroni and cheese"
 ```
-## 1.6 Form Letter Func
+## 1.6. Form Letter Func
 
 Let's organize your code a bit. Let's make it so that the code that outputs the _form letter_ is in a function.
 
@@ -126,7 +126,7 @@ Hints:
 * [A Tour of Go: Multiple results](https://tour.golang.org/basics/6)
 * [A Tour of Go: Named return values](https://tour.golang.org/basics/7)
 
-## 1.7 Configurations File
+## 1.7. Configurations File
 
 These variables — `name`, `weather`, and `snack` — function as _configuration parameters_.
 
@@ -143,10 +143,64 @@ In `cfg.go` let's put those 3 variables: `name`, `weather`, and `snack`
 
 After you have done that, do a `go build`, and make sure you get the same output as before.
 
-## Sub-Package
+## 1.8. Form Letter File
+
+Let's further organization our code by putting the form letter func into its own file too. So that you code's file structure would be:
+
+* main.go
+* cfg.go
+* formletter.go
+
+After you have done that, do a `go build`, and make sure you get the same output as before.
+
+# 1.9. Form Letter Package
 
 Let's move the _form letter_ function into its own sub-directory package.
 
+So, you will have:
+
+* main.go
+* cfg.go
+* lib/
+  * formletter/
+    * formletter.go
+
+I.e., the `formletter.go` file will be moved to:
+```
+lib/formletter/formletter.go
+```
+
+You should change the package name of this file to:
+```go
+package formletter
+```
+
+And then import it from your `main.go`
+
+After you have done that, do a `go build`, and see if you get the same output as before.
+
+Actually, **it won't work!**
+
+The reason is that `package main` imports `package formletter`, but `package formletter` needs the configuration parameters in the `cfg.go` file from `package main`.
+
+I.e., you have circular dependencies. Which Go doesn't permit.
+
+Thus, you need to move the configuration parameters to its own sub-directory package too.
+
+➤ It is usually a good idea to put the _configuration parameters_ into their own sub-directory package — such as `cfg/`
+
+So, let's make the file layout look like:
+
+* main.go
+* cfg/
+  * cfg.go
+* lib/
+  * formletter/
+    * formletter.go
+
+Once you make that change, it should work.
+
+After you have done that, do a `go build`, and make sure you get the same output as before.
 
 -------------------------
 
