@@ -143,6 +143,11 @@ In `cfg.go` let's put those 3 variables: `name`, `weather`, and `snack`
 
 After you have done that, do a `go build`, and make sure you get the same output as before.
 
+## Sub-Package
+
+Let's move the _form letter_ function into its own sub-directory package.
+
+
 -------------------------
 
 [⏮](../../README.md) [⏭️](../flagging/README.md)
