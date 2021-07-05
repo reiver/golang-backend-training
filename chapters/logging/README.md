@@ -491,6 +491,69 @@ If an error occurred then use `Error()` & `Errorf()`; for example:
 	lg.End()
 ```
 
+## 3.13. Logger Verbosity
+
+Make it so your program can turn on an off different levels of logs using _logger verbosity flags_.
+
+So, if your executable file is names `myprogram`, then —
+
+Running this:
+```
+myprogram
+```
+… would output no logs.
+
+Running this:
+```
+myprogram -v
+```
+… would output output the **level 1** logs.
+
+
+Running this:
+```
+myprogram -vv
+```
+… would output output the **level 2** logs.
+
+Running this:
+```
+myprogram -vvv
+```
+… would output output the **level 3** logs.
+
+Running this:
+```
+myprogram -vvvv
+```
+… would output output the **level 4** logs.
+
+Running this:
+```
+myprogram -vvvvv
+```
+… would output output the **level 5** logs.
+
+Running this:
+```
+myprogram -vvvvvv
+```
+… would output output the **level 6** logs.
+
+
+You code layout will have:
+
+* main.go
+* flags/
+  * flags.go 
+* srv/
+  * logger/
+    * logger.go  
+
+These `-v`, `-vv`, `-vvv`, `-vvvv`, `-vvvvv`, and `-vvvvvv` flags will be handled in `flags/flags.go`
+
+`srv/logger/logger.go` will import that `flags` package to figure out what level it should set itself to.
+
 
 -----
 
