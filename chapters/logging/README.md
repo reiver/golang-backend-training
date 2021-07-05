@@ -4,7 +4,9 @@ In this chapter you will create a **logger**.
 
 Loggers let programmers record information about events.
 
-At first you logger will be simple. But we will keep adding to it until it is quite powerful & sophisticated.
+Typically the the developer is reading the logs, not the end user. I.e., the logs are there to help **you**!
+
+At first your logger will be simple. But we will keep adding to it until it is quite powerful & sophisticated.
 
 ## 3.1. Create a simple logger
 
