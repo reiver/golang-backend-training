@@ -10,12 +10,15 @@ At first your logger will be simple. But we will keep adding to it until it is q
 
 ## 3.1. Create a simple logger
 
-Let's start of by №1 creating a simple logger, and then №2 creating a (very simple) program that uses that logger.
+Let's start by №1 creating a simple logger, and then №2 creating a (very simple) program that uses that logger.
 
 The program you will create (that uses that logger you created) will log the following:—
 
 At the beginning of the program it logs:
 > BEGIN
+
+At the beginning of the program it logs:
+> I said "Hello world!"
 
 At the end of the program it logs:
 > END
@@ -25,11 +28,13 @@ And it will look something like:
 package main
 
 func main() {
-    log.Begin()
+	log.Begin()
     
-    fmt.Println("Hello world!")
+	var msg string = "Hello world!"
+	fmt.Println(msg)
+	log.Log("I said:", msg)
     
-    log.End()
+	log.End()
 }
 ```
 
@@ -45,19 +50,19 @@ This logger will provide methods to output text BUT you will write it in a way t
 The first method your logger will have is:
 ```
 func (receiver Logger) Log(a ...interface{}) {
-    //@TODO:  you will need to figure out what goes here.
+    //@TODO: you will need to figure out what goes here.
 }
 ```
 The other two methods your logger will have are:
 ```
 func (receiver Logger) Begin(a ...interface{}) {
-    //@TODO:  you will need to figure out what goes here.
+    //@TODO: you will need to figure out what goes here.
 }
 ```
 
 ```
 func (receiver Logger) End(a ...interface{}) {
-    //@TODO:  you will need to figure out what goes here.
+    //@TODO: you will need to figure out what goes here.
 }
 ```
 
@@ -72,9 +77,9 @@ Hints:
 
 ## 3.2. Hello {NAME} with logging
 
-Copy your previous _Hello {NAME}_ program, but make it also log the name.
+Copy your previous _Hello {NAME}_ program, but make it also log the name (in addition to ading `.Begin()` & `.End()`).
 
-For example, if `name == "Joe"`, then it out log:
+For example, if `name == "Joe"`, then it logs:
 > The name was "Joe"
 
 Alternatively, for example, if `name == "Fred"`, then it out log:
@@ -92,16 +97,16 @@ END
 
 Note that 3 of those lines are output from logs; and 1 of those lines is regular output.
 
-This is a log:
+This is a **log**:
 > `BEGIN`
 
-This is a log:
+This is a **log**:
 > `The name is "Joe"`
 
 This is regular output:
 > `Hello Joe!`
 
-And this is a log:
+And this is a **log**:
 > `END`
 
 
