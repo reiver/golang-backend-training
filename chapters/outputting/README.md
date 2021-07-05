@@ -113,6 +113,9 @@ And finally have it so the snack is too stored in a variable; for example:
 ```go
 var snack string = "macaroni and cheese"
 ```
+
+After you have done that, do a go build, and make sure you get what is expected.
+
 ## 1.6. Form Letter Func
 
 Let's organize your code a bit. Let's make it so that the code that outputs the _form letter_ is in a function.
