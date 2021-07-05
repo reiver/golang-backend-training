@@ -122,6 +122,8 @@ Let's organize your code a bit. Let's make it so that the code that outputs the 
 
 And make it so the _name_, _weather_, and _snack_ are passed to this function as parameters.
 
+After you have done that, do a go build, and make sure you get what is expected.
+
 Hints:
 * [Go by Example: Functions](https://gobyexample.com/functions)
 * [A Tour of Go: Functions](https://tour.golang.org/basics/4)
@@ -131,7 +133,7 @@ Hints:
 
 ## 1.7. Configurations File
 
-These variables — `name`, `weather`, and `snack` — function as _configuration parameters_.
+These variables — `name`, `weather`, and `snack` — operate as _configuration parameters_.
 
 Let's move them into their own file so that it is easier to locate them and potentially edit them.
 
