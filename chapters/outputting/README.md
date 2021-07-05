@@ -207,6 +207,8 @@ Once you make that change, it should work.
 
 After you have done that, do a `go build`, and make sure you get the same output as before.
 
+➤ Any non-trivial Go program that you create will likely have a `cfg/` & `lib/` sub-package directories. You are probably better off just creating these from the get-go.
+
 -------------------------
 
 [⏮](../../README.md) [⏭️](../flagging/README.md)
