@@ -54,7 +54,7 @@ go build -o myprogramname
 Did it output?:
 > Hello world!
 
-➤ Note if you are using `git`. Typically most people do NOT commit the executable files into git. So you probably want to be careful what you commit. Maybe even exclude it using a `.gitignore` file.
+➤ Note that if you are using `git`, typically most people do NOT commit executable files into git. So you probably want to be careful with what you commit. Maybe even exclude the executable file using a `.gitignore` file.
 
 ## 1.4. Hello {NAME}
 
