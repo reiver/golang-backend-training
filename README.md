@@ -3,9 +3,9 @@ by [Charles Iliya Krempeaux](http://changelog.ca/)
 
 -----
 
-This is a guide to help train someone to do **backend development** using the Go programming language.
+With this **guide** you will learn how to do **backend development** using the Go programming language.
 
-**This is NOT a tutorial. This is a guide that directs someone to learn specific things.**
+**This is NOT a tutorial. This is a guide that directs you to learn specific things.**
 
 The whole point of this guide is that _you_ go and learn what you need to learn to be able to complete each assignment in this guide.
 
@@ -25,13 +25,13 @@ Do NOT skip any sections!!
 
 **Do _all_ the sections.**
 
-Even if they seem easy to you — still, do _all_ the sections! The point of this guide is _not_ to challenge you; the point of this guide is to get you familiar with certain parts of Go, and to correct any mistakes or misunderstandings you might have early on.
+Even if they seem easy to you — still, do _all_ the sections! The point of this guide is _not_ to challenge you; the point of this guide is to help you become familiar with certain parts of Go, and to correct any mistakes or misunderstandings you might have early on.
 
 **And do all the sections in the order that they appear in this guide.**
 
-A particular section can depend on the knowledge gained in previous sections. You need to 
+A particular section can depend on the knowledge gained in previous sections. You need to do them in the order they appear in this guide.
 
-The point of you going through this guide is that **you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster**.
+The point of you going through this guide is that, after you complete each assignment, then **you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster**.
 
 ## TABLE OF CONTENTS
 
