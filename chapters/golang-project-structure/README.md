@@ -138,4 +138,3 @@ For example, your configured & instantiated logger is a service. You might put i
 Also, for example, you configured & instantiated connection to the database is service. You might put it at: `srv/db`
 
 Etc.
-
