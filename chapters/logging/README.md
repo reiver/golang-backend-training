@@ -544,13 +544,13 @@ myprogram -vvvvvv
 You code layout will have:
 
 * main.go
-* flags/
-  * flags.go 
+* arg/
+  * arg.go 
 * srv/
   * logger/
     * logger.go  
 
-These `-v`, `-vv`, `-vvv`, `-vvvv`, `-vvvvv`, and `-vvvvvv` flags will be handled in `flags/flags.go`
+These `-v`, `-vv`, `-vvv`, `-vvvv`, `-vvvvv`, and `-vvvvvv` flags will be handled in `arg/arg.go`
 
 `srv/logger/logger.go` will import that `flags` package to figure out what level it should set itself to.
 
