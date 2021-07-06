@@ -44,9 +44,23 @@ You might even have:
 
 Next `cfg/` directory contains the configuration parameters. These are just simple variables.
 
+For example, some configuration parameters might be:
+
+* cfg.DefaultHttpPort
+* cfg.DBHost
+* cfg.DBName
+* cfg.DBPassword
+* cfg.DBUsername
+
 ## 2.4. lib/
 
 The `lib/` diretory contain local libraries.
+
+For example, some local libraries might be:
+
+* lib/formletter
+* lib/model/account
+* lib/model/user
 
 ## 2.5. srv/
 
@@ -56,5 +70,5 @@ For example, your configured & instantiated logger is a service. You might put i
 
 Also, for example, you configured & instantiated connection to the database is service. You might put it at: `srv/db`
 
-Etc
+Etc.
 
