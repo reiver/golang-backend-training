@@ -7,10 +7,10 @@ If you have gone through this guide, then you have likely already discovered the
 But I think it is a good idea to explicitly specify it in a chapter, so the information is in one place. So here it is:
 
 * `main.go`
-  * `arg/`
-  * `cfg/`
-  * `lib/`
-  * `srv/`
+  * `arg/` (command line arguments)
+  * `cfg/` (configuration parameters)
+  * `lib/` (local libraries)
+  * `srv/` (services)
 
 **Of course, you can have other directories & files in addition to these.**
 But these are the basics that likely most your Go projects will have.
