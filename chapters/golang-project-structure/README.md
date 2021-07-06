@@ -2,7 +2,7 @@
 
 # 2.1. Project Structure
 
-If you have gone through this guide, then you have likely already discovered the suggested Go project structure. The different chapters of this guide touches on different aspets of the suggested Go project layout.
+If you have gone through this guide, then you have likely already discovered the suggested Go project structure. The different chapters of this guide touch on different aspets of the suggested Go project layout.
 
 But I think it is a good idea to explicitly specify it in a chapter, so the information is in one place. So here it is:
 
