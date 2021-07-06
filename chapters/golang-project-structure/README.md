@@ -1,6 +1,6 @@
 # 11. Go Project Structure ([Golang Backend Training](../../README.md))
 
-# 2.1. Project Structure
+## 11.1. Project Structure
 
 If you have gone through this guide, then you have likely already discovered the suggested Go project structure. The different chapters of this guide touch on different aspets of the suggested Go project layout.
 
@@ -15,7 +15,7 @@ But I think it is a good idea to explicitly specify it in a chapter, so the info
 **Of course, you can have other directories & files in addition to these.**
 But these are the basics that likely most your Go projects will have.
 
-## 2.2. arg/
+## 11.2. arg/
 
 Before `main()` is called, things start in the `args/` diretory.
 
@@ -40,7 +40,7 @@ You might even have:
 * arg.HttpPort
 
 
-## 2.3. cfg/
+## 11.3. cfg/
 
 Next `cfg/` directory contains the configuration parameters. These are just simple variables.
 
@@ -52,7 +52,7 @@ For example, some configuration parameters might be:
 * cfg.DBPassword
 * cfg.DBUsername
 
-## 2.4. lib/
+## 11.4. lib/
 
 The `lib/` diretory contain local libraries.
 
@@ -62,7 +62,7 @@ For example, some local libraries might be:
 * lib/model/account
 * lib/model/user
 
-## 2.5. srv/
+## 11.5. srv/
 
 The `srv/` directory contains services.
 
