@@ -266,6 +266,26 @@ Hints:
 
 ### 9.7. JSON Unmarshal
 
+Make it so, for example, this JSON:
+```json
+{
+    "name":    "Jow Blow",
+    "balance": "CAD$123.45"
+}
+```
+
+
+Can be loaded in this struct:
+```go
+type Result struct {
+	Name    string `json:"name"`
+	Balance CAD    `json:"balance"`
+}
+```
+
+Also create a whole bunch of other test data for test with.
+
+
 Hints:
 * [json.Unmarshaler](https://golang.org/pkg/encoding/json/#Unmarshaler)
 * [json.Unmarshal()](https://golang.org/pkg/encoding/json/#Unmarshal)
