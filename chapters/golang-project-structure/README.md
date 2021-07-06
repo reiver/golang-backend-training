@@ -41,9 +41,14 @@ You might even have:
 
 It is probably going to look something like:
 ```go
+// file: arg/arg.go
 package arg
 
 import "flag"
+
+var (
+	Values []string
+)
 
 var (
 	Query string
@@ -70,13 +75,15 @@ func init() {
 	flag.BoolVar(&VeryVeryVeryVeryVeryVerbose, "vvvvvv", false, "very very very very very verbose logs outputted")
 
 	flag.Parse()
+	
+	Values = flag.Args()
 }
 ```
 
 
 ## 11.3. cfg/
 
-Next `cfg/` directory contains the configuration parameters. These are just simple variables.
+Next `cfg/` directory contains the configuration parameters. These are just simple constants or variables.
 
 For example, some configuration parameters might be:
 
@@ -85,6 +92,32 @@ For example, some configuration parameters might be:
 * cfg.DBName
 * cfg.DBPassword
 * cfg.DBUsername
+
+It will probably look something like:
+
+
+```go
+// cfg/db.go
+package cfg
+
+const (
+	DBHost = "db.example.com"
+	DBName = "blog"
+	DBPassword = "it.is.a.secret123"
+	DBUsername = "blogmaster"
+)
+```
+
+```go
+// cfg/http.go
+package cfg
+
+const (
+	DefaultHttpPort = 8080
+)
+```
+
+Etc.
 
 ## 11.4. lib/
 
