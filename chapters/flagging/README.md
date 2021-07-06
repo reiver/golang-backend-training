@@ -44,33 +44,33 @@ Hints:
 * [flag.Parse()](https://golang.org/pkg/flag/#Parse)
 
 
-# 2.3. Flags File
+# 2.3. Arg File
 
-To help make your code more manageable, let's put all the flag code into a separate file named: `flags.go`
+To help make your code more manageable, let's put all the flag code into a separate file named: `arg.go`
 
 So that your code base will look something like:
 * main.go
-* flags.go
+* arg.go
 
-The code that deals the flags should be in `flags.go`
+The code that deals the flags should be in `arg.go`
 
 The code that deals with the outputting should be in `main.go`
 
 Once you have done that, do a `go build` and make sure everything still works.
 
-# 2.4. Flags Sub Directory
+# 2.4. Arg Sub Directory
 
-To help make your code even more manageable, let's put all the flag code into a sub-directory named: `flags/`
+To help make your code even more manageable, let's put all the flag code into a sub-directory named: `arg/`
 
 So that your code will look something like:
 
 * main.go
-* flags/
-  * flags.go
+* arg/
+  * arg.go
 
 You will need to `import` this sub-directory from `main.go` to use it.
 
-The code that deals the flags should be in `flags/flags.go`
+The code that deals the flags should be in `arg/arg.go`
 
 The code that deals with the outputting should be in `main.go`
 
@@ -80,9 +80,9 @@ Once you have done that, do a `go build` and make sure everything still works.
 
 To make the flags get their values you have to run [flag.Parse()](https://golang.org/pkg/flag/#Parse).
 
-It would be nice if our `flags/` sub-directory could do this all by itself.
+It would be nice if our `arg/` sub-directory could do this all by itself.
 
-We can run initialization code from a special magical `init()` function. Create an init() function in the `flags/` sub-directory:
+We can run initialization code from a special magical `init()` function. Create an init() function in the `arg/` sub-directory:
 ```go
 func init() {
 	//@TODO
