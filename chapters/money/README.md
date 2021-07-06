@@ -189,7 +189,7 @@ Make it so that this:
 var money CAD
 var err error
 
-money, err = ParseCAD("$1.23)
+money, err = ParseCAD("$1.23")
 
 fmt.Printf("money = %#v" , opt)
 ```
@@ -220,7 +220,7 @@ fmt.Println("money:", money)
 ```
 Outputs:
 ```
-money: $1.23
+money: CAD$1.23
 ```
 
 And write units tests for this too.
@@ -233,7 +233,32 @@ Hints:
 
 ### 9.6. JSON Marshal
 
-Make it so
+Make it so your `CAD` type can be Marshaled as part of JSON.
+
+
+Once you do that, create a struct like this, and then Marshal it as JSON:
+```go
+type Result struct {
+	Name    string `json:"name"`
+	Balance CAD    `json:"balance"`
+}
+```
+
+So, for example, if you had:
+```go
+var result Result
+
+result.Name = "Joe Blow"
+result.Balance = Cents(12345)
+```
+
+Then the resulting JSON should be:
+```json
+{
+    "name":    "Jow Blow",
+    "balance": "CAD$123.45"
+}
+```
 
 Hints:
 * [json.Marshaler](https://golang.org/pkg/encoding/json/#Marshaler)
