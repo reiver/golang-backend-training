@@ -45,6 +45,7 @@ The point of you going through this guide is that, after you complete each assig
 * [8. Database & Go](chapters/database_and_go/README.md)
 * [9. Money](chapters/money/README.md)
 * [10. Option Types](#10-option-types)
+* [11. Go Project Structure](chapters/golang-project-structure/README.md)
 
 -----
 
