@@ -314,9 +314,9 @@ main: END
 ```
 
 Hints:
-* [runtime.Caller()](https://golang.org/pkg/runtime/#Caller)
+* [runtime.Callers()](https://golang.org/pkg/runtime/#Callers)
 * [runtime.FuncForPC()](https://golang.org/pkg/runtime/#FuncForPC)
-* [runetime.Func.Name()](https://golang.org/pkg/runtime/#Func.Name)
+* [runtime.Func.Name()](https://golang.org/pkg/runtime/#Func.Name)
 
 
 ## 3.10. Timer
