@@ -203,4 +203,10 @@ func init() {
 		Logger = Logger.Level(0)
 	}
 }
+
+func Begin(a ...string) Logger {
+	return Logger.Begin(a...)
+}
 ```
+
+
