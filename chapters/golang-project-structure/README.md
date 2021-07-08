@@ -209,4 +209,28 @@ func Begin(a ...string) Logger {
 }
 ```
 
+🠶 Note that we created `logsrv.Begin()`. Most the time you use the logger you will probably start with `logsrv.Begin()` so it is useful. For example:
+```go
+import "???????/srv/log"
+
+// ...
+
+func MyFunction() error {
+	log := logsrv.Begin()
+	defer log.End()
+	
+	// ...
+	
+	if nil == err {
+		log.Errorf("something bad happened:", err)
+		return err
+	}
+	
+	// ...
+	
+	log.Inform("SUCCESS!")
+	
+	// ...
+}
+```
 
