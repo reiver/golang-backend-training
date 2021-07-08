@@ -231,6 +231,8 @@ func MyFunction() error {
 	log.Inform("SUCCESS!")
 	
 	// ...
+	
+	return nil
 }
 ```
 
