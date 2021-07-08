@@ -21,7 +21,7 @@ Before `main()` is called, things start in the `args/` diretory.
 
 The code in the `args/` directory uses the Go built-in ["flag"](https://golang.org/pkg/flag/) package to make things happen.
 
-This package is very simple. It just expored variables.
+This package is very simple. It just exports variables.
 
 For example, you might have:
 
@@ -83,7 +83,11 @@ func init() {
 
 ## 11.3. cfg/
 
-Next `cfg/` directory contains the configuration parameters. These are just simple constants or variables.
+Next `cfg/` directory contains the configuration parameters. These are just simple constants.
+
+(Although some might be variables, rather than constants, if Go doesn't permit a constant for that type.)
+
+(Also, if a configuration parameter depends on something from the `arg/` directory, then it might be a variagble, rather than a constant, to accomodate that.)
 
 For example, some configuration parameters might be:
 
@@ -115,6 +119,31 @@ package cfg
 const (
 	DefaultHttpPort = 8080
 )
+```
+
+```go
+// cfg/payapi.go
+package cfg
+
+import "?????/arg"
+
+var PayApiUrl = ""
+
+func init() {
+
+	switch arg.DeploymentEnvironment {
+	case "DEV":
+		PayApiUrl = "http://localhost:8080/v1/pay"
+	case "QA":
+		PayApiUrl = "https://api.qa.example.com/v1/pay"
+	case "STAGING":
+		PayApiUrl = "https://api.staging.example.com/v1/pay"
+	case "PROD"
+		PayApiUrl = "https://api.example.com/v1/pay"
+	default:
+		panic("Unknown Deployment Environment: "+ arg.DeploymentEnvironment)
+	}
+}
 ```
 
 Etc.
