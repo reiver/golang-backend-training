@@ -184,6 +184,8 @@ var (
 )
 
 func init() {
+	//@TODO: make the output of the logger go to os.Stdout
+
 	switch {
 	case cfg.VeryVeryVeryVeryVeryVerbose:
 		Logger = Logger.Level(6)
