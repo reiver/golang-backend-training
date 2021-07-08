@@ -167,3 +167,38 @@ For example, your configured & instantiated logger is a service. You might put i
 Also, for example, you configured & instantiated connection to the database is service. You might put it at: `srv/db`
 
 Etc.
+
+For example:
+```go
+// srv/log/logger.go
+package logsrv
+
+import (
+	"github.com/???????/go-log"
+
+	"???????/arg"
+)
+
+var (
+	Logger log.Logger
+)
+
+func init() {
+	switch {
+	case cfg.VeryVeryVeryVeryVeryVerbose:
+		Logger = Logger.Level(6)
+	case cfg.VeryVeryVeryVeryVerbose:
+		Logger = Logger.Level(5)
+	case cfg.VeryVeryVeryVerbose:
+		Logger = Logger.Level(4)
+	case VeryVeryVerbose:
+		Logger = Logger.Level(3)
+	case VeryVerbose:
+		Logger = Logger.Level(2)
+	case Verbose:
+		Logger = Logger.Level(1)
+	default:
+		Logger = Logger.Level(0)
+	}
+}
+```
