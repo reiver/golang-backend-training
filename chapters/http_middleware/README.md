@@ -70,7 +70,9 @@ func main() {
 
 	log.Inform("HTTP Address:", httpAddr)
 
-	var handler http.Handler = helloWorldHandler{} // <----
+	var handler http.Handler // <---
+	
+	handler = helloWorldHandler{} // <----
 
 	err := http.ListenAndServe(httpAddr, handler) // <----
 	if nil != err (
@@ -81,3 +83,45 @@ func main() {
 ```
 
 And this is what your code might look with **WITHOUT** the `LogHandler`:
+```go
+// main.go
+package main
+
+import (
+	"srv/log"
+
+	"fmt"
+	"net/http"
+)
+
+const (
+	httpAddr = ":8080"
+)
+
+type helloWorldHandler struct{}
+
+func (receiver helloWorldHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Hello world!")
+}
+
+func main() {
+	log := logsrv.Begin()
+	defer log.End()
+
+	log.Inform("HTTP Address:", httpAddr)
+
+	var handler http.Handler // <---
+	
+	handler = helloWorldHandler{} // <----
+	
+	handler = LogHandler{
+		SubHandler: handler, // <---- WE ARE WRAPPING THE PREVIOUS HANDLER
+	}
+
+	err := http.ListenAndServe(httpAddr, handler) // <----
+	if nil != err (
+		log.Error("Had problem with HTTP server:", err)
+		return
+	}
+}
+```
