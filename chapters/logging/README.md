@@ -4,7 +4,11 @@ In this chapter you will create a **logger**.
 
 Loggers let programmers record information about events.
 
-Typically the the developer is reading the logs, not the end user. I.e., the logs are there to help **you**!
+Typically the programmer is reading the logs, not the end user. I.e., the logs are there to help **you**!
+
+Logs can help you debug your code while you are doing software development work, and, if there is a problem on production, logs can also help you figure out what went wrong on production.
+
+(Logs can also be read by software programs for monitoring, to detect hack attempts, etc.)
 
 At first your logger will be simple. But we will keep adding to it until it is quite powerful & sophisticated.
 
