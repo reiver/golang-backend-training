@@ -168,3 +168,29 @@ phone_number=604-555-5555
 ```
 
 (Notice in this second HTTP request code that the `X-HTTP-Method-Override` HTTP request header is gone, and the `POST` at the beginning is replaced by `PATCH`.)
+
+## 12.3. X-HTTP-Method-Override HTTP Middleware
+
+Create Go HTTP Middleware that does handles the `X-HTTP-Method-Override` HTTP request header.
+
+So, something like:
+
+```go
+type XHTTPMethodOverrideHandler struct {
+	SubHandler http.Handler
+}
+
+func (receiver XHTTPMethodOverrideHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	//@TODO
+}
+```
+
+With this, the HTTP request is represented by `http.Request` you need to check to if the `X-HTTP-Method-Override` HTTP request header is there or not.
+
+If it is NOT there, then you can pass the `http.Request` to the sub-`http.Handler` as is.
+
+But it is in there, you either need to modify `http.Request` (changing the HTTP method, and removeing the `X-HTTP-Method-Override` HTTP request header) before passing it, or create a new one to pass.
+
+Hints:
+* [http.Handler](https://pkg.go.dev/net/http#Handler)
+* [http.Request](https://pkg.go.dev/net/http#Request)
