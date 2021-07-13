@@ -208,4 +208,6 @@ Hints:
 * [http.Request](https://pkg.go.dev/net/http#Request)
 * [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)
 
+-----
+
 [⏮](../golang-project-structure/README.md) [⏭️](../http_router/README.md)
