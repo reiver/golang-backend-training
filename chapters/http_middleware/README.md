@@ -36,13 +36,13 @@ func (receiver LogHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 The `LogHandler`we created is has its own `ServeHTTP()` method that calls another `http.Handler`'s `ServeHTTP()` method.
 
-The `LogHandler` does some stuff before and after calling the other `http.Handler's` `ServeHTTP()` method. In this case, it is logging. But conceptually it could do whatever it wants.
+The `LogHandler` does some stuff before and after calling the other `http.Handler's` `ServeHTTP()` method. In this case, it is logging. But conceptually we could make it do whatever we want.
 
 This is what many call **“HTTP middleware”**. (Although many also just shorten that to **“middleware”**.)
 
 So, how would we use this‽ — here is how:
 
-This is what your code would look with **WITHOUT** the `LogHandler`:
+This is what your code might look with **WITHOUT** the `LogHandler`:
 ```go
 // main.go
 package main
@@ -79,3 +79,5 @@ func main() {
 	}
 }
 ```
+
+And this is what your code might look with **WITHOUT** the `LogHandler`:
