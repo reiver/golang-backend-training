@@ -198,3 +198,12 @@ But it is in there, you either need to modify `http.Request` (changing the HTTP 
 Hints:
 * [http.Handler](https://pkg.go.dev/net/http#Handler)
 * [http.Request](https://pkg.go.dev/net/http#Request)
+
+## 12.4. User-Agent Logging HTTP Middleware
+
+Create Go HTTP Middleware that logs the User-Agent for an HTTP request.
+
+Hints:
+* [http.Handler](https://pkg.go.dev/net/http#Handler)
+* [http.Request](https://pkg.go.dev/net/http#Request)
+* [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)
