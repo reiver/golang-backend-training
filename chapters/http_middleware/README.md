@@ -1,6 +1,6 @@
 # 12. HTTP Middleware ([Golang Backend Training](../../README.md))
 
-# 12.1. What is HTTP Middleware
+## 12.1. What is HTTP Middleware
 
 One of the key components of Go's built-in ["net/http"](https://pkg.go.dev/net/http) package is the [http.Handler](https://pkg.go.dev/net/http#Handler) interface:
 ```go
@@ -125,3 +125,43 @@ func main() {
 	}
 }
 ```
+
+## 12.2. X-HTTP-Method-Override
+
+HTTP was designed such that _HTTP paths_ (such as `http://example.com/members/joe-blow`) represents _nouns_, and _HTTP methods_ (such as built-in ones such as `DELETE`, `GET`, `PATCH`, `POST`, `PUT`, and custom ones such as `KICK`, `PUNCH`, `SCREAM`, etc) represent _verbs_.
+
+(Because many people were unaware that this was part of the original HTTP design and how HTTP was intended to be used, some came up with a new name for this — “REST”. But this was just how HTTP was intended to be used.)
+
+Some HTTP client software cannot use _all_ the built-in HTTP methods (such as `DELETE`, `GET`, `PATCH`, `POST`, `PUT`), and cannot use custom HTTP methods (such as `KICK`, `PUNCH`, `SCREAM`, etc).
+
+Some HTTP client software is unfortunately limited to just `GET` & `POST`.
+
+Due to this, a work-around was created: `X-HTTP-Method-Override`
+
+Here is an HTTP request of the `X-HTTP-Method-Override` HTTP request header being used:
+
+```
+POST /members/joe-blow HTTP/1.1
+Host: example.com
+X-HTTP-Method-Override: PATCH
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 25
+
+phone_number=604-555-5555
+```
+
+The `X-HTTP-Method-Override` work-around works like this:
+
+If you do an HTTP `POST` on a URL, and include the `X-HTTP-Method-Override` HTTP request header, then it is as if you did this:
+
+```
+PATCH /members/joe-blow HTTP/1.1
+Host: example.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 25
+
+phone_number=604-555-5555
+
+```
+
+(Notice in this second HTTP request code that the `X-HTTP-Method-Override` HTTP request header is gone, and the `POST` at the beginning is replaced by `PATCH`.)
