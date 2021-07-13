@@ -191,6 +191,10 @@ If it is NOT there, then you can pass the `http.Request` to the sub-`http.Handle
 
 But it is in there, you either need to modify `http.Request` (changing the HTTP method, and removeing the `X-HTTP-Method-Override` HTTP request header) before passing it, or create a new one to pass.
 
+**And of course create a program that uses this, to make sure it works.**
+
+**And, as always, create units tests for your new `XHTTPMethodOverrideHandler` type.**
+
 Hints:
 * [http.Handler](https://pkg.go.dev/net/http#Handler)
 * [http.Request](https://pkg.go.dev/net/http#Request)
