@@ -25,10 +25,12 @@ func (receiver LogHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	log := logsrv.Begin()
-	subhandler.ServerHTTP(w, r)
+	subhandler.ServerHTTP(w, r) // <----
 	log.End()
 }
 ```
+
+(Note that I've tried to keep things simpler in this `ServeHTTP()` to make it easier to understand. A production ready `ServeHTTP()` method would have more.)
 
 **Pay close attention to what is happening.**
 
@@ -39,3 +41,41 @@ The `LogHandler` does some stuff before and after calling the other `http.Handle
 This is what many call **“HTTP middleware”**. (Although many also just shorten that to **“middleware”**.)
 
 So, how would we use this‽ — here is how:
+
+This is what your code would look with **WITHOUT** the `LogHandler`:
+```go
+// main.go
+package main
+
+import (
+	"srv/log"
+
+	"fmt"
+	"net/http"
+)
+
+const (
+	httpAddr = ":8080"
+)
+
+type helloWorldHandler struct{}
+
+func (receiver helloWorldHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Hello world!")
+}
+
+func main() {
+	log := logsrv.Begin()
+	defer log.End()
+
+	log.Inform("HTTP Address:", httpAddr)
+
+	var handler http.Handler = helloWorldHandler{} // <----
+
+	err := http.ListenAndServe(httpAddr, handler) // <----
+	if nil != err (
+		log.Error("Had problem with HTTP server:", err)
+		return
+	}
+}
+```
