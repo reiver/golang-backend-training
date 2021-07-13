@@ -46,6 +46,7 @@ The point of you going through this guide is that, after you complete each assig
 * [9. Money](chapters/money/README.md)
 * [10. Option Types](#10-option-types)
 * [11. Go Project Structure](chapters/golang-project-structure/README.md)
+* [12. HTTP Middleware](chapters/http_middleware/README.md)
 
 -----
 
