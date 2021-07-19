@@ -15,6 +15,16 @@ But I think it is a good idea to explicitly specify it in a chapter, so the info
 **Of course, you can have other directories & files in addition to these.**
 But these are the basics that likely most your Go projects will have.
 
+Also, if I am creating **backend** APIs, then I also create an additional directory for my _HTTP handlers_: `api/`; so:
+
+* `main.go`
+  * `api/` (backend api) 
+  * `arg/` (command line arguments)
+  * `cfg/` (configuration parameters)
+  * `lib/` (local libraries)
+  * `srv/` (services)
+
+
 ## 11.2. arg/
 
 Before `main()` is called, things start in the `args/` diretory.
