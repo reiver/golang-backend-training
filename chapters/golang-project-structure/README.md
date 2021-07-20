@@ -24,8 +24,45 @@ Also, if I am creating **backend** APIs, then I also create an additional direct
   * `lib/` (local libraries)
   * `srv/` (services)
 
+## 11.2. api/
 
-## 11.2. arg/
+The `api/` directory is used to contain all the registered `http.Handler` 
+
+The layout of this directory mimics the paths use in the URL.
+
+So, for example, if your API looked like:
+
+* GET /v1/accounts
+* DELETE /v1/accounts/{iid}
+* GET /v1/accounts/{iid}
+* PATCH /v1/accounts/{iid}
+* PUT /v1/accounts/{iid}
+* GET /v1/users
+* DELETE /v1/users/{iid}
+* GET /v1/users/{iid}
+* PATCH /v1/users/{iid}
+* PUT /v1/users/{iid}
+
+Then in `api/` you would have:
+
+* `api/`
+  * `v1/`
+    * `accounts/`
+      * `get.go`
+      * `IID/`
+        * `delete.go`
+        * `get.go`
+        * `patch.go`
+        * `put.go` 
+    * `users/`
+      * `get.go`
+      * `IID/`
+        * `delete.go`
+        * `get.go`
+        * `patch.go`
+        * `put.go`
+
+## 11.3. arg/
 
 Before `main()` is called, things start in the `args/` diretory.
 
@@ -91,7 +128,7 @@ func init() {
 ```
 
 
-## 11.3. cfg/
+## 11.4. cfg/
 
 Next `cfg/` directory contains the configuration parameters. These are just simple constants.
 
@@ -158,7 +195,7 @@ func init() {
 
 Etc.
 
-## 11.4. lib/
+## 11.5. lib/
 
 The `lib/` diretory contain local libraries.
 
@@ -168,7 +205,7 @@ For example, some local libraries might be:
 * lib/model/account
 * lib/model/user
 
-## 11.5. srv/
+## 11.6. srv/
 
 The `srv/` directory contains services.
 
@@ -245,4 +282,3 @@ func MyFunction() error {
 	return nil
 }
 ```
-
