@@ -110,6 +110,10 @@ var (
 	VeryVeryVeryVeryVeryVerbose bool
 )
 
+var (
+	Help bool
+)
+
 
 func init() {
 	flag.StringVar(&Query, "q", "", "search query")
@@ -120,10 +124,18 @@ func init() {
 	flag.BoolVar(&VeryVeryVeryVerbose,         "vvvv",   false,           "very very very verbose logs outputted")
 	flag.BoolVar(&VeryVeryVeryVeryVerbose,     "vvvvv",  false,      "very very very very verbose logs outputted")
 	flag.BoolVar(&VeryVeryVeryVeryVeryVerbose, "vvvvvv", false, "very very very very very verbose logs outputted")
+	
+	flag.BoolVar(&Help, "help", "outputs help message")
 
 	flag.Parse()
 	
 	Values = flag.Args()
+
+	// --help
+	if Help {
+		flag.PrintDefaults()
+		os.Exit(0)
+	}
 }
 ```
 
