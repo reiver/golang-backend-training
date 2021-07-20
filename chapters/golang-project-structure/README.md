@@ -91,7 +91,10 @@ It is probably going to look something like:
 // file: arg/arg.go
 package arg
 
-import "flag"
+import (
+	"flag"
+	"os"
+)
 
 var (
 	Values []string
