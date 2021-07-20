@@ -125,7 +125,7 @@ func init() {
 	flag.BoolVar(&VeryVeryVeryVeryVerbose,     "vvvvv",  false,      "very very very very verbose logs outputted")
 	flag.BoolVar(&VeryVeryVeryVeryVeryVerbose, "vvvvvv", false, "very very very very very verbose logs outputted")
 	
-	flag.BoolVar(&Help, "help", "outputs help message")
+	flag.BoolVar(&Help, "help", false, "outputs help message")
 
 	flag.Parse()
 	
