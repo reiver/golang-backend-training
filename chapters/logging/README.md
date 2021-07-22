@@ -558,16 +558,6 @@ These `-v`, `-vv`, `-vvv`, `-vvvv`, `-vvvvv`, and `-vvvvvv` flags will be handle
 
 `srv/logger/logger.go` will import that `flags` package to figure out what level it should set itself to.
 
-## 3.15. README.md
-
-Add a `README.md` file to you `go-log` repository.
-
-Make it include a URL to online documentation for your package, using https://pkg.go.dev/
-
-## 3.16. Documentation
-
-Add documentation to your `log` package.
-
 ## 3.17. License
 
 Add a `LICENSE` file to your `go-log` repository.
@@ -593,6 +583,20 @@ So, for example, if your name is **“Joe Blow”**, and the year is **“2021�
 > The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 > 
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## 3.16. README.md
+
+Add a `README.md` file to you `go-log` repository.
+
+Make it include a URL to online documentation for your package, using https://pkg.go.dev/
+
+
+## 3.17. Documentation
+
+Notice that the online documentation for your package at https://pkg.go.dev/ doesn't have any descriptions or examples (like the documentation you see for many of the Go built-in packages).
+
+
+Add documentation to your `log` package.
 
 
 -----
