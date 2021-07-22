@@ -495,7 +495,7 @@ If an error occurred then use `Error()` & `Errorf()`; for example:
 	lg.End()
 ```
 
-## 3.13. Logger Verbosity
+## 3.14. Logger Verbosity
 
 Make it so your program can turn on an off different levels of logs using _logger verbosity flags_.
 
@@ -557,6 +557,18 @@ You code layout will have:
 These `-v`, `-vv`, `-vvv`, `-vvvv`, `-vvvvv`, and `-vvvvvv` flags will be handled in `arg/arg.go`
 
 `srv/logger/logger.go` will import that `flags` package to figure out what level it should set itself to.
+
+## 3.15. README.md
+
+Add a `README.md` file to you `go-log` repository.
+
+Make it include a URL to online documentation for your package, using https://pkg.go.dev/
+
+## 3.16. Documentation
+
+Add documentation to your `log` package.
+
+
 
 
 -----
