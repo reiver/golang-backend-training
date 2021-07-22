@@ -574,7 +574,7 @@ Add a `LICENSE` file to your `go-log` repository.
 
 Your are going to use this for you job, so it **must** be a business-friendly license.
 
-I suggest you use the MIT license:
+I suggest you use the **MIT license**:
 
 > Copyright {YEAR} {COPYRIGHT HOLDER}
 > 
