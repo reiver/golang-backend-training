@@ -403,7 +403,7 @@ type Logger interface {
 	
 	Prefix(...string) Logger
 	
-	Begin(a ...interface{}) Logger
+	Begin(...string) Logger
 	
 	End()
 	
