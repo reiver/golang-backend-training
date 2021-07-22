@@ -18,13 +18,13 @@ Let's start by №1 creating a simple logger, and then №2 creating a (very sim
 
 The program you will create (that uses that logger you created) will log the following:—
 
-At the beginning of the program it logs:
+At the beginning of the program it will log:
 > BEGIN
 
-At the beginning of the program it logs:
+In the middle of the program it will log:
 > I said "Hello world!"
 
-At the end of the program it logs:
+And at the end of the program it will log:
 > END
 
 And it will look something like:
