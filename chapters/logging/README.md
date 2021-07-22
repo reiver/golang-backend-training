@@ -405,7 +405,7 @@ type Logger interface {
 	
 	Begin(a ...interface{}) Logger
 	
-	End(a ...interface{})
+	End()
 	
 	Level(uint8) Logger
 }
