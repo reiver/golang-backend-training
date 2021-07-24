@@ -1,4 +1,4 @@
-# 3. Logging ([Golang Backend Training](../../README.md))
+# 4. Logging ([Golang Backend Training](../../README.md))
 
 In this chapter you will create a **logger**.
 
@@ -12,7 +12,7 @@ Logs can help you debug your code while you are doing software development work,
 
 At first your logger will be simple. But we will keep adding to it until it is quite powerful & sophisticated.
 
-## 3.1. Create a simple logger
+## 4.1. Create a simple logger
 
 Let's start by №1 creating a simple logger, and then №2 creating a (very simple) program that uses that logger.
 
@@ -79,7 +79,7 @@ Hints:
 * [ioutil.Discard](https://golang.org/pkg/io/ioutil/#Discard)
 * [io.Writer](https://golang.org/pkg/io/#Writer)
 
-## 3.2. Hello {NAME} with logging
+## 4.2. Hello {NAME} with logging
 
 Copy your previous _Hello {NAME}_ program, but make it also log the name (in addition to ading `.Begin()` & `.End()`).
 
@@ -129,7 +129,7 @@ log.Logf("The name was %q", name)
 Hints:
 * [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf)
 
-## 3.3. Repository "go-log"
+## 4.3. Repository "go-log"
 
 Create a new publicly accessible repository named `go-log`.
 
@@ -150,7 +150,7 @@ https://gitlab.com/commanderkeen/go-log
 
 Etc.
 
-## 3.4. Pacakge "log"
+## 4.4. Pacakge "log"
 
 Put your logger code into the `go-log` repository you previously created.
 
@@ -161,7 +161,7 @@ package log
 
 ➤ You might have noticed that the repository is called `go-log`, but the package is named `log`. That is on purpose. The convention in the Go community is to name things this way.
 
-### 3.5. Unit Testing
+### 4.5. Unit Testing
 
 **Unit testing** are tests used to test a piece of a software system. (These _pieces_ of the software system get called _“units”_ — thus the name “unit test”.)
 
@@ -233,7 +233,7 @@ Hints:
 * [import "testing"](https://golang.org/pkg/testing/)
 * [strings.Builder](https://golang.org/pkg/strings/#Builder)
 
-## 3.6. import "go-log"
+## 4.6. import "go-log"
 
 Write a program that uses your `"log"` package.
 
@@ -243,7 +243,7 @@ At the beginning of the program log:
 At the end of the program log:
 > END
 
-## 3.7. Verbose
+## 4.7. Verbose
 
 Write a program that normally discards all the logs. But if the `-v` flag is sent to it, then it will output the logs.
 
@@ -266,7 +266,7 @@ END
 Hints:
 * [import "flag"](https://golang.org/pkg/flag/)
 
-## 3.8. Prefix
+## 4.8. Prefix
 
 Modify the logger you created so that it has this method:
 ```go
@@ -297,7 +297,7 @@ apple: banana: cherry: Hello world!
 apple: banana: cherry: date: I am here!
 ```
 
-## 3.9. Func Name
+## 4.9. Func Name
 
 Modify the logger you created so that your `Log()` and `Logf()` functions prefix their output with the name of the function they are called in.
 
@@ -323,7 +323,7 @@ Hints:
 * [runtime.Func.Name()](https://golang.org/pkg/runtime/#Func.Name)
 
 
-## 3.10. Timer
+## 4.10. Timer
 
 We want to make it so calling `.End()` will also output the value of a timer that was started when we called `.Begin()`
 
@@ -373,7 +373,7 @@ Hints:
 * [time.Time](https://golang.org/pkg/time/#Time)
 * [time.Now()](https://golang.org/pkg/time/#Now)
 
-## 3.11. Leveled Logger
+## 4.11. Leveled Logger
 
 Sometimes it is useful to have a logger that can categorize its logs, and turn on and off the different categories of logs.
 
@@ -425,11 +425,11 @@ Use the `Level()` method to handle these levels.
 
 Also, make it so anything above level 6 — 7, 8, 9, 10, etc … — acts the same as level 6. I.e., all the logs are on.
 
-## 3.12. Leveled Logger Unit Tests
+## 4.12. Leveled Logger Unit Tests
 
 Add to your unit tests to cover all these new methods.
 
-## 3.13. Leveled Logger Demonstration
+## 4.13. Leveled Logger Demonstration
 
 Write a program that uses your leveled logger, and use each level in the appropriate way.
 
@@ -495,7 +495,7 @@ If an error occurred then use `Error()` & `Errorf()`; for example:
 	lg.End()
 ```
 
-## 3.14. Logger Verbosity
+## 4.14. Logger Verbosity
 
 Make it so your program can turn on an off different levels of logs using _logger verbosity flags_.
 
@@ -558,7 +558,7 @@ These `-v`, `-vv`, `-vvv`, `-vvvv`, `-vvvvv`, and `-vvvvvv` flags will be handle
 
 `srv/logger/logger.go` will import that `flags` package to figure out what level it should set itself to.
 
-## 3.17. License
+## 4.15. License
 
 Add a `LICENSE` file to your `go-log` repository.
 
@@ -584,14 +584,14 @@ So, for example, if your name is **“Joe Blow”**, and the year is **“2021�
 > 
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## 3.16. README.md
+## 4.16. README.md
 
 Add a `README.md` file to you `go-log` repository.
 
 Make it include a URL to online documentation for your package, using https://pkg.go.dev/
 
 
-## 3.17. Documentation
+## 4.17. Documentation
 
 Notice that the online documentation for your package at https://pkg.go.dev/ doesn't have any descriptions or examples (like the documentation you see for many of the Go built-in packages).
 
