@@ -37,17 +37,18 @@ The point of you going through this guide is that, after you complete each assig
 
 * [1. Outputting](chapters/outputting/README.md) ⟸ START HERE
 * [2. Flagging](chapters/flagging/README.md)
-* [3. Logging](chapters/logging/README.md)
-* [4. Web Serving](chapters/web_serving/README.md)
-* [5. JSON](chapters/json/README.md)
-* [6. Simple JSON](chapters/simple_json/README.md)
-* [7. Database](chapters/database/README.md)
-* [8. Database & Go](chapters/database_and_go/README.md)
-* [9. Money](chapters/money/README.md)
-* [10. Option Types](#10-option-types)
-* [11. Go Project Structure](chapters/golang-project-structure/README.md)
-* [12. HTTP Middleware](chapters/http_middleware/README.md)
-* [13. HTTP Router](chapters/http_router/README.md)
+* [3. Interfaces](chapters/interfaces/README.md)
+* [4. Logging](chapters/logging/README.md)
+* [5. Web Serving](chapters/web_serving/README.md)
+* [6. JSON](chapters/json/README.md)
+* [7. Simple JSON](chapters/simple_json/README.md)
+* [8. Database](chapters/database/README.md)
+* [9. Database & Go](chapters/database_and_go/README.md)
+* [10. Money](chapters/money/README.md)
+* [11. Option Types](#10-option-types)
+* [12. Go Project Structure](chapters/golang-project-structure/README.md)
+* [13. HTTP Middleware](chapters/http_middleware/README.md)
+* [14. HTTP Router](chapters/http_router/README.md)
 
 -----
 
