@@ -59,13 +59,13 @@ func (receiver Logger) Log(a ...interface{}) {
 ```
 The other two methods your logger will have are:
 ```
-func (receiver Logger) Begin(a ...interface{}) {
+func (receiver Logger) Begin() {
     //@TODO: you will need to figure out what goes here.
 }
 ```
 
 ```
-func (receiver Logger) End(a ...interface{}) {
+func (receiver Logger) End() {
     //@TODO: you will need to figure out what goes here.
 }
 ```
