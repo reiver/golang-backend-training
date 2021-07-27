@@ -33,4 +33,5 @@ Hint:
 
 -----
 
-[RETURN](../../README.md)
+
+[⏮](../logging/README.md) [⏭️](../json/README.md)
