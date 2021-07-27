@@ -1,6 +1,6 @@
-# 5. JSON ([Golang Backend Training](../../README.md))
+# 6. JSON ([Golang Backend Training](../../README.md))
 
-## 5.1. Output JSON
+## 6.1. Output JSON
 
 Make the Web server you wrote in Go output the JSON:
 ```json
@@ -14,7 +14,7 @@ Also include logging.
 Hints:
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
-## 5.2. Web Hello {NAME} with JSON
+## 6.2. Web Hello {NAME} with JSON
 
 Copy your previous _Web Hello {NAME}_ program, but make it output JSON:
 
@@ -41,7 +41,7 @@ Also include logging.
 Hints:
 * [import "encoding/json"](https://golang.org/pkg/encoding/json/)
 
-## 5.3. Web Addition
+## 6.3. Web Addition
 
 Create an API end point that accepts two numbers, adds then, and outputs the result.
 
@@ -61,4 +61,4 @@ Hints:
 
 -----
 
-[RETURN](../../README.md)
+[⏮](../web_serving/README.md) [⏭️](../simple_json/README.md)
