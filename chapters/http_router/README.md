@@ -15,7 +15,7 @@ When your Go program is a web server, it usually has code like that somewhere.
 If you are creating a backend HTTP(S) based API, then your program is a web server.
 
 Recall that in Go, the built-in `"net/http"` package, does most the low-level HTTP work for you.
-**But that (in the case of that example code) the `theHandlerYouCreated.ServeHTTP()` method _is_ the web server, in a lot of ways.**
+**But that (in the case of that example code) your `theHandlerYouCreated.ServeHTTP()` method _is_ the web server, in a lot of ways.**
 
 What does that mean —
 
@@ -47,7 +47,7 @@ And then this might get mapped he following way to the code on disk.
 * `GET /api/v1/users` -> `/home/username/api/v1/users.php`
 
 Go's `http.ListenAndServe()` function doesn't (by default) work this way.
-**But we are going to create something to make it work this way.**
+**But you are going to create something to make it work this way.**
 
 But you are going to do it in multiple steps.
 First creating a simple **HTTP router**.
