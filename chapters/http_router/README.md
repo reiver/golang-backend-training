@@ -221,3 +221,72 @@ interface {
 ```
 
 Once you finish that, use the program you wrote to make sure it works.
+
+## 14.6. Summary
+
+So far the HTTP router you created can hand off **HTTP requests** to an `http.Handler` based on an **HTTP path**. For example:
+```go
+// When an HTTP request for “/apple/banana/cherry” comes in, hand it if off to ‘handleAppleBananaCherry’.
+err := router.Register(handleAppleBananaCherry, "/apple/banana/cherry")
+
+// When an HTTP request for “/favorite/fruits” comes in, hand it if off to ‘handleFavoriteFruits’.
+err := router.Register(handleFavoriteFruits, "/favorite/fruits")
+```
+
+Also, the HTTP router you created can hand off **HTTP requests** to an `http.Handler` based on **HTTP path** and also **HTTP method**. For example:
+```go
+// When an HTTP request for “GET /toys” comes in, hand it if off to ‘handleToysGET’.
+err := router.Register(handleToysGET, "/toys", "GET")
+
+// When an HTTP request for “POST /toys” comes in, hand it if off to ‘handleToysPOST’.
+err := router.Register(handleToysPOST, "/toys", "POST")
+```
+
+Also you can make a single `http.Handler` response to more than one **HTTP path** and also **HTTP method** combination (but not others). For example:
+```go
+// When an HTTP request for “DELETE /product”, “GET /product”, “PATCH /product”, or “PUT /product” comes in, hand it if off to ‘handleProduct’.
+// But for all other HTTP methods, return a 405 Not Allowed
+err := router.Register(handleProduct, "/product", "DELETE", "GET", "PATCH", "PUT")
+
+// When an HTTP request for “GET /product” or “POST /form” comes in, hand it if off to ‘handleForm’.
+// But for all other HTTP methods, return a 405 Not Allowed
+err := router.Register(handleForm, "/form", "GET", "POST")
+```
+
+That's pretty powerful.
+
+## 14.7. Extra Points
+
+If you want to make your HTTP router even more powerful, add these features —
+
+### 14.7.1 Delegates
+
+Add this method:
+```go
+func (receiver *Router) Delegate(handler http.Handler, directory string) error {
+	//@TODO
+}
+```
+
+So that you can do stuff such as:
+```go
+err := router.Delegate(handleStaticImages, "/images/")
+```
+
+Where any path under `/images/` is handed off to `handleStaticImages`. For example, all these (plus more):
+* `/images/logo.png`
+* `/images/slightly-smiling.png`
+* `/images/team/joe.jpeg`
+* `/images/team/marry.jpeg`
+* `/images/webbug/1x1.gif`
+
+### 14.7.2 Default
+
+Add this method:
+```go
+func (receiver *Router) Default(handler http.Handler, directory string) error {
+	//@TODO
+}
+```
+
+Where if there is no handler registered or delegated to, then it is called.
