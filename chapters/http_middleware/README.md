@@ -1,6 +1,6 @@
-# 12. HTTP Middleware ([Golang Backend Training](../../README.md))
+# 13. HTTP Middleware ([Golang Backend Training](../../README.md))
 
-## 12.1. What is HTTP Middleware
+## 13.1. What is HTTP Middleware
 
 One of the key components of Go's built-in ["net/http"](https://pkg.go.dev/net/http) package is the [http.Handler](https://pkg.go.dev/net/http#Handler) interface:
 ```go
@@ -129,7 +129,7 @@ func main() {
 }
 ```
 
-## 12.2. X-HTTP-Method-Override
+## 13.2. X-HTTP-Method-Override
 
 HTTP was designed such that _HTTP paths_ (such as `http://example.com/members/joe-blow`) represents _nouns_, and _HTTP methods_ (such as built-in ones such as `DELETE`, `GET`, `PATCH`, `POST`, `PUT`, and custom ones such as `KICK`, `PUNCH`, `SCREAM`, etc) represent _verbs_.
 
@@ -169,7 +169,7 @@ phone_number=604-555-5555
 
 (Notice in this second HTTP request code that the `X-HTTP-Method-Override` HTTP request header is gone, and the `POST` at the beginning is replaced by `PATCH`.)
 
-## 12.3. X-HTTP-Method-Override HTTP Middleware
+## 13.3. X-HTTP-Method-Override HTTP Middleware
 
 Create Go HTTP Middleware that does handles the `X-HTTP-Method-Override` HTTP request header.
 
@@ -199,7 +199,7 @@ Hints:
 * [http.Handler](https://pkg.go.dev/net/http#Handler)
 * [http.Request](https://pkg.go.dev/net/http#Request)
 
-## 12.4. User-Agent Logging HTTP Middleware
+## 13.4. User-Agent Logging HTTP Middleware
 
 Create Go HTTP Middleware that logs the User-Agent for an HTTP request.
 
