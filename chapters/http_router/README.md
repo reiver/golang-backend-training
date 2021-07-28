@@ -125,7 +125,6 @@ The `http.Request` tells you what the **HTTP method** is. See:
 
 Once you finish that, use the program you wrote to make sure it works.
 
-
 ## 14.4. HTTP Router
 
 The **HTTP switch** we created is OK, but it is limited in some ways. Every time we want to add support for a new **HTTP path** we have to edit the `.ServeHTTP()` method.
@@ -167,6 +166,14 @@ err := httprouter.Register(handleHello, "/hello")
 
 err := httprouter.Register(handleFavoriteFruit, "/favorite/fruits")
 ```
+
+So, to summarize, your `httprouter.Router` will fit this interface:
+```go
+interface {
+	ServeHTTP(w ResponseWriter, r *Request)
+	Register(handler http.Handler, path string) error
+}
+``
 
 Once you finish that, use the program you wrote to make sure it works.
 
