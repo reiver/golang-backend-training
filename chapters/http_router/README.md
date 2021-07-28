@@ -2,6 +2,8 @@
 
 In this chapter you are going to create an **HTTP router**.
 
+But we will need to work up to it. So there will be a number of steps before we get there.
+
 ## 14.1. http.ListenAndServe()
 
 Take a look at this code:
@@ -19,8 +21,8 @@ Recall that in Go, the built-in `"net/http"` package, does most the low-level HT
 
 What does that mean —
 
-The `http.ListenAndServe()` function (from Go's built-in `"net/http"` package) will call your `theHandlerYouCreated.ServerHTTP()` method for **all** HTTP requests. All of them!
-Doesn't matter the **HTTP path** is. Doesn't matter what the **HTTP method** is. All HTTP requests will be handed off to your `theHandlerYouCreated.ServerHTTP()` method!
+The `http.ListenAndServe()` function (from Go's built-in `"net/http"` package) will call your `theHandlerYouCreated.ServeHTTP()` method for **all** HTTP requests. All of them!
+Doesn't matter the **HTTP path** is. Doesn't matter what the **HTTP method** is. All HTTP requests will be handed off to your `theHandlerYouCreated.ServeHTTP()` method!
 
 If you come from a background of doing web development using an interpretted programming language, such as PHP or Ruby, etc, then this is probably different than how you are used to working.
 
@@ -53,123 +55,118 @@ But you are going to do it in multiple steps.
 First creating a simple **HTTP router**.
 And then adding more and more sophistication to it, until you have something powerful.
 
-## 14.2. HTTP Router
+## 14.2 ServeHTTP Switch Part 1
 
-The first thing to realize is that an **HTTP router** is also an `http.Handler`
+The first thing you are going to do is create a new type:
+```go
+type HTTPSwitch struct {
+	//@TODO
+}
+```
 
-That means that the **HTTP router** you create will have a `.ServeHTTP(http.ResponseWriter, *http.Request)` method.
+This will be an `http.Handler`, so you will need a `.ServeHTTP()` method:
+```go
+func (receiver *HTTPSwitch) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	//@TODO
+}
+```
 
-So your **HTTP router** will look something like:
+Now what you are going to do is that you will make it look at the **HTTP path** in the **HTTP request** and return something different depending on what the **HTTP path** is. 
+
+The `.ServeHTTP()` method's 2nd parameter is a pointer to an `http.Request`. And `http.Request` tells you (among other things) what the **HTTP path** is. See:
+
+* [http.Request](https://pkg.go.dev/net/http#Request)
+* [ur.URL](https://pkg.go.dev/net/url#URL)
+
+Inside of this `.ServeHTTP()` method, use Go's `switch`-stament to return different responses depending on what the **HTTP path** is. For example:
+```go
+
+var path = ??? // <--- you have to figure out how to get the HTTP path.
+
+switch path {
+case "/hello":
+	fmt.Fprint(w, "Hello world!")
+	return
+case "/favorite/fruits":
+	fmt.Fprint(w, "apple banana cherry")
+	return
+default:
+	http.Error(w, "Not FOund", http.StatusNotFound)
+	return
+}
+return
+```
+
+Notice that I've made this return something for two paths — `/hello` and `/favorite/fruits"`.
+And for everything else it return a **404 Not Found** HTTP response.
+
+**Make this handle 3 other paths.**
+You decide what those paths are.
+And you decide what it returns for those paths.
+
+Once you have completed this, write a program to test this out, and make sure it works.
+
+## 14.3 ServeHTTP Switch Part 2
+
+Now make it so `/hello` tells you what **HTTP method** was used to request it. For example, change this:
+```go
+	fmt.Fprint(w, "Hello world!")
+```
+to this:
+```go
+	var method = ??? // <--- you have to figure out how to get the HTTP method.
+
+	fmt.Fprintf(w, "Hello world! method = %q", method)
+```
+
+The `http.Request` tells you what the **HTTP method** is. See:
+
+* [http.Request](https://pkg.go.dev/net/http#Request)
+
+Once you finish that, use the program you wrote to make sure it works.
+
+
+## 14.4. HTTP Router
+
+The **HTTP switch** we created is OK, but it is limited in some ways. Every time we want to add support for a new **HTTP path** we have to edit the `.ServeHTTP()` method.
+
+This is not ideal for many reasons. (One being a high degree of _coupling_.)
+
+What we want is a way of making our type support new **HTTP paths** without having to edit the code for the `.ServeHTTP()` method.
+
+So, you are going to create a new type:
 ```go
 package httprouter
 
 type Router struct {
 	//@TODO
 }
+```
 
+And just like the `HTTPSwitch` you created before, this too will be an `http.Handler`, so it will have a `.ServeHTTP()` method:
+```go
 func (receiver Router) ServeHTTP(http.ResponseWriter, *http.Request) {
 	//@TODO
 }
-
-//@TODO: more methods, etc
 ```
 
-And thus you might pass your **HTTP router** to `http.ListenAndServe()`; i.e.,:
+But, to make this so you can make it support **HTTP paths** on the fly, you are also going to give this new type this method:
+```go
+func (receiver Router) Register(handler http.Handler, path string) error {
+	//@TODO
+}
+```
+
+So that you can do things such as:
 ```go
 var router httprouter.Router
 
 // ...
 
-err := http.ListenAndServe(httpAddr, router)
+err := httprouter.Register(handleHello, "/hello")
+
+err := httprouter.Register(handleFavoriteFruit, "/favorite/fruits")
 ```
 
-## 14.3. Simple HTTP Router
+Once you finish that, use the program you wrote to make sure it works.
 
-First, you are going to create a _simple_ **HTTP router**.
-
-This _simple_ **HTTP router** will do things such as letting you specify what `http.Handler` should be called for a specific **HTTP path** + **HTTP method** pair.
-
-For example, something like this:
-
-* `GET /apple/banana/cherry` -> handler1
-* `PATCH /apple/banana/cherry` -> handler2
-* `GET /some/path` -> handler3
-* etc
-
-To do this, you are going to implement this interface:
-```go
-type HTTPRouter interface {
-	http.Handler
-
-	Delegate(handler http.Handler, path string) error
-	Register(handler http.Handler, path string, methods ...string) error
-}
-```
-
-➤ Did you notice that `http.Handler` was put inside of our `HTTPRouter` interface? That notation means that all the methods inside of `http.Handler` are also inside of `HTTPRouter`. I.e., this is equivalent:
-```go
-type HTTPRouter interface {
-	ServeHTTP(w http.ResponseWriter, r *http.Request)
-
-	Delegate(handler http.Handler, path string) error
-	Register(handler http.Handler, path string, methods ...string) error
-}
-```
-
-One would use this like:
-```go
-var router httprouter.Router
-
-// ...
-
-err := router.Register(handlerGETAccounts, "/v1/accounts", "GET")
-
-err := router.Register(handlerDELETEAccount, "/v1/accounts/{iid}", "DELETE")
-err := router.Register(handlerPATCHAccounts, "/v1/accounts/{iid}", "PATCH")
-err := router.Register(handlerPUTAccounts, "/v1/accounts/{iid}", "PUT")
-
-err := router.Register(handlerPUTAccounts, "/v1/users/{iid}")
-
-err := router.Delegate(handlerStaticImages, "/img/")
-```
-
-
-So, create a type that implements this interface.
-
-And then create a program that tests it.
-
-
-
-## 14.4. Convention Over Configuration
-
-We are going to add two more methods to our `HTTPRouter` interface:
-```go
-AutoDelegate(handler http.Handler) error
-AutoRegister(handler http.Handler, methods ...string) error
-```
-So that we have:
-```go
-type HTTPRouter interface {
-	http.Handler
-
-	AutoDelegate(handler http.Handler) error
-	AutoRegister(handler http.Handler, methods ...string) error
-
-	Delegate(handler http.Handler, path string) error
-	Register(handler http.Handler, path string, methods ...string) error
-}
-```
-
-What `AutoDelegate()` and `AutoRegister()` do is —
-
-`AutoDelegate()` is similar to `Delegate()` except that the caller does NOT specify the `path`, but instead `AutoDelegate()` infers the path where the source code file is in the project.
-
-`AutoRegister()` is similar to `Register()` except that the caller does NOT specify the `path`, but instead `AutoRegister()` infers the path where the source code file is in the project.
-
-Example usage would be:
-
-**#### TODO ####**
-
-So, modify your type so that it (also) implements these new methods.
-
-And then create a program that tests it.
