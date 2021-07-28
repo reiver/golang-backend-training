@@ -74,7 +74,16 @@ func (receiver Router) ServeHTTP(http.ResponseWriter, *http.Request) {
 //@TODO: more methods, etc
 ```
 
-## 14.2. Simple HTTP Router
+And thus you might pass your **HTTP router** to `http.ListenAndServe()`; i.e.,:
+```go
+var router httprouter.Router
+
+// ...
+
+err := http.ListenAndServe(httpAddr, router)
+```
+
+## 14.3. Simple HTTP Router
 
 First, you are going to create a _simple_ **HTTP router**.
 
@@ -87,20 +96,51 @@ For example, something like this:
 * `GET /some/path` -> handler3
 * etc
 
-## 14.1. Handler Interface
-
-Implement an **HTTP router** using this interface:
+To do this, you are going to implement this interface:
 ```go
 type HTTPRouter interface {
-	AutoDelegate(handler http.Handler) error
-	AutoRegister(handler http.Handler, methods ...string) error
+	http.Handler
 
 	Delegate(handler http.Handler, path string) error
 	Register(handler http.Handler, path string, methods ...string) error
 }
 ```
 
-## 14.2. Convention Over Configuration
+➤ Did you notice that `http.Handler` was put inside of our `HTTPRouter` interface? That notation means that all the methods inside of `http.Handler` are also inside of `HTTPRouter`. I.e., this is equivalent:
+```go
+type HTTPRouter interface {
+	ServeHTTP(w http.ResponseWriter, r *http.Request)
+
+	Delegate(handler http.Handler, path string) error
+	Register(handler http.Handler, path string, methods ...string) error
+}
+```
+
+One would use this like:
+```go
+var router httprouter.Router
+
+// ...
+
+err := router.Register(handlerGETAccounts, "/v1/accounts", "GET")
+
+err := router.Register(handlerDELETEAccount, "/v1/accounts/{iid}", "DELETE")
+err := router.Register(handlerPATCHAccounts, "/v1/accounts/{iid}", "PATCH")
+err := router.Register(handlerPUTAccounts, "/v1/accounts/{iid}", "PUT")
+
+err := router.Register(handlerPUTAccounts, "/v1/users/{iid}")
+
+err := router.Delegate(handlerStaticImages, "/img/")
+```
+
+
+So, create a type that implements this interface.
+
+And then create a program that tests it.
+
+
+
+## 14.4. Convention Over Configuration
 
 We are going to add two more methods to our `HTTPRouter` interface:
 ```go
@@ -110,6 +150,8 @@ AutoRegister(handler http.Handler, methods ...string) error
 So that we have:
 ```go
 type HTTPRouter interface {
+	http.Handler
+
 	AutoDelegate(handler http.Handler) error
 	AutoRegister(handler http.Handler, methods ...string) error
 
@@ -120,4 +162,14 @@ type HTTPRouter interface {
 
 What `AutoDelegate()` and `AutoRegister()` do is —
 
-`AutoDelegate()` is similar to `Delegate()` except that the caller does NOT specify the `path`, but instead `AutoDelegate()` infers the path
+`AutoDelegate()` is similar to `Delegate()` except that the caller does NOT specify the `path`, but instead `AutoDelegate()` infers the path where the source code file is in the project.
+
+`AutoRegister()` is similar to `Register()` except that the caller does NOT specify the `path`, but instead `AutoRegister()` infers the path where the source code file is in the project.
+
+Example usage would be:
+
+**#### TODO ####**
+
+So, modify your type so that it (also) implements these new methods.
+
+And then create a program that tests it.
