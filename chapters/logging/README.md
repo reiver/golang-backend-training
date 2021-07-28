@@ -188,10 +188,11 @@ func TestLogger_Logf(t *testing.T) {
 ```
 
 And, for example, if we are testing the `Punch()` function, we might name our test:
-```
+```go
 func TestPunch(t *testing.T) {
 	//@TODO
 }
+```
 
 And if we wanted to have 2 different tests for `the Log()` method we might have the following:
 ```go
