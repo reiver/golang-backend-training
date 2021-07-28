@@ -125,7 +125,7 @@ The `http.Request` tells you what the **HTTP method** is. See:
 
 Once you finish that, use the program you wrote to make sure it works.
 
-## 14.4. HTTP Router
+## 14.4. HTTP Router with Paths
 
 The **HTTP switch** we created is OK, but it is limited in some ways. Every time we want to add support for a new **HTTP path** we have to edit the `.ServeHTTP()` method.
 
@@ -173,7 +173,51 @@ interface {
 	ServeHTTP(w ResponseWriter, r *Request)
 	Register(handler http.Handler, path string) error
 }
-``
+```
 
 Once you finish that, use the program you wrote to make sure it works.
 
+## 14.5. HTTP Router with Paths and Methods
+
+Now lets change the `.Register()` method from this:
+```go
+	Register(handler http.Handler, path string) error
+```
+to this:
+```go
+	Register(handler http.Handler, path string, methods ...string) error
+```
+
+That new parameter is a list of **HTTP methods**.
+
+This will allow us to use different `http.Handler`s for each **HTTP method** if we want to. For example:
+```go
+err := router.Register(handleToyDELETE, "/toys", "DELETE")
+
+err := router.Register(handleToyGET, "/toys", "GET")
+
+err := router.Register(handleToyPATCH, "/toys", "PATCH")
+
+err := router.Register(handleToyPUT, "/toys", "PUT")
+```
+
+Notice that 4 different `http.Handler` were used in that example.
+
+We also want to make it so, if we want to use an `http.Handler` for all **HTTP methods**, then we can do that with:
+```go
+err := router.Register(handleSpice, "/spices")
+
+err := router.Register(handleBrick, "/bricks")
+```
+
+(Which is what we had in the last section.)
+
+So thus the interface becomes:
+```go
+interface {
+	ServeHTTP(w ResponseWriter, r *Request)
+	Register(handler http.Handler, path string, methods ...string) error
+}
+```
+
+Once you finish that, use the program you wrote to make sure it works.
