@@ -255,11 +255,22 @@ err := router.Register(handleForm, "/form", "GET", "POST")
 
 That's pretty powerful.
 
-## 14.7. Extra Points
+## 14.7. Convention Over Configuration
+
+Our `.Register()` method is powerful. But let's improve the user experience with it.
+
+Right now, we have to do things such as:
+```go
+err := router.Register(handleForm, "/the/form", "G)
+```
+
+
+
+## 14.8. Extra Points
 
 If you want to make your HTTP router even more powerful, add these features —
 
-### 14.7.1 Delegates
+### 14.8.1 Delegates
 
 Add this method:
 ```go
@@ -280,7 +291,7 @@ Where any path under `/images/` is handed off to `handleStaticImages`. For examp
 * `/images/team/marry.jpeg`
 * `/images/webbug/1x1.gif`
 
-### 14.7.2 Default
+### 14.8.2 Default
 
 Add this method:
 ```go
