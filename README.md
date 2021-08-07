@@ -65,10 +65,10 @@ For example:...
     * `main.go`
   * `section1.8/`
     * `cfg/` 
-      * `cfg/cfg.go`
+      * `cfg.go`
     * `go.mod`
     * `lib/`
-      * `lib/formletter.go`
+      * `formletter.go`
     * `main.go`
 * `chapter2/`
   * `section2.1/`
