@@ -33,6 +33,50 @@ A particular section can depend on the knowledge gained in previous sections. Yo
 
 The point of you going through this guide is that, after you complete each assignment, then **you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster**.
 
+## 
+
+In general you a creating a separate project for each section.
+
+I.e., most section's code will have their own `main.go` and `go.mod` file.
+
+For example:...
+
+* `chapter1/`
+  * `section1.1/`
+    * `go.mod`
+    * `main.go`
+  * `section1.4/`
+    * `go.mod`
+    * `main.go`
+  * `section1.5/`
+    * `go.mod`
+    * `main.go`
+  * `section1.6/`
+    * `go.mod`
+    * `main.go`
+  * `section1.7/`
+    * `cfg.go`
+    * `go.mod`
+    * `main.go`
+  * `section1.8/`
+    * `cfg.go`
+    * `formletter.go`
+    * `go.mod`
+    * `main.go`
+  * `section1.8/`
+    * `cfg/` 
+      * `cfg/cfg.go`
+    * `go.mod`
+    * `lib/`
+      * `lib/formletter.go`
+    * `main.go`
+* `chapter2/`
+  * `section2.1/`
+    * `go.mod`
+    * `main.go`
+  * ... etc etc etc ...
+* ... etc etc etc ...
+
 ## TABLE OF CONTENTS
 
 * [1. Outputting](chapters/outputting/README.md) ⟸ START HERE
