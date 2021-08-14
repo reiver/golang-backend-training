@@ -9,7 +9,9 @@ Let's make an **option type** for `int64`. So that this _int64 option type_ will
 Make this code work:
 
 ```
-type Int64Option struct {
+package int64option
+
+type Type struct {
     //@TODO
 }
 
