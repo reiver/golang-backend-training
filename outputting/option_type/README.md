@@ -73,7 +73,7 @@ If we were to use `%#v` on your **option type** then it would try to display the
 
 Make it so that this:
 ```
-var opt inp64option.Type = int64option.Nothing()
+var opt int64option.Type = int64option.Nothing()
 
 fmt.Printf("opt = %#v" , opt)
 ```
