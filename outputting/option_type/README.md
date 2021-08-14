@@ -136,10 +136,14 @@ For nothing:
 "nothing()"
 ```
 
+**And note that the JSON value for it is a string, not a number.**
+
 For something:
 ```
 "something(5)"
 ```
+
+**And note that the JSON value for it is a string, not a number.**
 
 Then write a program that demonstrates this being used.
 
