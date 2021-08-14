@@ -16,12 +16,12 @@ type Type struct {
 }
 
 // Nothing returns an option with nothing in it.
-func Nothing() Int64Option {
+func Nothing() Type {
     //@TODO
 }
 
 // Something returns an option with ‘ value’ in it.
-func Something(value int64) Int64Option {
+func Something(value int64) Type {
     //@TODO
 }
 
