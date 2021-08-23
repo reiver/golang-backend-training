@@ -93,6 +93,7 @@ For example:...
 * [12. Go Project Structure](chapters/golang-project-structure/README.md)
 * [13. HTTP Middleware](chapters/http_middleware/README.md)
 * [14. HTTP Router](chapters/http_router/README.md)
+* 15. HTTP Requests
 
 -----
 
