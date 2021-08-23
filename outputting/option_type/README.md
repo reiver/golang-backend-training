@@ -110,6 +110,38 @@ Hints:
 
 ### 10.3. Stringer
 
+The Go [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf), [fmt.Printf()](https://golang.org/pkg/fmt/#Printf), and [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf) functions have a **flag** that lets you see a **human-readable string representation of the value**.
+
+To do this we use the following flag:
+```
+%s
+```
+
+Make it so that this:
+```
+var opt int64option.Type = int64option.Nothing()
+
+fmt.Printf("opt = %#v" , opt)
+```
+Outputs:
+```
+opt = ⧼nothing⧽
+```
+
+And:
+```
+var opt int64option.Type = int64option.Something(42)
+
+fmt.Printf("opt = %#v" , opt)
+```
+Outputs:
+```
+opt = 42
+```
+
+Etc.
+
+
 Hints:
 * [fmt.Stringer](https://golang.org/pkg/fmt/#Stringer)
 
