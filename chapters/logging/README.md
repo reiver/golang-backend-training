@@ -404,7 +404,7 @@ type Logger interface {
 	
 	Prefix(...string) Logger
 	
-	Begin(...string) Logger
+	Begin() Logger
 	
 	End()
 	
