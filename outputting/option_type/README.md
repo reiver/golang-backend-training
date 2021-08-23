@@ -31,6 +31,12 @@ func (receiver Int64Option) Return() (int64, error) {
 }
 ```
 
+**NOTE** that one of the purposes of using an option type is so you can tell if nothing has been put into it or not. Thus code like this:
+```go
+var data int64option.Type
+```
+... (where no value has explicitly been assigned to it) must have a value of `int64option.Nothing()`.
+
 ### 10.2. GoStringer
 
 The Go [fmt.Fprintf()](https://golang.org/pkg/fmt/#Fprintf), [fmt.Printf()](https://golang.org/pkg/fmt/#Printf), and [fmt.Sprintf()](https://golang.org/pkg/fmt/#Sprintf) functions have a **flag** that lets you see the **Go-syntax representation of the value**.
