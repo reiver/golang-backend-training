@@ -86,6 +86,4 @@ Hints:
 
 -----
 
------
-
 [⏮](../database/README.md) [⏭️](../money/README.md)
