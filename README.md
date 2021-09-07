@@ -94,6 +94,9 @@ For example:...
 * [13. HTTP Middleware](chapters/http_middleware/README.md)
 * [14. HTTP Router](chapters/http_router/README.md)
 * 15. HTTP Requests
+* 16. File Uploads
+* 17. Database Patches
+* 18. API ACL
 
 -----
 
