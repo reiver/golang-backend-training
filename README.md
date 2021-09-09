@@ -97,6 +97,7 @@ For example:...
 * 16. File Uploads
 * 17. Database Patches
 * 18. API ACL
+* 19. Sessions
 
 -----
 
