@@ -98,6 +98,7 @@ For example:...
 * 17. Database Patches
 * 18. API ACL
 * 19. Sessions
+* 20. Deploying to Production
 
 -----
 
