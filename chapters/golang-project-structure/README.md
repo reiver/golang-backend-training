@@ -1,6 +1,6 @@
-# 11. Go Project Structure ([Golang Backend Training](../../README.md))
+# 12. Go Project Structure ([Golang Backend Training](../../README.md))
 
-## 11.1. Project Structure
+## 12.1. Project Structure
 
 If you have gone through this guide, then you have likely already discovered the suggested Go project structure. The different chapters of this guide touch on different aspets of the suggested Go project layout.
 
@@ -25,7 +25,7 @@ Also, if I am creating **backend** APIs, then I also create a couple additional 
   * `mdl/` (model libraries)
   * `srv/` (services)
 
-## 11.2. api/
+## 11.3. api/
 
 The `api/` directory is used to contain all the registered `http.Handler` 
 
@@ -63,7 +63,7 @@ Then in `api/` you would have:
         * `patch.go`
         * `put.go`
 
-## 11.3. arg/
+## 11.4. arg/
 
 Before `main()` is called, things start in the `args/` diretory.
 
@@ -143,8 +143,7 @@ func init() {
 }
 ```
 
-
-## 11.4. cfg/
+## 11.5. cfg/
 
 Next `cfg/` directory contains the configuration parameters. These are just simple constants.
 
@@ -211,7 +210,7 @@ func init() {
 
 Etc.
 
-## 11.5. lib/
+## 12.5. lib/
 
 The `lib/` diretory contain local libraries.
 
