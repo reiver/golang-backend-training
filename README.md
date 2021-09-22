@@ -99,6 +99,9 @@ For example:...
 * 18. API ACL
 * 19. Sessions
 * 20. Deploying to Production
+* 21. Go Routines
+* 22. Toilers
+* 23. Supervision Tree
 
 -----
 
