@@ -1,6 +1,6 @@
-## 6. Simple JSON
+## 7. Simple JSON
 
-### 6.1. Simple JSON
+### 7.1. Simple JSON
 
 Using the built-in `"encoding/json"`package to return an HTTP response whose payload is JSON can be quite verbose, with a lot of biolerplate looking code.
 
