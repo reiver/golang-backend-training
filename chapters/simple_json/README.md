@@ -119,7 +119,7 @@ func (receiver T) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}{
 		StatusCode: http.StatusNotFound,
 		StatusName: "Not Found",
-		Message:    "This is not the URI you are looking for.",
+		HumanMessage: "This is not the URI you are looking for.",
 		
 	})
 	if nil != err {
@@ -130,7 +130,16 @@ func (receiver T) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-That is a lot of code for just wanting to return a `404 Not Found` HTTP response with a JSON body.
+This will (logically) result in the following JSON code:
+```json
+{
+	"status_code":404,
+	"status_name":"Not Found",
+	"human_message": "This is not the URI you are looking for."
+}
+```
+
+That Go code is a lot of code for just wanting to return a `404 Not Found` HTTP response with a JSON body.
 
 Let's create a better **developer user-experience** (**UX**) for ourserlves, and anyone else who might use our code.
 
@@ -145,11 +154,11 @@ func (receiver T) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	data := struct{
 		StatusCode   int64  `json:"status_code"`
 		StatusName   string `json:"status_name"`
-		HumanMessage string `json:"message"`
+		HumanMessage string `json:"human_message"`
 	}{
 		StatusCode: http.StatusNotFound,
 		StatusName: "Not Found",
-		Message: "This is not the URI you are looking for.",
+		HumanMessage: "This is not the URI you are looking for.",
 	}
 
 	httpjson.NotFound(w, data)
@@ -158,7 +167,7 @@ func (receiver T) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-Note that the code that turned that Go data-type into JSON, and send the HTTP response is just this one line of code:
+Note that the code that turns that Go data-type into JSON, and sends the HTTP response is just this one line of code:
 ```go
 httpjson.NotFound(w, data)
 ```
