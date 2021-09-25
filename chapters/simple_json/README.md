@@ -382,6 +382,10 @@ Where you use your new `httpjson` package to return the result. I.e.,:
 httpjson.OK(w, result)
 ```
 
+Make this a full program with flags coming from the `arg/` directory.
+A logger configured and instantiated in the `srv/log/` directory.
+Etc.
+
 Hints:
 * [strconv.ParseInt()](https://golang.org/pkg/strconv/#ParseInt)
 * [strconv.ParseUint()](https://golang.org/pkg/strconv/#ParseUint)
