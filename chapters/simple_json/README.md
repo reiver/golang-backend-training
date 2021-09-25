@@ -219,7 +219,7 @@ So, for example, if your name is **“Joe Blow”**, and the year is **“2021�
 
 ## 7.6. README.md File
 
-Add a `README.md` file to you `go-log` repository.
+Add a `README.md` file to you `go-httpjson` repository.
 
 Make it include a URL to online documentation for your package, using https://pkg.go.dev/
 
