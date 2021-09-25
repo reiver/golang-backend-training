@@ -62,7 +62,7 @@ This will (logically) result in the following JSON code:
 
 ## 7.2. Marshal JSON — json.NewEncoder().Encode()
 
-One common time for writing code like this — marshaling data in Go into JSON — is when responding to an HTTP request.
+One common time that a Go programmer would write JSON marshaling code is when he or she is responding to an HTTP request.
 I.e., when creating an HTTP response.
 
 Since an `http.ResponseWriter` fits the `io.Writer` interface, instead of using `json.Marshal()` to turn data in Go into JSON, we could instead use `json.NewEncoder().Encode()` to simplify things for ourselves. So for a non-HTTP example of using `json.NewEncoder().Encode()`:
