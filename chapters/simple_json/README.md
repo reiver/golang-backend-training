@@ -83,7 +83,7 @@ if nil != err {
 	// ...
 }
 ```
-This will result in the following JSON code:
+This will (logically) result in the following JSON code:
 ```json
 {
 	"given_name":"Joe",
