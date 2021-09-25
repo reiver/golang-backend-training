@@ -367,7 +367,7 @@ You are now going to use your new `httpjson` package.
 You are going to create this API end point:
 
 ```
-/subtract?x=5&y=4
+/subtract?x=7&y=4
 ```
 
 Such that this would return this:
