@@ -38,7 +38,7 @@ This will Go code will (logically) result in the following JSON code:
 ```
 
 The `json.Marshal()` function can also marshal other Go datatypes.
-For example, here is the marshaling of a Go struct into JSON:
+For example, here is the marshaling of a Go `struct` into JSON:
 ```go
 p, err := := json.Marshal(struct{
 	Apple bool    `json:"aplpe"`
@@ -51,7 +51,7 @@ p, err := := json.Marshal(struct{
 	}
 })
 ```
-This will result in the following JSON code:
+This will (logically) result in the following JSON code:
 ```json
 {
 	"apple":true,
