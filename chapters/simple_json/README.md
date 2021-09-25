@@ -347,3 +347,32 @@ Hints:
 Notice that the online documentation for your package at https://pkg.go.dev/ doesn't have any descriptions or examples (like the documentation you see for many of the Go built-in packages).
 
 Add documentation to your `httpjson` package.
+
+## 7.10. Use It
+
+You are now going to use your new `httpjson` package.
+
+You are going to create this API end point:
+
+```
+/subtract?x=5&y=4
+```
+
+Such that this would return this:
+```json
+{
+	"result":3
+}
+```
+
+Where you use your new `httpjson` package to return the result. I.e.,:
+```go
+httpjson.OK(w, result)
+```
+
+Hints:
+* [strconv.ParseInt()](https://golang.org/pkg/strconv/#ParseInt)
+* [strconv.ParseUint()](https://golang.org/pkg/strconv/#ParseUint)
+* [import "github.com/reiver/go-simplehttp"](https://pkg.go.dev/github.com/reiver/go-simplehttp)
+
+-----
