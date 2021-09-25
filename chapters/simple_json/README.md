@@ -238,14 +238,14 @@ package httpjson
 OK(http.ResponseWriter, ...interface{})       // 200 OK
 Accepted(http.ResponseWriter, ...interface{}) // 202 Accepted
 
-BadRequest(http.ResponseWriter, ...interface{})                   // 400 Bad Request
-Unauthorized(http.ResponseWriter, ...interface{})                 // 401 Unauthorized
+BadRequest(http.ResponseWriter, ...interface{})       // 400 Bad Request
+Unauthorized(http.ResponseWriter, ...interface{})     // 401 Unauthorized
 
-Forbidden(http.ResponseWriter, ...interface{})                    // 403 Forbidden
-NotFound(http.ResponseWriter, ...interface{})                     // 404 Not Found
-MethodNotAllowed(http.ResponseWriter, ...interface{})             // 405 Method Not Allowed
+Forbidden(http.ResponseWriter, ...interface{})        // 403 Forbidden
+NotFound(http.ResponseWriter, ...interface{})         // 404 Not Found
+MethodNotAllowed(http.ResponseWriter, ...interface{}) // 405 Method Not Allowed
 
-InternalServerError(http.ResponseWriter, ...interface{})     // 500 Internal Server Error
+InternalServerError(http.ResponseWriter, ...interface{}) // 500 Internal Server Error
 ```
 
 Although long-term we are going to implement all of these:
