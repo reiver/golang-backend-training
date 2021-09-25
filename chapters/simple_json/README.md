@@ -25,7 +25,10 @@ var data map[string]interface{} = map[string]interface{}{
 
 p, err := json.Marshal(data)
 ```
-This will result in the following JSON code:
+
+In this code `p` is a `[]byte` that has the JSON in it.
+
+This will Go code will result in the following JSON code:
 ```json
 {
 	"apple":"ONE",
