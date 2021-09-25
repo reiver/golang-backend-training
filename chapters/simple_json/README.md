@@ -342,3 +342,8 @@ Hints:
 * [import "testing"](https://golang.org/pkg/testing/)
 * [strings.Builder](https://golang.org/pkg/strings/#Builder)
 
+## 7.9. Documentation
+
+Notice that the online documentation for your package at https://pkg.go.dev/ doesn't have any descriptions or examples (like the documentation you see for many of the Go built-in packages).
+
+Add documentation to your `httpjson` package.
