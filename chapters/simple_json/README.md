@@ -1,4 +1,4 @@
-# 7. Simple JSON
+# 7. Simple JSON ([Golang Backend Training](../../README.md))
 by [Charles Iliya Krempeaux](http://changelog.ca/)
 -----
 
