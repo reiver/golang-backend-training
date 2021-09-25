@@ -283,9 +283,9 @@ GatewayTimeout(http.ResponseWriter, ...interface{})          // 504 Gateway Time
 HTTPVersionNotSupported(http.ResponseWriter, ...interface{}) // 505 HTTP Version Not Supported
 ```
 
-But you can implement functions from the full-list whenever you end up needing them.)
+But you can implement functions from this full-list whenever you end up needing them.
 
-So, implement the 8 functions in the first list as `package httpjson`.
+So, for now, implement the 8 functions in the first list as `package httpjson`.
 
 # 7.8. Unit Testing
 
