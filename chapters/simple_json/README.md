@@ -235,52 +235,52 @@ And, for now, you are going to implement the following functions:
 ```go
 package httpjson
 
-OK(http.ResponseWriter, ...interface{})       // 200 OK
-Accepted(http.ResponseWriter, ...interface{}) // 202 Accepted
+OK(http.ResponseWriter, interface{})       // 200 OK
+Accepted(http.ResponseWriter, interface{}) // 202 Accepted
 
-BadRequest(http.ResponseWriter, ...interface{})       // 400 Bad Request
-Unauthorized(http.ResponseWriter, ...interface{})     // 401 Unauthorized
+BadRequest(http.ResponseWriter, interface{})       // 400 Bad Request
+Unauthorized(http.ResponseWriter, interface{})     // 401 Unauthorized
 
-Forbidden(http.ResponseWriter, ...interface{})        // 403 Forbidden
-NotFound(http.ResponseWriter, ...interface{})         // 404 Not Found
-MethodNotAllowed(http.ResponseWriter, ...interface{}) // 405 Method Not Allowed
+Forbidden(http.ResponseWriter, interface{})        // 403 Forbidden
+NotFound(http.ResponseWriter, interface{})         // 404 Not Found
+MethodNotAllowed(http.ResponseWriter, interface{}) // 405 Method Not Allowed
 
-InternalServerError(http.ResponseWriter, ...interface{}) // 500 Internal Server Error
+InternalServerError(http.ResponseWriter, interface{}) // 500 Internal Server Error
 ```
 
 Although long-term we are going to implement all of these:
 ```go
 package httpjson
 
-OK(http.ResponseWriter, ...interface{})       // 200 OK
-Accepted(http.ResponseWriter, ...interface{}) // 202 Accepted
+OK(http.ResponseWriter, interface{})       // 200 OK
+Accepted(http.ResponseWriter, interface{}) // 202 Accepted
 
-BadRequest(http.ResponseWriter, ...interface{})                   // 400 Bad Request
-Unauthorized(http.ResponseWriter, ...interface{})                 // 401 Unauthorized
-PaymentRequired(http.ResponseWriter, ...interface{})              // 402 Payment Required
-Forbidden(http.ResponseWriter, ...interface{})                    // 403 Forbidden
-NotFound(http.ResponseWriter, ...interface{})                     // 404 Not Found
-MethodNotAllowed(http.ResponseWriter, ...interface{})             // 405 Method Not Allowed
-NotAcceptable(http.ResponseWriter, ...interface{})                // 406 Not Acceptable
-ProxyAuthRequired(http.ResponseWriter, ...interface{})            // 407 Proxy Authentication Required
-RequestTimeout(http.ResponseWriter, ...interface{})               // 408 Request Timeout
-Conflict(http.ResponseWriter, ...interface{})                     // 409 Conflict
-Gone(http.ResponseWriter, ...interface{})                         // 410 Gone
-LengthRequired(http.ResponseWriter, ...interface{})               // 411 Length Required
-PreconditionFailed(http.ResponseWriter, ...interface{})           // 412 Precondition Failed
-RequestEntityTooLarge(http.ResponseWriter, ...interface{})        // 413 Request Entity Too Large
-RequestURITooLong(http.ResponseWriter, ...interface{})            // 414 Request-URI Too Long
-UnsupportedMediaType(http.ResponseWriter, ...interface{})         // 415 Unsupported Media Type
-RequestedRangeNotSatisfiable(http.ResponseWriter, ...interface{}) // 416 Requested Range Not Satisfiable
-ExpectationFailed(http.ResponseWriter, ...interface{})            // 417 Expectation Failed
-Teapot(http.ResponseWriter, ...interface{})                       // 418 I'm a teapot
+BadRequest(http.ResponseWriter, interface{})                   // 400 Bad Request
+Unauthorized(http.ResponseWriter, interface{})                 // 401 Unauthorized
+PaymentRequired(http.ResponseWriter, interface{})              // 402 Payment Required
+Forbidden(http.ResponseWriter, interface{})                    // 403 Forbidden
+NotFound(http.ResponseWriter, interface{})                     // 404 Not Found
+MethodNotAllowed(http.ResponseWriter, interface{})             // 405 Method Not Allowed
+NotAcceptable(http.ResponseWriter, interface{})                // 406 Not Acceptable
+ProxyAuthRequired(http.ResponseWriter, interface{})            // 407 Proxy Authentication Required
+RequestTimeout(http.ResponseWriter, interface{})               // 408 Request Timeout
+Conflict(http.ResponseWriter, interface{})                     // 409 Conflict
+Gone(http.ResponseWriter, interface{})                         // 410 Gone
+LengthRequired(http.ResponseWriter, interface{})               // 411 Length Required
+PreconditionFailed(http.ResponseWriter, interface{})           // 412 Precondition Failed
+RequestEntityTooLarge(http.ResponseWriter, interface{})        // 413 Request Entity Too Large
+RequestURITooLong(http.ResponseWriter, interface{})            // 414 Request-URI Too Long
+UnsupportedMediaType(http.ResponseWriter, interface{})         // 415 Unsupported Media Type
+RequestedRangeNotSatisfiable(http.ResponseWriter, interface{}) // 416 Requested Range Not Satisfiable
+ExpectationFailed(http.ResponseWriter, interface{})            // 417 Expectation Failed
+Teapot(http.ResponseWriter, interface{})                       // 418 I'm a teapot
 
-InternalServerError(http.ResponseWriter, ...interface{})     // 500 Internal Server Error
-NotImplemented(http.ResponseWriter, ...interface{})          // 501 Not Implemented
-BadGateway(http.ResponseWriter, ...interface{})              // 502 Bad Gateway
-ServiceUnavailable(http.ResponseWriter, ...interface{})      // 503 Service Unavailable
-GatewayTimeout(http.ResponseWriter, ...interface{})          // 504 Gateway Timeout
-HTTPVersionNotSupported(http.ResponseWriter, ...interface{}) // 505 HTTP Version Not Supported
+InternalServerError(http.ResponseWriter, interface{})     // 500 Internal Server Error
+NotImplemented(http.ResponseWriter, interface{})          // 501 Not Implemented
+BadGateway(http.ResponseWriter, interface{})              // 502 Bad Gateway
+ServiceUnavailable(http.ResponseWriter, interface{})      // 503 Service Unavailable
+GatewayTimeout(http.ResponseWriter, interface{})          // 504 Gateway Timeout
+HTTPVersionNotSupported(http.ResponseWriter, interface{}) // 505 HTTP Version Not Supported
 ```
 
 But you can implement functions from this full-list whenever you end up needing them.
