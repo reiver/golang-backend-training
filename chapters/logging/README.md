@@ -250,6 +250,10 @@ At the beginning of the program log:
 
 At the end of the program log:
 > END
+(Of better yet, use Go's `defer` keyword for _END_.)
+
+And in the middle of the program, log:
+> I am here!
 
 ## 4.7. Verbose
 
