@@ -309,11 +309,45 @@ apple: banana: cherry: Hello world!
 apple: banana: cherry: date: I am here!
 ```
 
-## 4.9. Func Name
+## 4.9. Begin Prefix
 
-Modify the logger you created so that when you call `.Begin()` store the function the function it was called in.
+Modify the `.Begin()` function you created before so that it accepts the same type of parameters as `.Prefix()`; i.e.,:
+```go
+func (receiver Logger) Begin(newprefix ...string) Logger {
+	//@TODO
+}
+```
 
-And then when `Log()` and `Logf()` and `.End()` are called, the function name comes before the prefix.
+So that if we had:
+```go
+package main
+
+// ...
+
+func main() {
+	lg := log.Begin("apple", "banana", "cherry")
+
+	lg.Log("Hello world!")
+	
+	plog := lg.Prefix("date")
+	
+	plog.Log("I am here!")
+
+	log.End()
+}
+```
+It would output something similar to:
+```
+apple: banana: cherry: BEGIN
+apple: banana: cherry: Hello world!
+apple: banana: cherry: date: I am here!
+apple: banana: cherry: END
+```
+
+
+## 4.10. Func Name
+
+Modify the logger you created so that when you call `.Begin()` it figures out what function it was called it, and stores the that information in the **new** logger it created, so that when `Log()`, `Logf()` and `.End()` are called using it, the function name comes before the prefix.
 
 So, for example, this program:
 ```go
@@ -358,7 +392,7 @@ Hints:
 * [runtime.Func.Name()](https://golang.org/pkg/runtime/#Func.Name)
 
 
-## 4.10. Timer
+## 4.11. Timer
 
 We want to make it so calling `.End()` will also output the value of a timer that was started when we called `.Begin()`
 
@@ -408,7 +442,7 @@ Hints:
 * [time.Time](https://golang.org/pkg/time/#Time)
 * [time.Now()](https://golang.org/pkg/time/#Now)
 
-## 4.11. Leveled Logger
+## 4.12. Leveled Logger
 
 Sometimes it is useful to have a logger that can categorize its logs, and turn on and off the different categories of logs.
 
@@ -460,11 +494,11 @@ Use the `Level()` method to handle these levels.
 
 Also, make it so anything above level 6 — 7, 8, 9, 10, etc … — acts the same as level 6. I.e., all the logs are on.
 
-## 4.12. Leveled Logger Unit Tests
+## 4.13. Leveled Logger Unit Tests
 
 Add to your unit tests to cover all these new methods.
 
-## 4.13. Leveled Logger Demonstration
+## 4.14. Leveled Logger Demonstration
 
 Write a program that uses your leveled logger, and use each level in the appropriate way.
 
@@ -530,7 +564,7 @@ If an error occurred then use `Error()` & `Errorf()`; for example:
 	lg.End()
 ```
 
-## 4.14. Logger Verbosity
+## 4.15. Logger Verbosity
 
 Make it so your program can turn on an off different levels of logs using _logger verbosity flags_.
 
@@ -612,7 +646,7 @@ func MyFunction() {
 ```
 
 
-## 4.15. License
+## 4.16. License
 
 Add a `LICENSE` file to your `go-log` repository.
 
@@ -638,14 +672,14 @@ So, for example, if your name is **“Joe Blow”**, and the year is **“2021�
 > 
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## 4.16. README.md
+## 4.17. README.md
 
 Add a `README.md` file to you `go-log` repository.
 
 Make it include a URL to online documentation for your package, using https://pkg.go.dev/
 
 
-## 4.17. Documentation
+## 4.18. Documentation
 
 Notice that the online documentation for your package at https://pkg.go.dev/ doesn't have any descriptions or examples (like the documentation you see for many of the Go built-in packages).
 
