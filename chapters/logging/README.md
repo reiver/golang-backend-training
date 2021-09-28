@@ -77,7 +77,7 @@ func (receiver Logger) End() {
 }
 ```
 
-These other two methods should use the `Log()` method (you created before) to do their outputting.
+These other two methods should use the `.Log()` method (you created before) to do their outputting.
 
 
 Hints:
