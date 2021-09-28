@@ -684,6 +684,8 @@ Make it include a URL to online documentation for your package, using https://pk
 
 Notice that the online documentation for your package at https://pkg.go.dev/ doesn't have any descriptions or examples (like the documentation you see for many of the Go built-in packages).
 
+(Contrast that with a package such as Go's built-in `"net/http"` package which has a lot of documentation: https://pkg.go.dev/net/http )
+
 
 Add documentation to your `log` package.
 
