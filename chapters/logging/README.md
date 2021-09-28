@@ -56,7 +56,7 @@ type Logger struct {
 }
 ```
 
-This logger will provide methods to output text BUT you will write it in a way that you have the ability to turn on and off the outputted text, and decide where you want the output to go.
+This logger will provide methods to output text BUT **you will write it in a way that you have the ability to turn on and off the outputted text, and decide where you want the output to go**.
 
 The first method your logger will have is:
 ```
