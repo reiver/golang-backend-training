@@ -8,7 +8,7 @@ Loggers let programmers record information about events that happen when the pro
 
 So, for example:
 ```go
-log.Alert("Hello world!")
+log.Alert("The super-user just logged in!")
 ```
 
 Typically the programmer is reading the logs, not the end user. I.e., the logs are there to help **you**!
