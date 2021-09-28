@@ -102,6 +102,7 @@ For example:...
 * 21. Go Routines
 * 22. Toilers
 * 23. Supervision Tree
+* 24. runtime.SetFinalizer()
 
 -----
 
