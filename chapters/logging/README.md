@@ -311,7 +311,9 @@ apple: banana: cherry: date: I am here!
 
 ## 4.9. Func Name
 
-Modify the logger you created so that your `Log()` and `Logf()` functions prefix their output with the name of the function they are called in.
+Modify the logger you created so that when you call `.Begin()` store the function the function it was called in.
+
+And then when `Log()` and `Logf()` and `.End()` are called, the function name comes before the prefix.
 
 So, for example, this program:
 ```go
@@ -320,14 +322,35 @@ package main
 // ...
 
 func main() {
-	log.Log("Hello world!")
+	log := logsrv.Begin().Prefix("apple", "banana", "cherry")
+	defer log.End()
+	
+	log.Log("Howdy!")
 }
 ```
 Would output something similar to:
 ```
 main: BEGIN
+main: Howdy!
 main: END
 ```
+
+If you are confused by the `defer` statement, that program is similar to this one:
+```go
+package main
+
+// ...
+
+func main() {
+	log := logsrv.Begin().Prefix("apple", "banana", "cherry")
+	
+	log.Log("Howdy!")
+
+	log.End()
+}
+```
+(Note that `log.End()` moved to the bottom of the `main()` function.)
+
 
 Hints:
 * [runtime.Callers()](https://golang.org/pkg/runtime/#Callers)
