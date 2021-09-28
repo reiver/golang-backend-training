@@ -552,12 +552,31 @@ You code layout will have:
 * arg/
   * arg.go 
 * srv/
-  * logger/
-    * logger.go  
+  * log/
+    * log.go  
 
 These `-v`, `-vv`, `-vvv`, `-vvvv`, `-vvvvv`, and `-vvvvvv` flags will be handled in `arg/arg.go`
 
-`srv/logger/logger.go` will import that `flags` package to figure out what level it should set itself to.
+`srv/log/log.go` will import that `flags` package to figure out what level it should set itself to.
+
+The `srv/log` package should only export on thing, a `Begin()` function — i..,:
+```go
+logsrv.Begin()
+```
+So that you can do stuff such as:
+```go
+func MyFunction() {
+	log := logsrv.Begin()
+	defer log.End()
+	
+	// ...
+	
+	log.Alert("Hello world!")
+	
+	// ...
+}
+```
+
 
 ## 4.15. License
 
