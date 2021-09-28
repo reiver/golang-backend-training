@@ -85,6 +85,7 @@ Hints:
 * [os.Stdout](https://golang.org/pkg/os/#Stdout) — `os.Stdout` is where `fmt.Printf()` & `fmt.Println()` send their output.
 * [ioutil.Discard](https://golang.org/pkg/io/ioutil/#Discard)
 * [io.Writer](https://golang.org/pkg/io/#Writer)
+* [Quick-and-Dirty Debugging in Golang](https://changelog.ca/log/2015/03/09/golang)
 
 ## 4.2. Hello {NAME} with logging
 
