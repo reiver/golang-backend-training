@@ -7,6 +7,8 @@ by [Charles Iliya Krempeaux](http://changelog.ca/)
 Create a Go program that outputs the text:
 > Hello world!
 
+➤ Recall from _chapter 0_ that we will put the code for section 1.1 into a folder structure like this: `chapter1/section1.1/main.go`
+
 Use the following **hints** to help you learn the basics of the Go programming language, and learn how output text (such as `Hello world!`.)
 
 Hints:
