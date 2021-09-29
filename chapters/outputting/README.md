@@ -29,6 +29,8 @@ go run main.go
 Did it output?:
 > Hello world!
 
+➤ Note that, even though `go run` can be useful, usually we don't use `go run` — usually we use `go build` — which we will talk next.
+
 ## 1.3. go build
 
 Using `go run` can be quick when we are able to use it.
