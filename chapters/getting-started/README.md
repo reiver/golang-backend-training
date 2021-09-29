@@ -4,7 +4,7 @@ by [Charles Iliya Krempeaux](http://changelog.ca/)
 
 You are about to get started with the Go backend training guide.
 
-This chapter will cover some important information you need to know before you get started.
+This chapter will cover some important information you need to know _before_ you get started.
 
 ## Do It All
 
