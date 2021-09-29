@@ -211,6 +211,10 @@ After you have done that, do a `go build`, and make sure you get the same output
 
 ➤ Any non-trivial Go program that you create will likely have a `cfg/` & `lib/` sub-package directories. You are probably better off just creating these from the get-go.
 
+## To Be Continued …
+
+Let's continue to the next chapter …
+
 -------------------------
 
 [⏮](../../README.md) [⏭️](../flagging/README.md)
