@@ -33,54 +33,11 @@ A particular section can depend on the knowledge gained in previous sections. Yo
 
 The point of you going through this guide is that, after you complete each assignment, then **you show your work to someone more experienced with the Go programming language, so that they can give you feedback, tips, etc, so you can learn Go faster**.
 
-## 
-
-In general you a creating a separate project for each section.
-
-I.e., most section's code will have their own `main.go` and `go.mod` file.
-
-For example:...
-
-* `chapter1/`
-  * `section1.1/`
-    * `go.mod`
-    * `main.go`
-  * `section1.4/`
-    * `go.mod`
-    * `main.go`
-  * `section1.5/`
-    * `go.mod`
-    * `main.go`
-  * `section1.6/`
-    * `go.mod`
-    * `main.go`
-  * `section1.7/`
-    * `cfg.go`
-    * `go.mod`
-    * `main.go`
-  * `section1.8/`
-    * `cfg.go`
-    * `formletter.go`
-    * `go.mod`
-    * `main.go`
-  * `section1.8/`
-    * `cfg/` 
-      * `cfg.go`
-    * `go.mod`
-    * `lib/`
-      * `formletter.go`
-    * `main.go`
-* `chapter2/`
-  * `section2.1/`
-    * `go.mod`
-    * `main.go`
-  * ... etc etc etc ...
-* ... etc etc etc ...
 
 ## TABLE OF CONTENTS
 
-* [0. Getting Started](chapters/getting-started/README.md)
-* [1. Outputting](chapters/outputting/README.md) ⟸ START HERE
+* [0. Getting Started](chapters/getting-started/README.md) ⟸ START HERE
+* [1. Outputting](chapters/outputting/README.md)
 * [2. Flagging](chapters/flagging/README.md)
 * [3. Interfaces](chapters/interfaces/README.md)
 * [4. Logging](chapters/logging/README.md)
@@ -108,5 +65,5 @@ For example:...
 
 -----
 
-[⏭️](chapters/outputting/README.md) ⟸ CLICK HERE
+[⏭️](chapters/getting-started/README.md) ⟸ CLICK HERE
 
