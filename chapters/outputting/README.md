@@ -7,6 +7,8 @@ by [Charles Iliya Krempeaux](http://changelog.ca/)
 Create a Go program that outputs the text:
 > Hello world!
 
+Use the following **hints** to help you learn the basics of the Go programming language, and learn how output text (such as `Hello world!`.)
+
 Hints:
 * [fmt.Println()](https://golang.org/pkg/fmt/#Println)
 * [installing Go](https://golang.org/doc/install)
