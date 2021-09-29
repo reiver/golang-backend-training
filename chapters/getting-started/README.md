@@ -1,5 +1,6 @@
 # Getting Started ([Golang Backend Training](../../README.md))
 by [Charles Iliya Krempeaux](http://changelog.ca/)
+
 -----
 
 You are about to get started with the Go backend training guide.
