@@ -79,6 +79,7 @@ For example:...
 
 ## TABLE OF CONTENTS
 
+* [0. Getting Started](chapters/getting-started/README.md)
 * [1. Outputting](chapters/outputting/README.md) ⟸ START HERE
 * [2. Flagging](chapters/flagging/README.md)
 * [3. Interfaces](chapters/interfaces/README.md)
