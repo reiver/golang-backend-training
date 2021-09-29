@@ -1,4 +1,4 @@
-# 1. Getting Started ([Golang Backend Training](../../README.md))
+# 0. Getting Started ([Golang Backend Training](../../README.md))
 by [Charles Iliya Krempeaux](http://changelog.ca/)
 -----
 
