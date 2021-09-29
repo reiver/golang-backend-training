@@ -1,4 +1,6 @@
 # 1. Outputting ([Golang Backend Training](../../README.md))
+by [Charles Iliya Krempeaux](http://changelog.ca/)
+
 
 ## 1.1. Hello world!
 
