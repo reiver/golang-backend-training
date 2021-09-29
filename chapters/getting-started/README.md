@@ -1,6 +1,8 @@
-# 1. Outputting ([Golang Backend Training](../../README.md))
+# 1. Getting Started ([Golang Backend Training](../../README.md))
 by [Charles Iliya Krempeaux](http://changelog.ca/)
 -----
+
+You are about to get started with the **Go backend training** guide.
 
 As you read through this **guide**, you will be writing code.
 
