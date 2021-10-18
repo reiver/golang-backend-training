@@ -121,7 +121,7 @@ Make it so that this:
 ```
 var opt int64option.Type = int64option.Nothing()
 
-fmt.Printf("opt = %#v" , opt)
+fmt.Printf("opt = %s" , opt)
 ```
 Outputs:
 ```
