@@ -33,7 +33,7 @@ func (receiver LogHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 (Note that I've tried to keep things simpler in this `ServeHTTP()` to make it easier to understand. A production ready `ServeHTTP()` method would have more.)
 
 
-**Make Go HTTP middleware that takes an `http.Request**, if it does NOT have an `X-HTTP-Method-Override` HTTP request header, then it just passes that `http.Request` to the sub- `http.Handler`, but if it does indeed have an `X-HTTP-Method-Override` HTTP request header
+**Make Go HTTP middleware that takes an `http.Request`**, if it does NOT have an `X-HTTP-Method-Override` HTTP request header, then it just passes that `http.Request` to the sub- `http.Handler`, but if it does indeed have an `X-HTTP-Method-Override` HTTP request header
 
 **Pay close attention to what is happening.**
 
