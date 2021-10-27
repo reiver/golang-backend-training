@@ -365,9 +365,9 @@ func main() {
 ```
 Would output something similar to:
 ```
-main: BEGIN
-main: Howdy!
-main: END
+main: apple: banana: cherry: BEGIN
+main: apple: banana: cherry: Howdy!
+main: apple: banana: cherry: END
 ```
 
 If you are confused by the `defer` statement, that program is similar to this one:
