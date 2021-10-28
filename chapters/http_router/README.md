@@ -264,6 +264,14 @@ Right now, we have to do things such as:
 err := router.Register(handleForm, "/the/form", "G)
 ```
 
+Your router should have (at least) these methods:
+```go
+router.Register(handler http.Handler)
+router.RegisterPath(handler http.Handler, path string)
+router.RegisterPathMethods(handler http.Handler, path string, methods ...string)
+
+```
+
 
 
 ## 14.8. Extra Points
