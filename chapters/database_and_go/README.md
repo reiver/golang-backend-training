@@ -1,6 +1,6 @@
-## 9. Database & Go ([Golang Backend Training](../../README.md))
+## 11. Database & Go ([Golang Backend Training](../../README.md))
 
-### 9.1. Browse
+### 11.1. Browse
 
 Write a Go program that connects to the database server you previously installed and gets and outputs all the data your from the table you previously created.
 
@@ -9,7 +9,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-### 9.2. Read
+### 11.2. Read
 
 Write a Go program that connects to the database server you previously installed and gets a single row from the table you previously created.
 
@@ -25,7 +25,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-### 9.3. Create
+### 11.3. Create
 
 Write a Go program that connects to the database server you previously installed and creates a single row from the table you previously created.
 
@@ -48,7 +48,7 @@ Hints:
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 * [pq Queries](https://pkg.go.dev/github.com/lib/pq#hdr-Queries)
 
-### 9.4. Update
+### 11.4. Update
 
 Write a Go program that connects to the database server you previously installed and updates a single row from the table you previously created.
 
@@ -66,7 +66,7 @@ Hints:
 * [import _ "github.com/lib/pq"](https://github.com/lib/pq)
 * [Go "database/sql" tutorial](http://go-database-sql.org/)
 
-### 9.5. Delete
+### 11.5. Delete
 
 Write a Go program that connects to the database server you previously installed and delete a single row from the table you previously created.
 
