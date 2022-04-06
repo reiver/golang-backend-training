@@ -26,6 +26,7 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [6. JSON](chapters/json/README.md)
 * [7. Simple JSON](chapters/simple_json/README.md)
 * [8. HTTP Router](chapters/http_router/README.md)
+* Embed
 * [9. Option Types](#10-option-types)
 * [10. Database](chapters/database/README.md)
 * 11. Database Patches
@@ -38,6 +39,7 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * 18. File Uploads
 * 19. API ACL
 * 20. Sessions
+* Deployment Tools
 * 21. Deploying to Production
 * 22. Go Routines
 * 23. Toilers
@@ -46,6 +48,10 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * 26. Gemtext Parser
 * 27. Gemini Protocol Client
 * 28. Gemini Protocol Server
+* UTF-8 Parser
+* Proxy
+* Code Reviews
+* Event Sourcing
 * 29. Spam Detection
 * 30. Collaborative Filtering/Recommendation
 * 31. Text/Sentiment Classification
