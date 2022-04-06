@@ -391,5 +391,20 @@ Hints:
 * [strconv.ParseUint()](https://golang.org/pkg/strconv/#ParseUint)
 * [import "github.com/reiver/go-simplehttp"](https://pkg.go.dev/github.com/reiver/go-simplehttp)
 
+## 7.11 Input
+
+Now create a method to handle JSON input.
+
+You are going to implement:
+
+```go
+httpjson.Unmarshal(dst interface{}, r *http.Request) error
+```
+
+This will:
+* confirm that the HTTP request's `Content-Type` is `application/json`,
+* get HTTP request's payload from `http.Request.Body`,
+* and then use `json.Unmarshal()` to try to unmarhsal it into `dst`
+
 -----
 [⏮](../json/README.md) [⏭️](../http_router/README.md)
