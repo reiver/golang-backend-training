@@ -45,10 +45,10 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * 23. Toilers
 * 24. Supervision Tree
 * 25. runtime.SetFinalizer()
+* UTF-8 Parser
 * 26. Gemtext Parser
 * 27. Gemini Protocol Client
 * 28. Gemini Protocol Server
-* UTF-8 Parser
 * Proxy
 * Code Reviews
 * Event Sourcing
