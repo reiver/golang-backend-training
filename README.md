@@ -25,11 +25,11 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [5. Web Serving](chapters/web_serving/README.md)
 * [6. JSON](chapters/json/README.md)
 * [7. Simple JSON](chapters/simple_json/README.md)
+* [11. Option Types](#10-option-types)
 * [8. Database](chapters/database/README.md)
 * [9. Database & Go](chapters/database_and_go/README.md)
 * Types for Database IDs
 * [10. Money](chapters/money/README.md)
-* [11. Option Types](#10-option-types)
 * [12. Go Project Structure](chapters/golang-project-structure/README.md)
 * [13. HTTP Middleware](chapters/http_middleware/README.md)
 * [14. HTTP Router](chapters/http_router/README.md)
