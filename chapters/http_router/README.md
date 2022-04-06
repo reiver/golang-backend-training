@@ -1,10 +1,10 @@
-# 14. HTTP Router ([Golang Backend Training](../../README.md))
+# 8. HTTP Router ([Golang Backend Training](../../README.md))
 
 In this chapter you are going to create an **HTTP router**.
 
 But we will need to work up to it. So there will be a number of steps before we get there.
 
-## 14.1. http.ListenAndServe()
+## 8.1. http.ListenAndServe()
 
 Take a look at this code:
 ```go
@@ -55,7 +55,7 @@ But you are going to do it in multiple steps.
 First creating a simple **HTTP router**.
 And then adding more and more sophistication to it, until you have something powerful.
 
-## 14.2 ServeHTTP Switch Part 1
+## 8.2 ServeHTTP Switch Part 1
 
 The first thing you are going to do is create a new type:
 ```go
@@ -106,7 +106,7 @@ And you decide what it returns for those paths.
 
 Once you have completed this, write a program to test this out, and make sure it works.
 
-## 14.3 ServeHTTP Switch Part 2
+## 8.3 ServeHTTP Switch Part 2
 
 Now make it so `/hello` tells you what **HTTP method** was used to request it. For example, change this:
 ```go
@@ -125,7 +125,7 @@ The `http.Request` tells you what the **HTTP method** is. See:
 
 Once you finish that, use the program you wrote to make sure it works.
 
-## 14.4. HTTP Router with Paths
+## 8.4. HTTP Router with Paths
 
 The **HTTP switch** we created is OK, but it is limited in some ways. Every time we want to add support for a new **HTTP path** we have to edit the `.ServeHTTP()` method.
 
@@ -177,7 +177,7 @@ interface {
 
 Once you finish that, use the program you wrote to make sure it works.
 
-## 14.5. HTTP Router with Paths and Methods
+## 8.5. HTTP Router with Paths and Methods
 
 Now lets change the `.Register()` method from this:
 ```go
@@ -222,7 +222,7 @@ interface {
 
 Once you finish that, use the program you wrote to make sure it works.
 
-## 14.6. Summary
+## 8.6. Summary
 
 So far the HTTP router you created can hand off **HTTP requests** to an `http.Handler` based on an **HTTP path**. For example:
 ```go
@@ -255,7 +255,7 @@ err := router.Register(handleForm, "/form", "GET", "POST")
 
 That's pretty powerful.
 
-## 14.7. Convention Over Configuration
+## 8.7. Convention Over Configuration
 
 Our `.Register()` method is powerful. But let's improve the user experience with it.
 
@@ -274,11 +274,11 @@ router.RegisterPathMethods(handler http.Handler, path string, methods ...string)
 
 
 
-## 14.8. Extra Points
+## 8.8. Extra Points
 
 If you want to make your HTTP router even more powerful, add these features —
 
-### 14.8.1 Delegates
+### 8.8.1 Delegates
 
 Add this method:
 ```go
@@ -299,7 +299,7 @@ Where any path under `/images/` is handed off to `handleStaticImages`. For examp
 * `/images/team/marry.jpeg`
 * `/images/webbug/1x1.gif`
 
-### 14.8.2 Default
+### 8.8.2 Default
 
 Add this method:
 ```go
