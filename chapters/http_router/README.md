@@ -310,4 +310,4 @@ func (receiver *Router) Default(handler http.Handler, directory string) error {
 
 Where if there is no handler registered or delegated to, then it is called.
 
-[⏮](../http_middleware/README.md)
+[⏮](../simple_json/README.md)
