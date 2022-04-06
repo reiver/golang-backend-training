@@ -25,34 +25,34 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [5. Web Serving](chapters/web_serving/README.md)
 * [6. JSON](chapters/json/README.md)
 * [7. Simple JSON](chapters/simple_json/README.md)
-* [11. Option Types](#10-option-types)
-* [8. Database](chapters/database/README.md)
-* [9. Database & Go](chapters/database_and_go/README.md)
+* [8. Option Types](#10-option-types)
+* [9. Database](chapters/database/README.md)
+* [10. Database & Go](chapters/database_and_go/README.md)
 * Types for Database IDs
-* [10. Money](chapters/money/README.md)
-* [12. Go Project Structure](chapters/golang-project-structure/README.md)
-* [13. HTTP Middleware](chapters/http_middleware/README.md)
-* [14. HTTP Router](chapters/http_router/README.md)
-* 15. HTTP Requests
-* 16. File Uploads
-* 17. Database Patches
-* 18. API ACL
-* 19. Sessions
-* 20. Deploying to Production
-* 21. Go Routines
-* 22. Toilers
-* 23. Supervision Tree
-* 24. runtime.SetFinalizer()
-* 25. Gemtext Parser
-* 26. Gemini Protocol Client
-* 27. Gemini Protocol Server
-* 25. Spam Detection
-* 26. Collaborative Filtering/Recommendation
-* 27. Text/Sentiment Classification
-* 28. Search Ranking
-* 29. Click-Through Rate Prediction
-* 30. Click-Fraud Detection
-* 31. Payment Fraud
+* [12. Money](chapters/money/README.md)
+* [13. Go Project Structure](chapters/golang-project-structure/README.md)
+* [14. HTTP Middleware](chapters/http_middleware/README.md)
+* [15. HTTP Router](chapters/http_router/README.md)
+* 16. HTTP Requests
+* 17. File Uploads
+* 18. Database Patches
+* 19. API ACL
+* 20. Sessions
+* 21. Deploying to Production
+* 22. Go Routines
+* 23. Toilers
+* 24. Supervision Tree
+* 25. runtime.SetFinalizer()
+* 26. Gemtext Parser
+* 27. Gemini Protocol Client
+* 28. Gemini Protocol Server
+* 29. Spam Detection
+* 30. Collaborative Filtering/Recommendation
+* 31. Text/Sentiment Classification
+* 32. Search Ranking
+* 33. Click-Through Rate Prediction
+* 34. Click-Fraud Detection
+* 35. Payment Fraud
 
 -----
 
