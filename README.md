@@ -43,7 +43,16 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * 22. Toilers
 * 23. Supervision Tree
 * 24. runtime.SetFinalizer()
-
+* 25. Gemtext Parser
+* 26. Gemini Protocol Client
+* 27. Gemini Protocol Server
+* 25. Spam Detection
+* 26. Collaborative Filtering/Recommendation
+* 27. Text/Sentiment Classification
+* 28. Search Ranking
+* 29. Click-Through Rate Prediction
+* 30. Click-Fraud Detection
+* 31. Payment Fraud
 
 -----
 
