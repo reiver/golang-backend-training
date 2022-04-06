@@ -1,6 +1,6 @@
 # 2. Flagging ([Golang Backend Training](../../README.md))
 
-# 2.1. Flag Hello {NAME}
+## 2.1. Flag Hello {NAME}
 
 Modify your previous **Hello {NAME}** program so that the name comes from a command line flag.
 
@@ -20,7 +20,7 @@ Hints:
 * [flag.StringVar()](https://golang.org/pkg/flag/#StringVar)
 * [flag.Parse()](https://golang.org/pkg/flag/#Parse)
 
-# 2.2. Shhh
+## 2.2. Shhh
 
 Modify your previous program to add  `--shhh` flag. The `--shhh` will make it so nothing will output.
 
@@ -44,7 +44,7 @@ Hints:
 * [flag.Parse()](https://golang.org/pkg/flag/#Parse)
 
 
-# 2.3. Arg File
+## 2.3. Arg File
 
 To help make your code more manageable, let's put all the flag code into a separate file named: `arg.go`
 
@@ -58,7 +58,7 @@ The code that deals with the outputting should be in `main.go`
 
 Once you have done that, do a `go build` and make sure everything still works.
 
-# 2.4. Arg Sub Directory
+## 2.4. Arg Sub Directory
 
 To help make your code even more manageable, let's put all the flag code into a sub-directory named: `arg/`
 
@@ -76,7 +76,7 @@ The code that deals with the outputting should be in `main.go`
 
 Once you have done that, do a `go build` and make sure everything still works.
 
-# 2.5. init()
+## 2.5. init()
 
 To make the flags get their values you have to run [flag.Parse()](https://golang.org/pkg/flag/#Parse).
 
@@ -93,6 +93,33 @@ And then run [flag.Parse()](https://golang.org/pkg/flag/#Parse) from it, to make
 
 Hints:
 * [Effective Go: The init function](https://golang.org/doc/effective_go#init)
+
+## 2.6. flag.Var
+
+Package `flag` comes with built-in support for a number of types:
+
+* `bool`
+* `float64`
+* `int`
+* `int64`
+* `string`
+* `uint`
+* `uint64`
+
+If you want to load the value of a command line flag into a custom type, then the custom would need to implement the `flag.Value` inteface:
+```golang
+type Value interface {
+	String() string
+	Set(string) error
+}
+```
+
+Create a custom type that (also) implements the `flag.Value` interface, and write a program that loads a value into it from a command line flag using the `flag.Value` interface.
+
+
+Hints:
+* [flag.Value](https://pkg.go.dev/flag#Value)
+
 
 -----
 
