@@ -25,6 +25,7 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [5. Web Serving](chapters/web_serving/README.md)
 * [6. JSON](chapters/json/README.md)
 * [7. Simple JSON](chapters/simple_json/README.md)
+* [15. HTTP Router](chapters/http_router/README.md)
 * [8. Option Types](#10-option-types)
 * [9. Database](chapters/database/README.md)
 * [10. Database & Go](chapters/database_and_go/README.md)
@@ -32,7 +33,6 @@ This guide gives you hints. And you should spend a bit of time trying to figure 
 * [12. Money](chapters/money/README.md)
 * [13. Go Project Structure](chapters/golang-project-structure/README.md)
 * [14. HTTP Middleware](chapters/http_middleware/README.md)
-* [15. HTTP Router](chapters/http_router/README.md)
 * 16. HTTP Requests
 * 17. File Uploads
 * 18. Database Patches
